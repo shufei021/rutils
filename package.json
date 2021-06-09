@@ -3,7 +3,7 @@
     "version": "1.0.19",
     "description": "",
     "private": false,
-    "main": "./dist/lib/handday/index.js",
+    "main": "./index.js",
     "dependencies": {
         "babel-core": "^6.26.3",
         "babel-loader": "^7.1.5",

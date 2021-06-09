@@ -1,32 +1,37 @@
-import isEmpty from './lib/isEmpty'
-import isEquals from './lib/isEquals'
-import isArray from './lib/isArray'
-import isBoolean from './lib/isBoolean'
-import isDate from './lib/isDate'
-import isFunction from './lib/isFunction'
-import isNull from './lib/isNull'
-import isNumber from './lib/isNumber'
-import isObject from './lib/isObject'
-import isRegExp from './lib/isRegExp'
-import isString from './lib/isString'
-import isType from './lib/isType'
-import isUndefined from './lib/isUndefined'
-import union from './lib/union'
-import intersection from './lib/intersection'
+import './polyfill'
+// base
+import base from './lib/base'
+// array
+import array from './lib/array'
+// dom
+import dom from './lib/dom'
+// number
+import number from './lib/number'
+// browser
+import browser from './lib/browser'
+// object
+import object from './lib/object'
+// string
+import string from './lib/string'
+// regExp
+import reg from './lib/reg'
+// url
+import url from './lib/url'
+// file
+import file from './lib/file'
+// store
+import store from './lib/store'
+
 export default {
-    isEmpty,
-    isEquals,
-    isArray,
-    isBoolean,
-    isDate,
-    isFunction,
-    isNull,
-    isNumber,
-    isObject,
-    isRegExp,
-    isString,
-    isType,
-    isUndefined,
-    union,
-    intersection
+    ...base,
+    ...array,
+    ...dom,
+    ...number,
+    ...browser,
+    ...object,
+    ...string,
+    ...reg,
+    ...url,
+    ...file,
+    ...store
 }

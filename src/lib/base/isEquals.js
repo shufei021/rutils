@@ -10,6 +10,6 @@ const isEquals = function (a, b) {
     let keys = Object.keys(a)
     if (keys.length !== Object.keys(b).length) return false
     let type = o => Object.prototype.toString.call(o).slice(8, -1)
-    return ((Array.isArray(a) && Array.isArray(b)) || (type(a) == 'Object' && type(b) == 'Object')) && keys.every(k => equals(a[k], b[k]))
+    return ((Array.isArray(a) && Array.isArray(b)) || (type(a) == 'Object' && type(b) == 'Object')) && keys.every(k => isEquals(a[k], b[k]))
 }
 export default isEquals
