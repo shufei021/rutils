@@ -1,0 +1,18 @@
+{
+  "name": "pree",
+  "version": "1.0.0",
+  "description": "document",
+  "main": "index.js",
+  "author": "min",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.5.3",
+    "@vuepress/plugin-medium-zoom": "^1.8.2",
+    "vuepress": "^1.5.3"
+  }
+}
