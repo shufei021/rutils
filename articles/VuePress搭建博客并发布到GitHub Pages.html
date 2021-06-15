@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>VuePress搭建博客并发布到GitHub Pages | Heart Thief</title>
+    <meta name="description" content="Zhang Yunyi 的个人博客">
+    <link rel="icon" href="/logo.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/styles.4adcc782.css" as="style"><link rel="preload" href="/assets/js/app.4adcc782.js" as="script"><link rel="preload" href="/assets/js/10.7af472b8.js" as="script"><link rel="prefetch" href="/assets/css/1.styles.380afd09.css"><link rel="prefetch" href="/assets/css/2.styles.f6f4c535.css"><link rel="prefetch" href="/assets/css/3.styles.8a388077.css"><link rel="prefetch" href="/assets/js/1.380afd09.js"><link rel="prefetch" href="/assets/js/11.3497f631.js"><link rel="prefetch" href="/assets/js/2.f6f4c535.js"><link rel="prefetch" href="/assets/js/3.8a388077.js"><link rel="prefetch" href="/assets/js/4.c036a7b5.js"><link rel="prefetch" href="/assets/js/5.16d5b44a.js"><link rel="prefetch" href="/assets/js/6.937d4fac.js"><link rel="prefetch" href="/assets/js/7.c52e138e.js"><link rel="prefetch" href="/assets/js/8.13acf589.js"><link rel="prefetch" href="/assets/js/9.4b08e189.js">
+    <link rel="stylesheet" href="/assets/css/1.styles.380afd09.css"><link rel="stylesheet" href="/assets/css/2.styles.f6f4c535.css"><link rel="stylesheet" href="/assets/css/3.styles.8a388077.css"><link rel="stylesheet" href="/assets/css/styles.4adcc782.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Heart Thief</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/articles/" class="nav-link router-link-active">Articles</a></div><div class="nav-item"><a href="/projects/" class="nav-link">Projects</a></div><div class="nav-item"><a href="/about/" class="nav-link">About</a></div> <a href="https://github.com/theheartthief/theheartthief.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/articles/" class="nav-link router-link-active">Articles</a></div><div class="nav-item"><a href="/projects/" class="nav-link">Projects</a></div><div class="nav-item"><a href="/about/" class="nav-link">About</a></div> <a href="https://github.com/theheartthief/theheartthief.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav> <div class="carbon-ads"></div> <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>技术文章</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/articles/" class="sidebar-link">介绍</a></li><li><a href="/articles/VuePress搭建博客并发布到GitHub Pages.html" class="active sidebar-link">VuePress搭建博客并发布到GitHub Pages</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/articles/VuePress搭建博客并发布到GitHub Pages.html#开始上手" class="sidebar-link">开始上手</a></li><li class="sidebar-sub-header"><a href="/articles/VuePress搭建博客并发布到GitHub Pages.html#配置网站" class="sidebar-link">配置网站</a></li><li class="sidebar-sub-header"><a href="/articles/VuePress搭建博客并发布到GitHub Pages.html#构建与部署" class="sidebar-link">构建与部署</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="vuepress搭建博客并发布到github-pages"><a href="#vuepress搭建博客并发布到github-pages" aria-hidden="true" class="header-anchor">#</a> VuePress搭建博客并发布到GitHub Pages</h1> <p>VuePress 是一个静态网站生成工具，带有一个默认主题。由 VuePress 生成的每个页面，都具有相应的预渲染静态 HTML，它们能提供出色的加载性能，并且对 SEO 友好。然而，页面加载之后，Vue 就会将这些静态内容，接管为完整的单页面应用程序(SPA)。当用户在浏览站点时，可以按需加载其他页面。</p> <p>VuePress开发的目的本来是为了支持Vue子项目的文档需求。但是它用来搭建个人博客也很方便，自带的主题也非常简洁清爽，还可以灵活更改网页主题的配置，所以就打算把个人博客从Jekyll迁移到VuePress上。VuePress的<a href="https://vuepress.vuejs.org/" target="_blank" rel="noopener noreferrer">官方文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 和 <a href="https://vuepress.docschina.org/" target="_blank" rel="noopener noreferrer">中文文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 在这里。</p> <h2 id="开始上手"><a href="#开始上手" aria-hidden="true" class="header-anchor">#</a> 开始上手</h2> <p>事实上文档中已经介绍了如何快速构建一个VuePress项目。不过由于VuePress的文档也是由VuePress来实现的，所以我就参考了<a href="https://github.com/docschina/vuepress" target="_blank" rel="noopener noreferrer">VuePress中文文档的仓库<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 进行一些修改。</p> <ol><li><p>首先安装NodeJS与yarn</p> <p>Windows下安装NodeJS非常方便，只需要到 <a href="http://nodejs.cn/" target="_blank" rel="noopener noreferrer">Node.js中文网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 就可以看到下载页面。下载完成后双击进行安装。</p> <p>在 <a href="https://yarnpkg.com/zh-Hans/" target="_blank" rel="noopener noreferrer">Yarn中文官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 下载安装文件并运行即可安装Yarn。</p> <p>在cmd中输入下面的命令，如果看到版本号说明已经安装成功。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>node -v
+yarn -v
+</code></pre></div><div class="warning custom-block"><p class="custom-block-title">兼容性注意事项</p> <p>VuePress 要求 Node.js &gt;= 8。</p></div></li> <li><p>全局安装VuePress</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span> -g vuepress
+</code></pre></div></li> <li><p>克隆VuePress仓库</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> clone https://github.com/docschina/vuepress.git
+</code></pre></div></li> <li><p>添加默认主题</p> <div class="warning custom-block"><p class="custom-block-title">重要</p> <p>网上很多教程包括官方文档都没写这一步，最后生成静态资源的时候报错Error: vuepress fail to resolve custom theme。导致我折腾了好几个小时才解决了问题。</p></div> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cd</span> vuepress
+yarn add vuepress-theme-vue
+</code></pre></div></li> <li><p>本地查看是否正常打开</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cd</span> docs
+vuepress dev
+</code></pre></div><p>当你看到这一行说明已经成功了。</p> <div class="language- extra-class"><pre class="language-text"><code> VuePress dev server listening at http://localhost:8080/
+</code></pre></div><p>打开http://localhost:8080/</p> <p><img src="/1.png" alt="1"></p> <p>接下来就是一些自定义的配置，以及把VuePress文档换成自己的文章。</p></li></ol> <h2 id="配置网站"><a href="#配置网站" aria-hidden="true" class="header-anchor">#</a> 配置网站</h2> <p>先看一下docs的目录结构</p> <div class="language- extra-class"><pre class="language-text"><code>├─.vuepress
+│  ├─components
+│  └─public
+│      └─icons
+│   └─config.js // 配置文件
+├─config // Vuepress文档的配置参考内容
+├─default-theme-config // Vuepress文档的默认主题配置内容
+├─guide // Vuepress文档的指南内容
+└─zh // 中文文档目录
+    ├─config
+    ├─default-theme-config
+    └─guide
+└─README.md // 首页配置文件
+</code></pre></div><ul><li><p>首页配置</p> <p>默认主题提供了一个首页布局，要使用它，你需要在根目录的 <code>README.md</code> 的 <a href="https://vuepress.docschina.org/guide/markdown.html#%E9%93%BE%E6%8E%A5-links" target="_blank" rel="noopener noreferrer">YAML front matter<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 中指定<code>home: true</code> ，其他配置如下：</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">home</span><span class="token punctuation">:</span> true // 是否使用Vuepress默认主题
+<span class="token key atrule">heroImage</span><span class="token punctuation">:</span> /hero.png // 首页的图片
+<span class="token key atrule">actionText</span><span class="token punctuation">:</span> Get Started →  // 按钮的文字
+<span class="token key atrule">actionLink</span><span class="token punctuation">:</span> articles
+<span class="token key atrule">features</span><span class="token punctuation">:</span> // 首页三个特性
+<span class="token punctuation">-</span> <span class="token key atrule">title</span><span class="token punctuation">:</span> Simplicity First
+  <span class="token key atrule">details</span><span class="token punctuation">:</span> Minimal setup with markdown<span class="token punctuation">-</span>centered project structure helps you focus on writing.
+<span class="token punctuation">-</span> <span class="token key atrule">title</span><span class="token punctuation">:</span> Vue<span class="token punctuation">-</span>Powered
+  <span class="token key atrule">details</span><span class="token punctuation">:</span> Enjoy the dev experience of Vue + webpack<span class="token punctuation">,</span> use Vue components in markdown<span class="token punctuation">,</span> and develop custom themes with Vue.
+<span class="token punctuation">-</span> <span class="token key atrule">title</span><span class="token punctuation">:</span> Performant
+  <span class="token key atrule">details</span><span class="token punctuation">:</span> VuePress generates pre<span class="token punctuation">-</span>rendered static HTML for each page<span class="token punctuation">,</span> and runs as an SPA once a page is loaded.
+<span class="token key atrule">footer</span><span class="token punctuation">:</span> MIT Licensed <span class="token punctuation">|</span> Copyright © 2018<span class="token punctuation">-</span>present Evan You // 页尾
+</code></pre></div></li> <li><p>导航配置</p> <p>导航配置文件在 <code>.vuepress/config.js</code> 中。</p> <p>配置文件中nav控制导航栏链接，可以改变导航栏的标题，链接到自己的博客目录。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>nav<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        text<span class="token punctuation">:</span> <span class="token string">'Guide'</span><span class="token punctuation">,</span>
+        link<span class="token punctuation">:</span> <span class="token string">'/guide/'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        text<span class="token punctuation">:</span> <span class="token string">'Config Reference'</span><span class="token punctuation">,</span>
+        link<span class="token punctuation">:</span> projects
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        text<span class="token punctuation">:</span> <span class="token string">'Default Theme Config'</span><span class="token punctuation">,</span>
+        link<span class="token punctuation">:</span> projects
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre></div></li> <li><p>侧边栏配置</p> <p>侧边栏的配置也在 <code>.vuepress/config.js</code> 中。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>sidebar<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          <span class="token string">'/guide/'</span><span class="token punctuation">:</span> <span class="token function">genSidebarConfig</span><span class="token punctuation">(</span><span class="token string">'指南'</span><span class="token punctuation">)</span><span class="token comment">//设定侧边栏的函数，参数是名称</span>
+        <span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">genSidebarConfig</span> <span class="token punctuation">(</span>title<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      title<span class="token punctuation">,</span>
+      collapsable<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><span class="token comment">//是否可折叠</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span> <span class="token comment">//文章目录，构建出来的网页会按照顺序链接</span>
+        <span class="token string">''</span><span class="token punctuation">,</span>
+        <span class="token string">'getting-started'</span><span class="token punctuation">,</span>
+        <span class="token string">'basic-config'</span><span class="token punctuation">,</span>
+        <span class="token string">'assets'</span><span class="token punctuation">,</span>
+        <span class="token string">'markdown'</span><span class="token punctuation">,</span>
+        <span class="token string">'using-vue'</span><span class="token punctuation">,</span>
+        <span class="token string">'custom-themes'</span><span class="token punctuation">,</span>
+        <span class="token string">'i18n'</span><span class="token punctuation">,</span>
+        <span class="token string">'deploy'</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li></ul> <p>其他配置方法可参考官方文档。</p> <h2 id="构建与部署"><a href="#构建与部署" aria-hidden="true" class="header-anchor">#</a> 构建与部署</h2> <p>Github Pages 是面向用户、组织和项目开放的公共静态页面搭建托管服务，站点可以被免费托管在 Github 上，你可以选择使用 Github Pages 默 认提供的域名 github.io 或者自定义域名来发布站点。不仅免除了租服务器的麻烦，而且部署起来非常轻松。简而言之，在GitHub Pages上发布博客是非常好的选择。</p> <ol><li><p>在本地安装Git并注册GitHub账号</p></li> <li><p>创建仓库</p> <p>创建一个名为 <code>&lt;username&gt;.github.io</code> 的仓库，这里的<code>&lt;username&gt;</code> 换成自己GitHub的应户名。</p></li> <li><p>修改自动构建与部署脚本</p> <p>脚本在<code>vuepress/scripts/deploy-gh.sh</code> 中。</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">cd</span> <span class="token punctuation">..</span>
+<span class="token comment"># 终止一个错误</span>
+<span class="token keyword">set</span> -e
+<span class="token function">cd</span> docs
+<span class="token comment"># 生成静态资源</span>
+vuepress build
+<span class="token comment"># 进入生成的构建文件夹</span>
+<span class="token function">cd</span> vuepress
+<span class="token function">git</span> init
+<span class="token function">git</span> add -A
+<span class="token function">git</span> commit -m <span class="token string">'deploy'</span>
+<span class="token function">git</span> push -f https://github.com/<span class="token operator">&lt;</span>username<span class="token operator">&gt;</span>/<span class="token operator">&lt;</span>username<span class="token operator">&gt;</span>.github.io.git master
+</code></pre></div><p>同理这里的<code>&lt;username&gt;</code> 要改成自己GitHub的用户名。</p> <p>执行脚本 <code>./deploy-gh.sh</code> ，你的博客就会发布到GitHub Pages上啦。</p></li> <li><p>打开网址 https://username.github.io/，就可以看到已经构建好的博客网站。</p></li></ol></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/theheartthief/theheartthief.github.io/edit/master/docs/articles/VuePress搭建博客并发布到GitHub Pages.md" target="_blank" rel="noopener noreferrer">编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></div> <!----> <div class="bsa-cpc-wrapper"><div class="bsa-cpc"></div></div></div> <!----></div></div>
+    <script src="/assets/js/10.7af472b8.js" defer></script><script src="/assets/js/app.4adcc782.js" defer></script>
+  </body>
+</html>
