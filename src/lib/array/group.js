@@ -1,7 +1,7 @@
 /**
  * @description: 一维数组转二维数组 (分组)
  * @param {Array} arr:数组
- * @param {String | Number} num: 平分基数（num 个为一组进行分组（归档））
+ * @param {Number} num: 平分基数（num 个为一组进行分组（归档））
  */
 const group = function (arr, num) {
     return [...Array(Math.ceil(arr.length / num)).keys()].reduce((p, _, i) => (p.push(arr.slice(i * num, (i + 1) * num)), p), [])

@@ -35,3 +35,6 @@ export default {
     ...file,
     ...store
 }
+
+
+import { a, b, c} from '@utils'

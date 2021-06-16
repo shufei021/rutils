@@ -6,6 +6,7 @@ import isNum from './isNum'
 import multiply from './multiply'
 import round from './round'
 import subtract from './subtract'
+import isInteger from './isInteger'
 export default {
     add,
     calc,
@@ -14,5 +15,6 @@ export default {
     isNum,
     multiply,
     round,
-    subtract
+    subtract,
+    isInteger
 }

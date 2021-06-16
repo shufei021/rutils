@@ -8,7 +8,7 @@ const dynamicAddCss = function (cssName, prefix = '') {
         let link = document.createElement('link')
         link.setAttribute('href', prefix + cssName + '.css')
         link.setAttribute('type', 'text/css')
-        link.onload = () => resolve()
+        link.onload = () => resolve(link)
         document.getElementsByTagName('head')[0].appendChild(link)
     })
 }
