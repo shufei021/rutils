@@ -1,13 +1,6 @@
-/*
- * @Description: 
- * @Author: shufei
- * @Date: 2021-06-11 10:18:28
- * @LastEditTime: 2021-06-11 11:07:01
- * @LastEditors: shufei
- */
 module.exports = {
     title: 'Rutils', //网站名称
-    base: '/', //部署站点的基础路径，如果你想让你的网站部署到一个子路径下，你将需要设置它。如 GitHub pages，如果你想将你的网站部署到 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/"，它的值应当总是以斜杠开始，并以斜杠结束。
+    base: '/rutils/', //部署站点的基础路径，如果你想让你的网站部署到一个子路径下，你将需要设置它。如 GitHub pages，如果你想将你的网站部署到 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/"，它的值应当总是以斜杠开始，并以斜杠结束。
     head: [
         ['link', { rel: 'icon', href: '/favicon.png' }] //ico图标
     ],
