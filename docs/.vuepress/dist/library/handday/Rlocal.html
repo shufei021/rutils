@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>缓存 local | 攻城狮</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/favicon.png">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.b4d41823.css" as="style"><link rel="preload" href="/assets/js/app.72a56e39.js" as="script"><link rel="preload" href="/assets/js/2.6407fbb2.js" as="script"><link rel="preload" href="/assets/js/17.7643218b.js" as="script"><link rel="prefetch" href="/assets/js/10.9663fd09.js"><link rel="prefetch" href="/assets/js/11.0cd9ffb2.js"><link rel="prefetch" href="/assets/js/12.9979626a.js"><link rel="prefetch" href="/assets/js/13.08f0af61.js"><link rel="prefetch" href="/assets/js/14.8932308a.js"><link rel="prefetch" href="/assets/js/15.514107a6.js"><link rel="prefetch" href="/assets/js/16.f82c7334.js"><link rel="prefetch" href="/assets/js/18.3a2d19c9.js"><link rel="prefetch" href="/assets/js/19.0ad79435.js"><link rel="prefetch" href="/assets/js/20.60b5a689.js"><link rel="prefetch" href="/assets/js/21.6b89ba82.js"><link rel="prefetch" href="/assets/js/22.ce31ad00.js"><link rel="prefetch" href="/assets/js/23.b693f12f.js"><link rel="prefetch" href="/assets/js/24.a36c01a1.js"><link rel="prefetch" href="/assets/js/25.edf73270.js"><link rel="prefetch" href="/assets/js/26.e37e1045.js"><link rel="prefetch" href="/assets/js/27.4325a99b.js"><link rel="prefetch" href="/assets/js/28.d8253702.js"><link rel="prefetch" href="/assets/js/29.6e4a4278.js"><link rel="prefetch" href="/assets/js/3.de1dad46.js"><link rel="prefetch" href="/assets/js/30.73f54d4c.js"><link rel="prefetch" href="/assets/js/31.342d9313.js"><link rel="prefetch" href="/assets/js/32.1cbe756f.js"><link rel="prefetch" href="/assets/js/33.a5a96573.js"><link rel="prefetch" href="/assets/js/34.454316df.js"><link rel="prefetch" href="/assets/js/35.f98fb35e.js"><link rel="prefetch" href="/assets/js/36.57fa3a91.js"><link rel="prefetch" href="/assets/js/37.19400479.js"><link rel="prefetch" href="/assets/js/38.6a927fb5.js"><link rel="prefetch" href="/assets/js/39.d5559935.js"><link rel="prefetch" href="/assets/js/4.881c5f3a.js"><link rel="prefetch" href="/assets/js/40.331d26b7.js"><link rel="prefetch" href="/assets/js/41.61275e2d.js"><link rel="prefetch" href="/assets/js/42.044b4af8.js"><link rel="prefetch" href="/assets/js/43.5b480e5f.js"><link rel="prefetch" href="/assets/js/44.581550b1.js"><link rel="prefetch" href="/assets/js/45.0efa203e.js"><link rel="prefetch" href="/assets/js/46.b7104fb4.js"><link rel="prefetch" href="/assets/js/47.88c9cedb.js"><link rel="prefetch" href="/assets/js/48.99b0aa7a.js"><link rel="prefetch" href="/assets/js/49.b056536c.js"><link rel="prefetch" href="/assets/js/5.21f0d470.js"><link rel="prefetch" href="/assets/js/50.86d0305e.js"><link rel="prefetch" href="/assets/js/51.f1d7ea6a.js"><link rel="prefetch" href="/assets/js/52.0baa71c3.js"><link rel="prefetch" href="/assets/js/53.a8e50466.js"><link rel="prefetch" href="/assets/js/54.6e02381b.js"><link rel="prefetch" href="/assets/js/55.21e654e0.js"><link rel="prefetch" href="/assets/js/56.720e5f07.js"><link rel="prefetch" href="/assets/js/57.90602edc.js"><link rel="prefetch" href="/assets/js/58.76ff45ff.js"><link rel="prefetch" href="/assets/js/6.f7b656d9.js"><link rel="prefetch" href="/assets/js/7.61d89839.js"><link rel="prefetch" href="/assets/js/8.88248474.js"><link rel="prefetch" href="/assets/js/9.aa423314.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b4d41823.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">攻城狮</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/rudiment/entry.html" class="nav-link">
+  指南
+</a></div><div class="nav-item"><a href="/standard/appoint.html" class="nav-link">
+  规范
+</a></div><div class="nav-item"><a href="/refactor/envcpm.html" class="nav-link">
+  重构规范
+</a></div><div class="nav-item"><a href="/work/project.html" class="nav-link">
+  文档
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="库" class="dropdown-title"><span class="title">库</span> <span class="arrow down"></span></button> <button type="button" aria-label="库" class="mobile-dropdown-title"><span class="title">库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/storage/" class="nav-link">
+  介绍
+</a></li><li class="dropdown-item"><h4>
+          HandDay项目
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/library/handday/HandDay.html" class="nav-link">
+  HandDay
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rdate.html" class="nav-link">
+  日期时间
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rarr.html" class="nav-link">
+  数组
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rurl.html" class="nav-link">
+  URL
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rnum.html" class="nav-link">
+  数字
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rlocal.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  缓存 local
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rsession.html" class="nav-link">
+  缓存 session
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Robj.html" class="nav-link">
+  对象
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rstr.html" class="nav-link">
+  字符串
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rdom.html" class="nav-link">
+  DOM
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rreg.html" class="nav-link">
+  正则
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rbrowser.html" class="nav-link">
+  浏览器
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rdownload.html" class="nav-link">
+  下载
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/tools/Fiddler.html" class="nav-link">
+  开发工具
+</a></div><div class="nav-item"><a href="/share/git.html" class="nav-link">
+  分享
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/rudiment/entry.html" class="nav-link">
+  指南
+</a></div><div class="nav-item"><a href="/standard/appoint.html" class="nav-link">
+  规范
+</a></div><div class="nav-item"><a href="/refactor/envcpm.html" class="nav-link">
+  重构规范
+</a></div><div class="nav-item"><a href="/work/project.html" class="nav-link">
+  文档
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="库" class="dropdown-title"><span class="title">库</span> <span class="arrow down"></span></button> <button type="button" aria-label="库" class="mobile-dropdown-title"><span class="title">库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/storage/" class="nav-link">
+  介绍
+</a></li><li class="dropdown-item"><h4>
+          HandDay项目
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/library/handday/HandDay.html" class="nav-link">
+  HandDay
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rdate.html" class="nav-link">
+  日期时间
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rarr.html" class="nav-link">
+  数组
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rurl.html" class="nav-link">
+  URL
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rnum.html" class="nav-link">
+  数字
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rlocal.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  缓存 local
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rsession.html" class="nav-link">
+  缓存 session
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Robj.html" class="nav-link">
+  对象
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rstr.html" class="nav-link">
+  字符串
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rdom.html" class="nav-link">
+  DOM
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rreg.html" class="nav-link">
+  正则
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rbrowser.html" class="nav-link">
+  浏览器
+</a></li><li class="dropdown-subitem"><a href="/library/handday/Rdownload.html" class="nav-link">
+  下载
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/tools/Fiddler.html" class="nav-link">
+  开发工具
+</a></div><div class="nav-item"><a href="/share/git.html" class="nav-link">
+  分享
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>handday.js</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/library/handday/HandDay.html" class="sidebar-link">工具库介绍</a></li><li><a href="/library/handday/Rdate.html" class="sidebar-link">日期时间</a></li><li><a href="/library/handday/Rarr.html" class="sidebar-link">数组</a></li><li><a href="/library/handday/Rurl.html" class="sidebar-link">URL</a></li><li><a href="/library/handday/Rnum.html" class="sidebar-link">数字</a></li><li><a href="/library/handday/Rlocal.html" aria-current="page" class="active sidebar-link">缓存 local</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#rlocal-项目介绍" class="sidebar-link">Rlocal 项目介绍</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#rlocal-项目结构" class="sidebar-link">Rlocal 项目结构</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#rlocal-项目-api" class="sidebar-link">Rlocal 项目 API</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#rlocal-项目示例" class="sidebar-link">Rlocal 项目示例</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#_1-set" class="sidebar-link">1.set</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#_2-get" class="sidebar-link">2.get</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#_3-set1" class="sidebar-link">3.set1</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#_4-get1" class="sidebar-link">4.get1</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#_5-getstore" class="sidebar-link">5.getStore</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#_6-clear" class="sidebar-link">6.clear</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#_7-remove" class="sidebar-link">7.remove</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#_8-openeventlistener" class="sidebar-link">8.openEventListener</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#_8-opensetitemevent" class="sidebar-link">8.openSetItemEvent</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#_9-opengetitemevent" class="sidebar-link">9.openGetItemEvent</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#_10-openremoveitemevent" class="sidebar-link">10.openRemoveItemEvent</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#_11-gethasexpired" class="sidebar-link">11.getHasExpired</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#_12-gethasexpiredkeys" class="sidebar-link">12.getHasExpiredKeys</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#_13-getexpired" class="sidebar-link">13.getExpired</a></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#_14-clearexpired" class="sidebar-link">14.clearExpired</a></li></ul></li><li class="sidebar-sub-header"><a href="/library/handday/Rlocal.html#rlocal-项目更新" class="sidebar-link">Rlocal 项目更新</a></li></ul></li><li><a href="/library/handday/Rsession.html" class="sidebar-link">缓存 session</a></li><li><a href="/library/handday/Robj.html" class="sidebar-link">对象</a></li><li><a href="/library/handday/Rstr.html" class="sidebar-link">字符串类</a></li><li><a href="/library/handday/Rdom.html" class="sidebar-link">DOM</a></li><li><a href="/library/handday/Rreg.html" class="sidebar-link">正则</a></li><li><a href="/library/handday/Rbrowser.html" class="sidebar-link">浏览器</a></li><li><a href="/library/handday/Rdownload.html" class="sidebar-link">下载</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="缓存-local"><a href="#缓存-local" class="header-anchor">#</a> 缓存 local</h1> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>本地缓存类<span style="color:#07c160;"> Rlocal </span>基于原生 JavaScript 的 localStorage 相关 api 封装，暂收录了 15 个 实际项目开发中常用的方法</p></div> <div class="custom-block warning"><p class="custom-block-title">sessionStorage 概念</p> <p>只读的 localStorage 属性允许你访问一个 Document 源（origin）的对象 Storage；存储的数据将保存在浏览器会话中。localStorage 类似 sessionStorage，但其区别在于：存储在 localStorage 的数据可以长期保留；而当页面会话结束——也就是说，当页面被关闭时，存储在 sessionStorage 的数据会被清除 。</p></div> <div class="custom-block danger"><p class="custom-block-title">sessionStorage 注意</p> <p>应注意，无论数据存储在 localStorage 还是 sessionStorage ，它们都特定于页面的协议。</p> <p>另外，localStorage 中的键值对总是以字符串的形式存储。 (需要注意, 和 js 对象相比, 键值对总是以字符串的形式存储意味着数值类型会自动转化为字符串类型).</p></div> <h2 id="rlocal-项目介绍"><a href="#rlocal-项目介绍" class="header-anchor">#</a> Rlocal 项目介绍</h2> <p>💥 <code>Rlocal</code> 类为 <code>HandDay</code> 的子类，属于本地缓存 localStorage 相关的工具类，致力于各种 localStorage 数据的快速处理</p> <h2 id="rlocal-项目结构"><a href="#rlocal-项目结构" class="header-anchor">#</a> Rlocal 项目结构</h2> <div class="language-base extra-class"><pre class="language-text"><code>local
+  |----- lib
+  |----- index.js
+</code></pre></div><h2 id="rlocal-项目-api"><a href="#rlocal-项目-api" class="header-anchor">#</a> Rlocal 项目 API</h2> <table><thead><tr><th style="text-align:left;">方法名</th> <th style="text-align:left;">说明</th></tr></thead> <tbody><tr><td style="text-align:left;">set</td> <td style="text-align:left;">添加 localStorage</td></tr> <tr><td style="text-align:left;">get</td> <td style="text-align:left;">获取 localStorage</td></tr> <tr><td style="text-align:left;">set1</td> <td style="text-align:left;">添加带过期时间的 localStorage</td></tr> <tr><td style="text-align:left;">get1</td> <td style="text-align:left;">获取带过期时间的 localStorage</td></tr> <tr><td style="text-align:left;">getStore</td> <td style="text-align:left;">获取所有的 localStorage</td></tr> <tr><td style="text-align:left;">clear</td> <td style="text-align:left;">清除本地所有的 localStorage</td></tr> <tr><td style="text-align:left;">remove</td> <td style="text-align:left;">移除指定 key 的 localStorage</td></tr> <tr><td style="text-align:left;">openEventListener</td> <td style="text-align:left;">开启 localStorage 的自定义事件监听</td></tr> <tr><td style="text-align:left;">openSetItemEvent</td> <td style="text-align:left;">开启 localStorage 的自定义事件监听 setItemEvent</td></tr> <tr><td style="text-align:left;">openGetItemEvent</td> <td style="text-align:left;">开启 localStorage 的自定义事件监听 getItemEvent</td></tr> <tr><td style="text-align:left;">openRemoveItemEvent</td> <td style="text-align:left;">开启 localStorage 的自定义事件监听 removeItemEvent</td></tr> <tr><td style="text-align:left;">getHasExpired</td> <td style="text-align:left;">获取所有带过期时间的数据</td></tr> <tr><td style="text-align:left;">getHasExpiredKeys</td> <td style="text-align:left;">获取所有带过期时间的 keys</td></tr> <tr><td style="text-align:left;">getExpired</td> <td style="text-align:left;">获取所有已经过期的数据信息</td></tr> <tr><td style="text-align:left;">clearExpired</td> <td style="text-align:left;">清除过期的缓存</td></tr></tbody></table> <h2 id="rlocal-项目示例"><a href="#rlocal-项目示例" class="header-anchor">#</a> Rlocal 项目示例</h2> <p>🎉 导入实例 <code>local</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> local <span class="token keyword">from</span> <span class="token string">'handday/dist/lib/local'</span>
+</code></pre></div><h3 id="_1-set"><a href="#_1-set" class="header-anchor">#</a> 1.set</h3> <p>不带过期时间的 设置</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//设置一条数据</span>
+local<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'userInfo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'帆老板'</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">18</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// 此时本地缓存localStorage中 成功存入一条数据</span>
+<span class="token comment">/*
+  key            value
+  userInfo       {&quot;name&quot;:&quot;帆老板&quot;,&quot;age&quot;:18}
+*/</span>
+
+<span class="token comment">// 设置多个值</span>
+local<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'F4'</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">29</span><span class="token punctuation">,</span> job<span class="token operator">:</span> <span class="token string">'搬砖'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_2-get"><a href="#_2-get" class="header-anchor">#</a> 2.get</h3> <p>获取不带过期时间的 获取</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//获取一条数据</span>
+local<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'userInfo'</span><span class="token punctuation">)</span> <span class="token comment">// {name: &quot;帆老板&quot;, age: 18}</span>
+</code></pre></div><h3 id="_3-set1"><a href="#_3-set1" class="header-anchor">#</a> 3.set1</h3> <p>带过期时间的 设置</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//设置一条数据,过期时间位6秒钟</span>
+<span class="token function">set1</span><span class="token punctuation">(</span><span class="token string">'userInfo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">'帆老板'</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">18</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">6000</span><span class="token punctuation">)</span>
+<span class="token comment">// 此时本地缓存localStorage中 成功存入一条数据</span>
+<span class="token comment">/*
+  key            value
+  userInfo       {&quot;startTime&quot;:1605507896824,&quot;expires&quot;:6000,&quot;value&quot;:{&quot;name&quot;:&quot;帆老板&quot;,&quot;age&quot;:18}}
+*/</span>
+</code></pre></div><h3 id="_4-get1"><a href="#_4-get1" class="header-anchor">#</a> 4.get1</h3> <p>获取带过期时间的 获取</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//获取一条带过期时间的数据</span>
+local<span class="token punctuation">.</span><span class="token function">get1</span><span class="token punctuation">(</span><span class="token string">'userInfo'</span><span class="token punctuation">)</span> <span class="token comment">// {name: &quot;帆老板&quot;, age: 18}</span>
+<span class="token comment">// 如果过期了返回 false 没有过期则返回 数据</span>
+</code></pre></div><h3 id="_5-getstore"><a href="#_5-getstore" class="header-anchor">#</a> 5.getStore</h3> <p>获取所有的 localStorage 数据</p> <div class="language-js extra-class"><pre class="language-js"><code>local<span class="token punctuation">.</span><span class="token function">getStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_6-clear"><a href="#_6-clear" class="header-anchor">#</a> 6.clear</h3> <p>清除本地所有的 localStorage，内部调用原生的</p> <div class="language-js extra-class"><pre class="language-js"><code>local<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_7-remove"><a href="#_7-remove" class="header-anchor">#</a> 7.remove</h3> <p>移除一条或多条 localStorage 数据</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 移除 多条 localStorage数据</span>
+local<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment">// 移除 一条 localStorage数据</span>
+local<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">'userInfo'</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_8-openeventlistener"><a href="#_8-openeventlistener" class="header-anchor">#</a> 8.openEventListener</h3> <p>localStorage 监听</p> <ul><li><p>localStorage.setItem 监听：自定义事件 setItemEvent</p></li> <li><p>localStorage.getItem 监听：自定义事件 getItemEvent</p></li> <li><p>localStorage.removeItem 监听：自定义事件 removeItemEvent</p></li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 开启后</span>
+local<span class="token punctuation">.</span><span class="token function">openEventListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">//localStorage.setItem监听</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'setItemEvent'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>detail<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">//localStorage.getItem监听</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'getItemEvent'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>detail<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">//localStorage.removeItem监听</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'removeItemEvent'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>detail<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_8-opensetitemevent"><a href="#_8-opensetitemevent" class="header-anchor">#</a> 8.openSetItemEvent</h3> <p>开启 localStorage 的自定义事件监听 setItemEvent</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 启 localStorage 的自定义事件监听 setItemEvent</span>
+local<span class="token punctuation">.</span><span class="token function">openSetItemEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 开启后</span>
+<span class="token comment">//localStorage.setItem监听</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'setItemEvent'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>detail<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_9-opengetitemevent"><a href="#_9-opengetitemevent" class="header-anchor">#</a> 9.openGetItemEvent</h3> <p>开启 localStorage 的自定义事件监听 getItemEvent</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 启 localStorage 的自定义事件监听 getItemEvent</span>
+local<span class="token punctuation">.</span><span class="token function">openGetItemEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 开启后</span>
+<span class="token comment">//localStorage.getItemEvent监听</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'getItemEvent'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>detail<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_10-openremoveitemevent"><a href="#_10-openremoveitemevent" class="header-anchor">#</a> 10.openRemoveItemEvent</h3> <p>开启 localStorage 的自定义事件监听 removeItemEvent</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 启 localStorage 的自定义事件监听 removeItemEvent</span>
+local<span class="token punctuation">.</span><span class="token function">openRemoveItemEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 开启后</span>
+<span class="token comment">//localStorage.removeItem监听</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'removeItemEvent'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>detail<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_11-gethasexpired"><a href="#_11-gethasexpired" class="header-anchor">#</a> 11.getHasExpired</h3> <p>获取 所有带过期时间 的数据,没有返回空对象 {}</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// ...</span>
+local<span class="token punctuation">.</span><span class="token function">getHasExpired</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_12-gethasexpiredkeys"><a href="#_12-gethasexpiredkeys" class="header-anchor">#</a> 12.getHasExpiredKeys</h3> <p>获取所有带过期时间的 keys，没有返回空数组 []</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// ...</span>
+local<span class="token punctuation">.</span><span class="token function">getHasExpired</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_13-getexpired"><a href="#_13-getexpired" class="header-anchor">#</a> 13.getExpired</h3> <p>获取所有已经过期的数据信息,没有就返回 {keys: [],val: {}}</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// ...</span>
+local<span class="token punctuation">.</span><span class="token function">getExpired</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_14-clearexpired"><a href="#_14-clearexpired" class="header-anchor">#</a> 14.clearExpired</h3> <p>清除过期的缓存，只针对过期数据进行处理</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// ...</span>
+local<span class="token punctuation">.</span><span class="token function">clearExpired</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 不传参，清除所有过期的本地缓存数据</span>
+local<span class="token punctuation">.</span><span class="token function">clearExpired</span><span class="token punctuation">(</span><span class="token string">'keyName'</span><span class="token punctuation">)</span> <span class="token comment">// 传参，清除指定key 的过期的本地缓存数据</span>
+local<span class="token punctuation">.</span><span class="token function">clearExpired</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'keyName1'</span><span class="token punctuation">,</span> <span class="token string">'keyName2'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// 传参数组，清除指定key数组中过期的本地缓存数据</span>
+</code></pre></div><h2 id="rlocal-项目更新"><a href="#rlocal-项目更新" class="header-anchor">#</a> Rlocal 项目更新</h2> <ul><li>2020/11/17 文档编辑整理</li> <li>2021/01/15 文档编辑整理</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">5/14/2021, 9:37:19 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/library/handday/Rnum.html" class="prev">
+        数字
+      </a></span> <span class="next"><a href="/library/handday/Rsession.html">
+        缓存 session
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.72a56e39.js" defer></script><script src="/assets/js/2.6407fbb2.js" defer></script><script src="/assets/js/17.7643218b.js" defer></script>
+  </body>
+</html>
