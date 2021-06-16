@@ -1,35 +1,30 @@
-<!--
- * @Author: your name
- * @Date: 2021-05-30 18:38:04
- * @LastEditTime: 2021-06-09 01:03:46
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \rutils\index.html
--->
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>handday.js</title>
-    </head>
-    <body></body>
-    <script src="././build/index.js"></script>
-    <!-- <script src="././build/lib/array/index.js"></script> -->
-    <script>
-        const { add, findKey, camelCase, escape, range, subtract, multiply, devide } = rutils
-        console.log(rutils)
-        console.log(Object.keys(rutils).length)
-
-        const isToday = function (dt) {
-            let t = new Date()
-            let y = t.getFullYear()
-            let m = t.getMonth() + 1
-            let d = t.getDate()
-            let s = +new Date(y, m, d, 0, 0, 0)
-            let e = +new Date(y, m, d, 23, 59, 59)
-            let c = +new Date(typeof dt == 'string' ? dt.replace(/-/g, '/') : dt)
-            return c >= s && c <= e
-        }
-    </script>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Rutils</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/rutils/favicon.png">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/rutils/assets/css/0.styles.5fde50c2.css" as="style"><link rel="preload" href="/rutils/assets/js/app.c5b8535c.js" as="script"><link rel="preload" href="/rutils/assets/js/2.1dda284f.js" as="script"><link rel="preload" href="/rutils/assets/js/7.9c5ea14e.js" as="script"><link rel="prefetch" href="/rutils/assets/js/10.19d29775.js"><link rel="prefetch" href="/rutils/assets/js/11.e3b08b4c.js"><link rel="prefetch" href="/rutils/assets/js/12.8e44dc3f.js"><link rel="prefetch" href="/rutils/assets/js/13.c1a43544.js"><link rel="prefetch" href="/rutils/assets/js/14.05d481a0.js"><link rel="prefetch" href="/rutils/assets/js/15.b4145edd.js"><link rel="prefetch" href="/rutils/assets/js/16.c209aace.js"><link rel="prefetch" href="/rutils/assets/js/17.9059a722.js"><link rel="prefetch" href="/rutils/assets/js/18.0143eb0f.js"><link rel="prefetch" href="/rutils/assets/js/19.935b7d44.js"><link rel="prefetch" href="/rutils/assets/js/20.7bec174f.js"><link rel="prefetch" href="/rutils/assets/js/3.e0dd5038.js"><link rel="prefetch" href="/rutils/assets/js/4.fc8e4bb0.js"><link rel="prefetch" href="/rutils/assets/js/5.08aafc5b.js"><link rel="prefetch" href="/rutils/assets/js/6.d435967b.js"><link rel="prefetch" href="/rutils/assets/js/8.64a0f2f5.js"><link rel="prefetch" href="/rutils/assets/js/9.b7086b4e.js">
+    <link rel="stylesheet" href="/rutils/assets/css/0.styles.5fde50c2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/rutils/" aria-current="page" class="home-link router-link-exact-active router-link-active"><!----> <span class="site-name">Rutils</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/rutils/library/" class="nav-link">
+  文档
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/rutils/library/" class="nav-link">
+  文档
+</a></div> <!----></nav>  <!----> </aside> <main aria-labelledby="main-title" class="home"><header class="hero"><img src="/rutils/home.png" alt="hero"> <h1 id="main-title">
+      前端程序猿
+    </h1> <p class="description">
+      文档，规范，工具，资源
+    </p> <p class="action"><a href="/rutils/library/" class="nav-link action-button">
+  开始 →
+</a></p></header> <!----> <div class="theme-default-content custom content__default"></div> <div class="footer">
+    MIT Licensed | Copyright © 2020-Handday
+  </div></main></div><div class="global-ui"><!----></div></div>
+    <script src="/rutils/assets/js/app.c5b8535c.js" defer></script><script src="/rutils/assets/js/2.1dda284f.js" defer></script><script src="/rutils/assets/js/7.9c5ea14e.js" defer></script>
+  </body>
 </html>
