@@ -8,7 +8,10 @@
   "private": true,
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy-gh": "GH=1 yarn docs:build && bash scripts/deploy-gh.sh"
   },
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.5.3",
