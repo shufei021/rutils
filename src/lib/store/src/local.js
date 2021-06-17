@@ -84,7 +84,7 @@ const getExpired = function (k) {
                 return v.value
             }
         } else {
-            return v
+            return null
         }
     }else {
         let ret = {}
