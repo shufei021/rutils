@@ -66,18 +66,43 @@ const get = function (k) {
     }
 }
 
+/**
+ * @description: 获取带过期时间的缓存
+ * @return {*}
+ * @param {*} k
+ */
 const getExpired = function (k) {
-    let v = _parse(k)
-    if (v && 'startTime' in v) {
-        // 如果大于就是过期了，如果小于或等于就还没过期
-        if (new Date() - v.startTime > v.expiredTime) {
-            _remove(k)
-            return false
+    // 如果是字符串，则获取该缓存
+    if(isString(k)){
+        let v = _parse(k)
+        if (v && 'startTime' in v) {
+            // 如果大于就是过期了，如果小于或等于就还没过期
+            if (new Date() - v.startTime > v.expiredTime) {
+                _remove(k)
+                return false
+            } else {
+                return v.value
+            }
         } else {
-            return v.value
+            return v
         }
-    } else {
-        return v
+    }else {
+        let ret = {}
+        for(let i=0;i<k.length;i++){
+            let key = k[i]
+            if(isString(key)){
+                let v = _parse(key)
+                if(v && 'startTime' in v){
+                    // 如果大于就是过期了，如果小于或等于就还没过期
+                    if (new Date() - v.startTime > v.expiredTime) {
+                        _remove(k)
+                    } else {
+                        ret[key]= v.value
+                    }
+                }
+            }
+        }
+        return ret
     }
 }
 
