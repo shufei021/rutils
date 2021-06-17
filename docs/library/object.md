@@ -4,12 +4,13 @@
 
 
 
-| 名称                                 | 描述            |
-| ------------------------------------ | :-------------- |
-| <a href="#r-clone">clone</a>         | 对象浅拷贝      |
-| <a href="#r-deepclone">deepClone</a> | 对象深拷贝      |
-| <a href="#r-findkey">findKey</a>     | 查询某个值的key |
-| <a href="#r-merge">merge</a>         | 合并两个对象    |
+| 名称                                   | 描述            |
+| -------------------------------------- | :-------------- |
+| <a href="#r-clone">clone</a>           | 对象浅拷贝      |
+| <a href="#r-deepclone">deepClone</a>   | 对象深拷贝      |
+| <a href="#r-findkey">findKey</a>       | 查询某个值的key |
+| <a href="#r-merge">merge</a>           | 合并两个对象    |
+| <a href="#r-convertkey">convertKey</a> | 转换key         |
 
 ### R.clone
 
@@ -190,3 +191,38 @@ merge(a, b)
 
 ```
 
+
+
+### R.convertKey
+
+> 转换key
+
+```bash
+R.convertKey(value1, value2, value3)
+```
+
+**参数：**
+
+1. `value1` {object | array} 数据源
+2. `value2` {object}  key隐射关系
+3. `value3` {boolean} 是否为深度替换， 如果为true，则第二层、....、第n层 的相同key会被替换成映射key
+
+**返回值：**
+
+​	`object | array`
+
+​	转换后的新对象、或者数组
+
+ **例子：**
+
+```javascript
+var a = {
+  name: "张三",
+  age: 30
+}
+
+// 把原始的 name 换成 userNmae， 把原始的age 换成 ageNum
+convertKey(a, { name: "userName", age: "ageNum" }, true)
+// => { userName: "张三", ageNum: 30 }
+
+```

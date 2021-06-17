@@ -25,6 +25,7 @@
 | <a href="#r-isellipsis">isEllipsis</a>               | 内容是否超出省略                                           |
 | <a href="#r-loadscript">loadScript</a>               | 加载外部脚本                                               |
 | <a href="#r-smoothscroll">smoothScroll</a>           | 顺滑的滚动到当前元素                                       |
+| <a href="#r-isscrollbottom">isScrollBottom</a>       | 元素是否滚动到最底部                                       |
 
 ### R.backTop
 
@@ -693,3 +694,35 @@ R.smoothScroll(value)
 smoothScroll(".test-btn")
 ```
 
+
+
+### R.isScrollBottom
+
+> 判断元素是否滚动到最低部，常用语底部加载更多
+
+```bash
+R.isScrollBottom(value)
+```
+
+**参数：**
+
+​	1.`value` {element | string} 元素或选择器
+
+**返回值：**
+
+​	`boolean`
+
+​	true: 底部 | false: 非底部
+
+ **例子：**
+
+```javascript
+// 1.选择器
+isScrollBottom(".scoll-wrap")
+// => true
+
+
+// 2.元素
+isScrollBottom(document.querySelector(".scoll-wrap"))
+// => true
+```
