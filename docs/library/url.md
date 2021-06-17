@@ -20,7 +20,7 @@ R.getQuery(value)
 
 **参数：**
 
- 	1. `value` {string} 需要获取的URL，默认为当前窗口上的URL
+​	1. `value` {string} 需要获取的URL，默认为当前窗口上的URL
 
 **返回值：**
 

@@ -20,7 +20,7 @@ R.camelCase(value)
 
 **参数：**
 
- 	1. `value` {string} 需要转换的字符
+​	1. `value` {string} 需要转换的字符
 
 **返回值：**
 

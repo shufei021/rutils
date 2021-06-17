@@ -22,7 +22,7 @@ R.get(value)
 
 **参数：**
 
- 	1. `value` {string|array} 存储的key，多条则传递数组
+​	1. `value` {string|array} 存储的key，多条则传递数组
 
 **返回值：**
 
@@ -56,8 +56,8 @@ R.set(value1, value2)
 
 **参数：**
 
- 	1. `value1` {string|object} 存储的key，如果传入`object`则为多条，请忽略`value2`参数
- 	2.  `value2` {any} 存储的value，如果第一个参数为对象，则该参数不生效
+1. `value1` {string|object} 存储的key，如果传入`object`则为多条，请忽略`value2`参数
+2.  `value2` {any} 存储的value，如果第一个参数为对象，则该参数不生效
 
 **返回值：**
 
@@ -89,7 +89,7 @@ R.del(value)
 
 **参数：**
 
- 	1. `value` {string|array} 删除数据的key，多条则为数组
+​	1. `value` {string|array} 删除数据的key，多条则为数组
 
 **返回值：**
 
@@ -140,5 +140,32 @@ clearAll()
 // 获取
 get("userName")
 // => null
+```
+
+
+
+### R.each
+
+> 遍历所有存储的值
+
+```bash
+R.each(value)
+```
+
+**参数：**
+
+1. `value` {function} 回调函数，形参有`key` 、`value`两个参数
+
+**返回值：**
+
+​	`void`
+
+ **例子：**
+
+```javascript
+// 循环
+each((key, value) => {
+  // do sth...
+})
 ```
 

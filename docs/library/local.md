@@ -19,13 +19,13 @@
 
 > 获取储存的值，可批量获取
 
-```bash
+```javascript
 R.get(value)
 ```
 
 **参数：**
 
- 	1. `value` {string|array} 存储的key，多条则传递数组
+​	 1. `value` {string | array} 存储的key，多条则传递数组
 
 **返回值：**
 
@@ -36,6 +36,9 @@ R.get(value)
  **例子：**
 
 ```javascript
+// 写入数据
+set({ userName: "张三", age: 20, sex: "男" })
+
 // 1.单条获取
 get("userName");
 // => 张三
@@ -59,8 +62,8 @@ R.set(value1, value2)
 
 **参数：**
 
-	1. `value1` {string|object} 存储的key，如果传入`object`则为多条，请忽略`value2`参数
- 	2.  `value2` {any} 存储的value，如果第一个参数为对象，则该参数不生效
+1. `value1` {string | object} 存储的key，如果传入`object`则为多条，请忽略`value2`参数
+2. `value2` {any} 存储的value，如果第一个参数为对象，则该参数不生效setExpired
 
 **返回值：**
 
@@ -92,11 +95,11 @@ R.del(value)
 
 **参数：**
 
-	1. `value` {string|array} 删除数据的key，多条则为数组
+​	1.  `value` {string | array} 删除数据的key，多条则为数组
 
 **返回值：**
 
-​	无
+​	`void`
 
  **例子：**
 
@@ -118,15 +121,15 @@ del(["userName", "age", "job"])
 
 <font color="#ff5722" style="font-weight: bold;">注意： 如果使用了此方法写入数据，那么获取也得使用 `getExpire()` 来获取数据</font>
 
-```bash
+```javascript
 R.setExpired(value1, value2, value3)
 ```
 
 **参数：**
 
- 	1.	`value1` {string} 字段key
- 	2.	`value2` {any} 字段值value
- 	3.	`value3` {number} 过期时间，单位: (毫秒)
+1. `value1` {string} 字段key;
+2. `value2` {any} 字段值value
+ 3. `value3` {number} 过期时间，单位: (毫秒)；
 
 **返回值：**
 
@@ -158,12 +161,12 @@ setTimeout(() => {
 > 获取一条在有效过期时间内的数据
 
 ```bash
-R.setExpired(value)
+R.getExpired(value)
 ```
 
 **参数：**
 
- 	1.	`value` {string} 字段key
+​	1. `value` {string} 字段key
 
 **返回值：**
 
@@ -250,5 +253,34 @@ clearAll()
 // 获取
 get("userName")
 // => null
+```
+
+
+
+
+
+### R.each
+
+> 遍历所有存储的值
+
+```bash
+R.each(value)
+```
+
+**参数：**
+
+1. `value` {function} 回调函数，形参有`key` 、`value`两个参数
+
+**返回值：**
+
+​	`void`
+
+ **例子：**
+
+```javascript
+// 循环
+each((key, value) => {
+  // do sth...
+})
 ```
 
