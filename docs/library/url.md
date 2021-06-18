@@ -12,7 +12,7 @@
 
 ### R.getQuery
 
-> 获取url查询参数，不传递参数则为当前窗口
+> 获取url查询参数，不传递参数则为当前页面的URL
 
 ```javascript
 R.getQuery(value)
@@ -20,7 +20,7 @@ R.getQuery(value)
 
 **参数：**
 
-​	1. `value` {string} 需要获取的URL，默认为当前窗口上的URL
+​	1. `value` {string} 需要获取的URL
 
 **返回值：**
 

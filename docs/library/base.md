@@ -6,6 +6,7 @@
 
 | 名称                                     | 描述                                   |
 | ---------------------------------------- | -------------------------------------- |
+| <a href="#r-gettype">getType</a>         | 获取值类型                             |
 | <a href="#r-isempty">isEmpty</a>         | 是否为空值                             |
 | <a href="#r-isequals">isEquals</a>       | 深度比较两者的值是否相等，值为基本类型 |
 | <a href="#r-isarray">isArray</a>         | 是否为数组                             |
@@ -26,7 +27,7 @@
 
 > 获取值的类型，日常通过 `typeof` 、`instanceof` 无法精确获取值的原始类型。底层实现：`Object.prototype.toSring.call(value)` 就可以拿到值的最原始类型；
 
-```javascript
+```bash
 R.getType(value)
 ```
 
@@ -74,7 +75,7 @@ getType(function () {});
 
 ### R.isEmpty
 
-```javascript
+```bash
 R.isEmpty(value)
 ```
 
@@ -119,7 +120,7 @@ isEmpty({});
 
 > 判断两个数据是否相同，值支持基本类型（string/number/boolean...）
 
-```javascript
+```bash
 R.isEquals(value1, value2)
 ```
 
@@ -150,7 +151,7 @@ isEquals({userName: 'zhangsan'}, {userName: "lisi"});
 
 > 判断数据是否为数组
 
-```javascript
+```bash
 R.isArray(value)
 ```
 
@@ -182,7 +183,7 @@ isArray([1, 2, 3, 4]);
 
 > 数据是否为日期对象,注：日期对象生效`new Date()`
 
-```javascript
+```bash
 R.isDate(value)
 ```
 
@@ -212,7 +213,7 @@ isDate('yyyy-mm-dd');
 
 > 数据是否布尔
 
-```javascript
+```bash
 R.isBoolean(value)
 ```
 
@@ -254,7 +255,7 @@ isBoolean(0);
 
 > 值是否为函数
 
-```javascript
+```bash
 R.isBoolean(value)
 ```
 
@@ -298,7 +299,7 @@ isFunction(111);
 
 > 值是否为空值
 
-```javascript
+```bash
 R.isNull(value)
 ```
 
@@ -333,7 +334,7 @@ isNull();
 
 > 值是否为数字
 
-```javascript
+```bash
 R.isNumber(value)
 ```
 
@@ -368,7 +369,7 @@ isNumber(true);
 
 > 值是否为对象，注意：{}、new Object(), 内部实现为：`Object.prototype.toString.call(value) === '[object Object]'`
 
-```javascript
+```bash
 R.isObject(value)
 ```
 
@@ -404,7 +405,7 @@ isObject(new Date())
 
 > 值是否为正则表达式
 
-```javascript
+```bash
 R.isRegExp(value)
 ```
 
@@ -439,7 +440,7 @@ isRegExp(111)
 
 > 值是否为指定类型，底层调用的是 `Object.prototype.toString.call(value1)`
 
-```javascript
+```bash
 R.isType(value1, value2)
 ```
 
@@ -488,7 +489,7 @@ isType(new Date(), 'object')
 
 > 值是否为字符串类型
 
-```javascript
+```bash
 R.isString(value1)
 ```
 
@@ -524,13 +525,13 @@ isString({})
 
 > 值是否为字符串类型
 
-```javascript
+```bash
 R.isUndefined(value)
 ```
 
 **参数：**
 
-​	1. `value` {any} 需要检测的值
+​	1.`value` {any} 需要检测的值
 
 **返回：**
 
