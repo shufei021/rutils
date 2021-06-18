@@ -148,6 +148,15 @@ const isChineseCharacter = value =>
 const isDecimal = value => /^\d+\.\d+$/g.test(value)
 
 /**
+ * 是否为整数
+ * @param {*} number 
+ * @return {Boolean}
+ */
+const isInteger = number => {
+    return typeof number === 'number' && !isNaN(number) && number % 1 === 0
+}
+
+/**
  * 验证数字
  * @param { string } value
  */
@@ -208,6 +217,7 @@ export default {
     isPassport,
     isChineseCharacter,
     isDecimal,
+    isInteger,
     isNumber,
     isQQNum,
     isNumAndStr,
