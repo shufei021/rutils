@@ -123,33 +123,6 @@ R.blobToFile(value1, value2)
 
 
 
-### R.blobToFile
-
-> 文件流转文件
-
-```javascript
-R.blobToFile(value1, value2)
-```
-
-**参数：**
-
-​	1.`value1` {blob} blob文件流数据；
-
-​	1.`value2` {string} 文件名称；
-
-**返回值：**
-
-​	`file`
-
-​	转换后的 `new File()` 数据
-
- **例子：**
-
-```javascript
-
-```
-
-
 
 
 
