@@ -16,7 +16,7 @@
 
 > 获取储存的值，可批量获取
 
-```bash
+```javascript
 R.get(value)
 ```
 
@@ -50,7 +50,7 @@ get(["userName", "age", "sex"])
 
 > 设置存储内容，支持多条写入
 
-```bash
+```javascript
 R.set(value1, value2)
 ```
 
@@ -83,7 +83,7 @@ set({
 
 > 删除一条或多条数据
 
-```bash
+```javascript
 R.del(value)
 ```
 
@@ -111,7 +111,7 @@ del(["userName", "age", "job"])
 
 > 清空所有数据
 
-```bash
+```javascript
 R.clearAll(value)
 ```
 
@@ -148,7 +148,7 @@ get("userName")
 
 > 遍历所有存储的值
 
-```bash
+```javascript
 R.each(value)
 ```
 

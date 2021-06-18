@@ -41,7 +41,7 @@
 
 > 回到顶部
 
-```bash
+```javascript
 R.isInteger(value)
 ```
 

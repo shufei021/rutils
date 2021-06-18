@@ -16,7 +16,7 @@
 
 > 浅拷贝，针对引用类型值，只是拷贝了引用地址，并未对值做单独开辟空间存放，因此只适用于基本类型数据；
 
-```bash
+```javascript
 R.clone(value)
 ```
 
@@ -57,7 +57,7 @@ console.log(a1.users === res1.users);
 
 > 深拷贝，针对引用类型的值，单独开辟了内存空间来存放，因此新数据和老数据不会相互依赖、干扰；
 
-```bash
+```javascript
 R.deepClone(value)
 ```
 
@@ -104,7 +104,7 @@ unique(a1)
 
 > 通过 `value` 在对象中查找 `key`；
 
-```bash
+```javascript
 R.findKey(value)
 ```
 
@@ -153,7 +153,7 @@ findKey(users, 'active');
 
 > 合并对象
 
-```bash
+```javascript
 R.clone(value1, value2, value2)
 ```
 
@@ -197,7 +197,7 @@ merge(a, b)
 
 > 转换key
 
-```bash
+```javascript
 R.convertKey(value1, value2, value3)
 ```
 

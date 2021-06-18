@@ -56,7 +56,7 @@ get(["userName", "age", "sex"])
 
 > 设置存储内容，支持多条写入
 
-```bash
+```javascript
 R.set(value1, value2)
 ```
 
@@ -89,7 +89,7 @@ set({
 
 > 删除一条或多条数据
 
-```bash
+```javascript
 R.del(value)
 ```
 
@@ -160,7 +160,7 @@ setTimeout(() => {
 
 > 获取一条在有效过期时间内的数据
 
-```bash
+```javascript
 R.getExpired(value)
 ```
 
@@ -199,7 +199,7 @@ setTimeout(() => {
 
 > 清除所有设置过期时间的值
 
-```bash
+```javascript
 R.clearAllExpired()
 ```
 
@@ -224,7 +224,7 @@ clearAllExpired()
 
 > 清空所有数据
 
-```bash
+```javascript
 R.clearAll(value)
 ```
 
@@ -263,7 +263,7 @@ get("userName")
 
 > 遍历所有存储的值
 
-```bash
+```javascript
 R.each(value)
 ```
 

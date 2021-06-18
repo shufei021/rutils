@@ -20,7 +20,7 @@
 
 > 两数或多数相加的和
 
-```bash
+```javascript
 R.add(value1, value2, value3)
 ```
 
@@ -57,7 +57,7 @@ add([1, 2, 3, 4, 5, 6, 7.124], 2)
 
 > 两数或多数相减的值
 
-```bash
+```javascript
 R.subtract(value1, value2, value3)
 ```
 
@@ -96,7 +96,7 @@ subtract([30, 2, 3, 4, 5, 6, 7.124], 2)
 
 > 两数或多数相乘的值
 
-```bash
+```javascript
 R.multiply(value1, value2, value3)
 ```
 
@@ -135,7 +135,7 @@ multiply([1, 2, 3, 4, 5, 6, 7.124], 2)
 
 > 两数或多数相除的值
 
-```bash
+```javascript
 R.devide(value1, value2, value3)
 ```
 
@@ -174,7 +174,7 @@ devide([500, 1.2, 3, 4, 5, 6, 7.124], 2)
 
 > 是否有效数字：排除 `NaN` 、 `Infinity`，数字字符串或数字，都为有效数字
 
-```bash
+```javascript
 R.isNum(value)
 ```
 
@@ -207,7 +207,7 @@ arr.forEach(item => {
 
 > 是否为整数, 必须是数字类型
 
-```bash
+```javascript
 R.isInteger(value)
 ```
 

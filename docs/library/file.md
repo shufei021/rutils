@@ -19,7 +19,7 @@
 
 > base64转为文件流
 
-```bash
+```javascript
 R.base64ToBlob(value)
 ```
 
@@ -47,7 +47,7 @@ console.log(Object.prototype.toString.call(res) === '[object Bolb]') //判断数
 
 > base64转为File文件
 
-```bash
+```javascript
 R.base64ToFile(value1, value2)
 ```
 
@@ -75,7 +75,7 @@ R.base64ToFile(value1, value2)
 
 > blob文件流转为Base64
 
-```bash
+```javascript
 R.blobToBase64(value)
 ```
 
@@ -103,7 +103,7 @@ R.blobToBase64(value)
 
 > 文件流转为File对象
 
-```bash
+```javascript
 R.blobToFile(value1, value2)
 ```
 
@@ -127,7 +127,7 @@ R.blobToFile(value1, value2)
 
 > 文件流转文件
 
-```bash
+```javascript
 R.blobToFile(value1, value2)
 ```
 
@@ -157,7 +157,7 @@ R.blobToFile(value1, value2)
 
 > 文件流转文件
 
-```bash
+```javascript
 R.fileToBase64(value)
 ```
 
@@ -185,7 +185,7 @@ fileToBase64(new File())
 
 > 文件转为文件流，由于有异步操作，所以返回值为一个`Promise`
 
-```bash
+```javascript
 R.fileToBlob(value)
 ```
 
@@ -221,7 +221,7 @@ fileToBlob(new File()).then(data => {
 >
 > 分别有：`['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']`
 
-```bash
+```javascript
 R.bytesFormat(value)
 ```
 
@@ -258,7 +258,7 @@ bytesFormat(3100399621124)
 
 > 通过base64字符串下载文件
 
-```bash
+```javascript
 R.downloadByBase64(value1, value2)
 ```
 
@@ -285,7 +285,7 @@ downloadByBase64('data:image/png;base64,......', '测试base64下载.png')
 
 > 通过一个图片的 `URL` 下载一张图片
 
-```bash
+```javascript
 R.downloadByImgLink(value1, value2, value3)
 ```
 
@@ -323,7 +323,7 @@ downloadByImgLink('https://pics5.baidu.com/feed/26607a01094d08f17d.png', 200, 20
 
 > 通过DOM中的img标签，使用选择器下载图片
 
-```bash
+```javascript
 R.downloadByImgSelector(value1, value2)
 ```
 

@@ -31,7 +31,7 @@
 
 > 回到顶部
 
-```bash
+```javascript
 R.backTop(value1, value2)
 ```
 
@@ -65,7 +65,7 @@ R.backTop(value1, value2)
 
 > 绑定DOM事件
 
-```bash
+```javascript
 bindEvent(value1, value2, value3)
 ```
 
@@ -95,7 +95,7 @@ bindEvent(document.body, "click", function (e) {
 
 > 解绑事件监听
 
-```bash
+```javascript
 R.unbindEvent(value1, value2, value3)
 ```
 
@@ -128,7 +128,7 @@ bindEvent(btn, "click", handlerClick)// 绑定事件
 
 > 手动触发已有和自定义事件类型函数
 
-```bash
+```javascript
 R.trigger(value1, value2)
 ```
 
@@ -160,7 +160,7 @@ trigger(btn, "click") // 触发按钮的click事件
 
 > 滚动条情况下，页面最底部是否出现在可视区域内 。<span style="color: red;">日常用于：上拉加载更多</span>
 
-```bash
+```javascript
 R.bottomVisible()
 ```
 
@@ -194,7 +194,7 @@ window.addEventListener("scroll", () => {
 
 > DOM 元素 `A` 是否包含在元素 `B` 节点中，常适用于outclick
 
-```bash
+```javascript
 R.contains(value1, value2)
 ```
 
@@ -232,7 +232,7 @@ R.contains(value1, value2)
 
 > 防抖函数，日常用语滚动防抖、input输入防抖等..
 
-```bash
+```javascript
 R.debounce(value1, value2, value3)
 ```
 
@@ -270,7 +270,7 @@ window.addEventListener("scroll", debounce(() => {
 
 > 节流
 
-```bash
+```javascript
 R.throttle(value1, value2, value3)
 ```
 
@@ -316,7 +316,7 @@ window.addEventListener("scroll", throttle(() => {
 
 > 动态添加css文件
 
-```bash
+```javascript
 R.dynamicAddCss(value1, value2)
 ```
 
@@ -349,7 +349,7 @@ dynamicAddCss("./style/common").then(el => {
 
 > 动态异步加载 `script` 脚本
 
-```bash
+```javascript
 R.dynamicAddScript(value)
 ```
 
@@ -391,7 +391,7 @@ dynamicAddScript([
 
 > 获取元素的属性值
 
-```bash
+```javascript
 R.getAttr(value1, value2)
 ```
 
@@ -419,7 +419,7 @@ getAttr(document.querySelector('#app'), "id")
 
 > 获取DOM中 `z-index` 最高的元素
 
-```bash
+```javascript
 R.getMaxZIndex()
 ```
 
@@ -446,7 +446,7 @@ getMaxZIndex()
 
 > 获取元素的滚动位置坐标
 
-```bash
+```javascript
 R.getScrollPosition(value)
 ```
 
@@ -480,7 +480,7 @@ R.getScrollPosition(document.querySelector("#container"))
 
 > 获取网页被卷去的位置
 
-```bash
+```javascript
 R.getScrollXY()
 ```
 
@@ -512,7 +512,7 @@ getScrollXY()
 
 > 获取元素样式，如：`width`、`height`、`padding`、`margin`等
 
-```bash
+```javascript
 R.getStyle(value1, value2)
 ```
 
@@ -544,7 +544,7 @@ getStyle(document.body, "color")
 
 > 设置元素属性，如：class、id、style等内容
 
-```bash
+```javascript
 R.setAttr(value1, value2)
 ```
 
@@ -576,7 +576,7 @@ setAttr(document.body, {
 
 > 隐藏元素
 
-```bash
+```javascript
 R.hide(value)
 ```
 
@@ -604,7 +604,7 @@ hide('.box')
 
 > 内容是否超出省略
 
-```bash
+```javascript
 R.isEllipsis(value)
 ```
 
@@ -633,7 +633,7 @@ isEllipsis(document.body)
 
 > 动态加载外部js脚本
 
-```bash
+```javascript
 R.loadScript(value1, value2)
 ```
 
@@ -676,7 +676,7 @@ loadScript("www.baiu.com/source/js/common.js", {
 
 > 顺滑到某个元素
 
-```bash
+```javascript
 R.smoothScroll(value)
 ```
 
@@ -700,7 +700,7 @@ smoothScroll(".test-btn")
 
 > 判断元素是否滚动到最低部，常用语底部加载更多
 
-```bash
+```javascript
 R.isScrollBottom(value)
 ```
 

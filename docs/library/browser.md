@@ -19,7 +19,7 @@
 
 > 是否为Chorme浏览器
 
-```bash
+```javascript
 R.isChorme()
 ```
 
@@ -46,7 +46,7 @@ isChorme()
 
 > 是否为移动端
 
-```bash
+```javascript
 R.isMobile()
 ```
 
@@ -75,7 +75,7 @@ isMobile()
 
 > 是否为ios设备
 
-```bash
+```javascript
 R.isIos()
 ```
 
@@ -104,7 +104,7 @@ isIos()
 
 > 是否为ios设备
 
-```bash
+```javascript
 R.isAndroid()
 ```
 
@@ -133,7 +133,7 @@ isAndroid()
 
 > 是否为微信浏览器
 
-```bash
+```javascript
 R.isWx()
 ```
 
@@ -162,7 +162,7 @@ isWx()
 
 > 是否为微信移动端
 
-```bash
+```javascript
 R.isWxMobile()
 ```
 
@@ -189,7 +189,7 @@ isWxMobile()
 
 > 是否为微信PC端
 
-```bash
+```javascript
 R.isWxPc()
 ```
 
@@ -218,7 +218,7 @@ isWxPc()
 
 > 是否为企业微信
 
-```bash
+```javascript
 R.isWxWork()
 ```
 
@@ -247,7 +247,7 @@ isWxWork()
 
 > 是否为企业微信移动端
 
-```bash
+```javascript
 R.isWxWorkMobile()
 ```
 
@@ -276,7 +276,7 @@ isWxWorkMobile()
 
 > 是否为企业微信PC端
 
-```bash
+```javascript
 R.isWxWorkPc()
 ```
 

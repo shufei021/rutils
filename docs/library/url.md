@@ -14,7 +14,7 @@
 
 > 获取url查询参数，不传递参数则为当前窗口
 
-```bash
+```javascript
 R.getQuery(value)
 ```
 
@@ -44,7 +44,7 @@ getQuery(url)
 
 > url参数序列化
 
-```bash
+```javascript
 R.urlSerialize(value1, value2)
 ```
 
@@ -84,7 +84,7 @@ urlSerialize('', {
 
 > URL地址栏中的模板解析
 
-```bash
+```javascript
 R.urlTmtFmt(value1, value2)
 ```
 

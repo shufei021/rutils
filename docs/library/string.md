@@ -14,7 +14,7 @@
 
 > 字符转为大驼峰，
 
-```bash
+```javascript
 R.camelCase(value)
 ```
 
@@ -46,7 +46,7 @@ camelCase("welcome_to_chengdu")
 
 > 随机生成36位字符ID, 类似UUID
 
-```bash
+```javascript
 R.guid()
 ```
 
@@ -73,7 +73,7 @@ guid()
 
 > 随机十六进制颜色
 
-```bash
+```javascript
 R.randomHexColorCode()
 ```
 

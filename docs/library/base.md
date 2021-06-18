@@ -26,7 +26,7 @@
 
 > 获取值的类型，日常通过 `typeof` 、`instanceof` 无法精确获取值的原始类型。底层实现：`Object.prototype.toSring.call(value)` 就可以拿到值的最原始类型；
 
-```bash
+```javascript
 R.getType(value)
 ```
 
@@ -74,7 +74,7 @@ getType(function () {});
 
 ### R.isEmpty
 
-```bash
+```javascript
 R.isEmpty(value)
 ```
 
@@ -119,7 +119,7 @@ isEmpty({});
 
 > 判断两个数据是否相同，值支持基本类型（string/number/boolean...）
 
-```bash
+```javascript
 R.isEquals(value1, value2)
 ```
 
@@ -150,7 +150,7 @@ isEquals({userName: 'zhangsan'}, {userName: "lisi"});
 
 > 判断数据是否为数组
 
-```bash
+```javascript
 R.isArray(value)
 ```
 
@@ -182,7 +182,7 @@ isArray([1, 2, 3, 4]);
 
 > 数据是否为日期对象,注：日期对象生效`new Date()`
 
-```bash
+```javascript
 R.isDate(value)
 ```
 
@@ -212,7 +212,7 @@ isDate('yyyy-mm-dd');
 
 > 数据是否布尔
 
-```bash
+```javascript
 R.isBoolean(value)
 ```
 
@@ -254,7 +254,7 @@ isBoolean(0);
 
 > 值是否为函数
 
-```bash
+```javascript
 R.isBoolean(value)
 ```
 
@@ -298,7 +298,7 @@ isFunction(111);
 
 > 值是否为空值
 
-```bash
+```javascript
 R.isNull(value)
 ```
 
@@ -333,7 +333,7 @@ isNull();
 
 > 值是否为数字
 
-```bash
+```javascript
 R.isNumber(value)
 ```
 
@@ -368,7 +368,7 @@ isNumber(true);
 
 > 值是否为对象，注意：{}、new Object(), 内部实现为：`Object.prototype.toString.call(value) === '[object Object]'`
 
-```bash
+```javascript
 R.isObject(value)
 ```
 
@@ -404,7 +404,7 @@ isObject(new Date())
 
 > 值是否为正则表达式
 
-```bash
+```javascript
 R.isRegExp(value)
 ```
 
@@ -439,7 +439,7 @@ isRegExp(111)
 
 > 值是否为指定类型，底层调用的是 `Object.prototype.toString.call(value1)`
 
-```bash
+```javascript
 R.isType(value1, value2)
 ```
 
@@ -488,7 +488,7 @@ isType(new Date(), 'object')
 
 > 值是否为字符串类型
 
-```bash
+```javascript
 R.isString(value1)
 ```
 
@@ -524,7 +524,7 @@ isString({})
 
 > 值是否为字符串类型
 
-```bash
+```javascript
 R.isUndefined(value)
 ```
 

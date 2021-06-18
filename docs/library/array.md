@@ -35,7 +35,7 @@
 
 > *求数组并集*
 
-```bash
+```javascript
 R.union(value1, value2)
 ```
 
@@ -89,7 +89,7 @@ union(a1, b1, 'id')
 
 > 去除重复值
 
-```bash
+```javascript
 R.unique(value1, value2)
 ```
 
@@ -140,7 +140,7 @@ unique(a1)
 
 > 去除*求数组交集*值
 
-```bash
+```javascript
 R.intersection(value1, value2)
 ```
 
@@ -186,7 +186,7 @@ intersection(a1, b1, 'id') // [ { id: 2, name: '李四', age: 21 }]
 
 > *生成一个指定长度 每个值都填充为统一的 指定值*
 
-```bash
+```javascript
 R.arrayFill(value1, value2)
 ```
 
@@ -218,7 +218,7 @@ arrayFill(3, {name: 'zhangsan'});
 
 > list转为树形数据
 
-```bash
+```javascript
 R.arrayToTree(value1, value2, value3)
 ```
 
@@ -271,7 +271,7 @@ isArray([1, 2, 3, 4]);
 
 > 根据条件删除数组中某个值
 
-```bash
+```javascript
 R.delBy(value1, value2, value3)
 ```
 
@@ -414,7 +414,7 @@ R.delBy(value1, value2, value3)
 
 > 求数组差集
 
-```bash
+```javascript
 R.except(value1, value2)
 ```
 
@@ -464,7 +464,7 @@ except(a1, b1, 'id')
 
 > 交换数组中任一两个值的位置
 
-```bash
+```javascript
 R.exchangePostion(value1, value2, value3)
 ```
 
@@ -504,7 +504,7 @@ console.log(a2) // [1, 5, 3, 4, 2, 6]
 
 > 指定深度扁平化数组
 
-```bash
+```javascript
 R.flatten(value1, value2)
 ```
 
@@ -538,7 +538,7 @@ flatten([1, 2, 3, [4, [5, 6, [7]]]], 2);
 
 > 一维数组转二维数组 (分组)
 
-```bash
+```javascript
 R.group(value1, value2)
 ```
 
@@ -575,7 +575,7 @@ isNumber(true);
 
 > 返回数组中某值的所有索引，数组形式返回
 
-```bash
+```javascript
 R.indexOfAll(value1, value2, value3)
 ```
 
@@ -619,7 +619,7 @@ indexOfAll(a2, 1);
 
 > 指定数组中某个索引的值 取出来，再插入到数组的任一位置
 
-```bash
+```javascript
 R.insetPostion(value1, value2, value3, value4)
 ```
 
@@ -658,7 +658,7 @@ console.log(a1)
 
 > 数组内是否有重复值
 
-```bash
+```javascript
 R.isRepeat(value)
 ```
 
@@ -715,7 +715,7 @@ isHasRepeat(a2)
 
 > 数组平均数
 
-```bash
+```javascript
 R.mean(value1, value2)
 ```
 
@@ -757,7 +757,7 @@ mean(['4', 2, '8', 6])
 
 > 生成 起止数字间（包含起止数字）的升序数组
 
-```bash
+```javascript
 R.range(value1, value2)
 ```
 
@@ -789,7 +789,7 @@ range(1,9)
 
 > 生成两数之间指定长度（所需产生的个数）的随机数组
 
-```bash
+```javascript
 R.range(value1, value2, value3, value4)
 ```
 
@@ -833,7 +833,7 @@ rangeRandom(20, 50, 8, true)
 
 > 生成 起止数字间（包含起止数字）的升序数组
 
-```bash
+```javascript
 R.rangeScopeStartZore(value)
 ```
 
@@ -865,7 +865,7 @@ rangeScopeStartZore(5)
 
 > 生成指定范围内指定步长的数组
 
-```bash
+```javascript
 R.rangeStep(value1, value2, value3)
 ```
 
@@ -904,7 +904,7 @@ rangeStep(0, 19, 4)
 
 > 取出数组中随机一项目
 
-```bash
+```javascript
 R.sample(value)
 ```
 
@@ -947,7 +947,7 @@ sample(users)
 
 > 数组求和
 
-```bash
+```javascript
 R.sum(value1, value2)
 ```
 
@@ -987,7 +987,7 @@ sum(a1, 'age')
 
 > 数组中出现次数统计
 
-```bash
+```javascript
 R.timesTotal(value1, value2, value3)
 ```
 
