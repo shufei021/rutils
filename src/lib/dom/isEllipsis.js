@@ -3,6 +3,9 @@
  * @param {Element} el
  */
 const isEllipsis = function (el) {
-    return el.scrollHeight !== el.offsetHeight || el.scrollWidth !== el.offsetWidth
-}
-export default isEllipsis
+    return (
+        el.scrollHeight !== el.offsetHeight || el.scrollWidth !== el.offsetWidth
+    );
+};
+
+export default isEllipsis;
