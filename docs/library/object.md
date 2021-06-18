@@ -151,17 +151,17 @@ findKey(users, 'active');
 
 ### R.merge
 
-> 合并两个对象
+> 合并对象
 
 ```bash
-R.clone(value1, value2)
+R.clone(value1, value2, value2)
 ```
 
 **参数：**
 
-​	1.`value1` {object} 数据源1；
-
-​	1.`value2` {object} 数据源2；
+1. `value1` {object} 数据源1；
+2. `value2` {object} 数据源2；
+3. `valueN` {object} 数据源n；
 
 **返回值：**
 
