@@ -4,21 +4,21 @@
 
 
 
-| 名称        | 描述                                   |
-| ----------- | -------------------------------------- |
-| isEmpty     | 是否为空值                             |
-| isEquals    | 深度比较两者的值是否相等，值为基本类型 |
-| isArray     | 是否为数组                             |
-| isDate      | 是否为日期                             |
-| isBoolean   | 是否为布尔                             |
-| isFunction  | 是否为函数                             |
-| isNull      | 是否为null                             |
-| isNumber    | 是否为数字                             |
-| isObject    | 是否为对象                             |
-| isRegExp    | 是否为正则                             |
-| isString    | 是否为字符串                           |
-| isType      | 是否为指定类型                         |
-| isUndefined | 是否为undefined                        |
+| 名称                                     | 描述                                   |
+| ---------------------------------------- | -------------------------------------- |
+| <a href="#r-isempty">isEmpty</a>         | 是否为空值                             |
+| <a href="#r-isequals">isEquals</a>       | 深度比较两者的值是否相等，值为基本类型 |
+| <a href="#r-isarray">isArray</a>         | 是否为数组                             |
+| <a href="#r-isdate">isDate</a>           | 是否为日期                             |
+| <a href="#r-isboolean">isBoolean</a>     | 是否为布尔                             |
+| <a href="#r-isfunction">isFunction</a>   | 是否为函数                             |
+| <a href="#r-isnull">isNull</a>           | 是否为null                             |
+| <a href="#r-isnumber">isNumber</a>       | 是否为数字                             |
+| <a href="#r-isobject">isObject</a>       | 是否为对象                             |
+| <a href="#r-isregexp">isRegExp</a>       | 是否为正则                             |
+| <a href="#r-isstring">isString</a>       | 是否为字符串                           |
+| <a href="#r-istype">isType</a>           | 是否为指定类型                         |
+| <a href="#r-isundefined">isUndefined</a> | 是否为undefined                        |
 
 
 
@@ -32,7 +32,7 @@ R.getType(value)
 
 **参数：**
 
-​	1.`value`需要检测的值；
+​	1. `value` 需要检测的值；
 
 **返回：**
 
@@ -80,13 +80,13 @@ R.isEmpty(value)
 
 **参数：**
 
-​	1.`value`需要检测的值；
+​	1. `value` 需要检测的值；
 
 **返回：**
 
 ​	`boolean`
 
-​	true：表示为空，false不为空
+​	true：表示为空 | false不为空
 
  **例子：**
 
@@ -125,15 +125,14 @@ R.isEquals(value1, value2)
 
 **参数：**
 
-​	1.`value1`*需要检测的值2；*
-
-​	2.`value2`需要检测的值2；
+1. `value1 ` {any} 需要检测的值1
+2. `value2` {any} 需要检测的值2
 
 **返回：**
 
 ​	`boolean`
 
-​	true：相同，false不同
+​	true:相同  |  false:不同
 
  **例子：**
 
@@ -152,18 +151,18 @@ isEquals({userName: 'zhangsan'}, {userName: "lisi"});
 > 判断数据是否为数组
 
 ```bash
-R.isEquals(value1)
+R.isArray(value)
 ```
 
 **参数：**
 
-​	1.`value1` 需要检测的值1
+​	1. `value` {any} 需要检测的值
 
 **返回：**
 
 ​	`boolean`
 
-​	true：是，false否
+​	true:是  |  false:否
 
  **例子：**
 
@@ -189,13 +188,13 @@ R.isDate(value)
 
 **参数：**
 
-​	1.`value` 需要检测的值
+​	1. `value` 需要检测的值
 
 **返回：**
 
 ​	`boolean`
 
-​	true：是，false否
+​	true：是  |  false否
 
  **例子：**
 
@@ -219,13 +218,13 @@ R.isBoolean(value)
 
 **参数：**
 
-​	1.`value` 需要检测的值
+​	1. `value` 需要检测的值
 
 **返回：**
 
 ​	`boolean`
 
-​	true：是，false否
+​	true:是  |  false:否
 
  **例子：**
 
@@ -267,7 +266,7 @@ R.isBoolean(value)
 
 ​	`boolean`
 
-​	true：是，false否
+​	true:是  |  false:否
 
  **例子：**
 
@@ -305,13 +304,13 @@ R.isNull(value)
 
 **参数：**
 
-​	1.`value` 需要检测的值
+​	1. `value` 需要检测的值
 
 **返回：**
 
 ​	`boolean`
 
-​	true：是，false否
+​	true:是  |  false:否
 
  **例子：**
 
@@ -340,13 +339,13 @@ R.isNumber(value)
 
 **参数：**
 
-​	1.`value` 需要检测的值
+​	1. `value` 需要检测的值
 
 **返回：**
 
 ​	`boolean`
 
-​	true：是，false否
+​	true:是 | false:否
 
  **例子：**
 
@@ -375,13 +374,13 @@ R.isObject(value)
 
 **参数：**
 
-​	1.`value` 需要检测的值
+​	1. `value` 需要检测的值
 
 **返回：**
 
 ​	`boolean`
 
-​	true：是，false否
+​	true:是 | false:否
 
  **例子：**
 
@@ -411,13 +410,13 @@ R.isRegExp(value)
 
 **参数：**
 
-​	1.`value` 需要检测的值
+​	1. `value` 需要检测的值
 
 **返回：**
 
 ​	`boolean`
 
-​	true：是，false否
+​	true:是 | false:否
 
  **例子：**
 
@@ -446,15 +445,15 @@ R.isType(value1, value2)
 
 **参数：**
 
-​	1.`value1` {any} 需要检测的值1
+​	1. `value1` {any} 需要检测的值1
 
-​	2.`value2` {String} 需要检测的值的类型，小驼峰, 如：（map、set、date、array....）y
+​	2. `value2` {String} 需要检测的值的类型，小驼峰, 如：（map、set、date、array....）等
 
 **返回：**
 
 ​	`boolean`
 
-​	true：是，false否
+​	true:是 | false:否
 
  **例子：**
 
@@ -501,7 +500,7 @@ R.isString(value1)
 
 ​	`boolean`
 
-​	true：是，false否
+​	true:是 | false:否
 
  **例子：**
 
@@ -526,18 +525,18 @@ isString({})
 > 值是否为字符串类型
 
 ```bash
-R.isUndefined(value1)
+R.isUndefined(value)
 ```
 
 **参数：**
 
-​	1.`value1` {any} 需要检测的值1
+​	1. `value` {any} 需要检测的值
 
 **返回：**
 
 ​	`boolean`
 
-​	true：是，false否
+​	true:是  |  false:否
 
  **例子：**
 
