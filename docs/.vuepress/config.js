@@ -1,8 +1,8 @@
 /*
- * @Description: 
+ * @Description:
  * @Author: shufei
  * @Date: 2021-06-11 10:18:28
- * @LastEditTime: 2021-06-16 18:40:10
+ * @LastEditTime: 2021-06-20 17:58:12
  * @LastEditors: Please set LastEditors
  */
 module.exports = {
@@ -18,7 +18,10 @@ module.exports = {
         displayAllHeaders: false, //侧边栏只有活动的才展开
         nav: [
             //导航栏目
+            { text: '首页', link: '/' },
             { text: '文档', link: '/library/' },
+            { text: 'github', link: 'https://github.com/shufei021/rutils' },
+            { text: '友情链接', link: 'https://github.com/shufei021/rdate' }
         ],
         sidebarDepth: 2,
         // sidebar: 'auto'
@@ -41,7 +44,7 @@ module.exports = {
                         '/library/url.md',
                         '/library/reg.md',
                         '/library/dom.md',
-                        '/library/file.md',
+                        '/library/file.md'
                     ]
                 }
             ]
@@ -83,5 +86,5 @@ module.exports = {
         //     ]
         // },
     },
-    plugins: ['@vuepress/back-to-top','@vuepress/medium-zoom']
+    plugins: ['@vuepress/back-to-top', '@vuepress/medium-zoom']
 }
