@@ -2,38 +2,34 @@
 
 ## API
 
-
-
-| 名称                | 描述                                                  |
-| ------------------- | :---------------------------------------------------- |
-| <a href="#r-union">union</a>               | 求数组并集                                            |
-| <a href="#r-unique">unique</a>              | 数组去重                                              |
-| <a href="#r-intersection">intersection</a>        | 深度比较两者的值是否相等，值为基本类型                |
-| <a href="#r-arrayfill">arrayFill</a>           | 生成一个指定长度的数字，并填充                        |
-| <a href="#r-arraytoobject">arrayToObject</a>       | 是否为日期                                            |
-| <a href="#r-arraytotree">arrayToTree</a>         | 数组转树                                              |
-| <a href="#r-delby">delBy</a>               | 根据条件删除数组中的值                                |
-| <a href="#r-except">except</a>              | 求数组差集                                          |
-| <a href="#r-exchangepostion">exchangePostion</a>     | 交换数组中任一两个值的位置                            |
-| <a href="#r-flatten">flatten</a>             | 指定深度扁平化数组                                    |
-| <a href="#r-group">group</a>               | 一维数组转二维数组 (分组)                             |
-| <a href="#r-indexofall">indexOfAll</a>          | 返回数组中某值的所有索引，数组形式返回                |
-| <a href="#r-insetpostion">insetPostion</a>        | 指定数组中某个索引的值 取出来，再插入到数组的任一位置 |
-| <a href="#r-isrepeat">isRepeat</a>            | 数组内是否有重复值                                    |
-| <a href="#r-mean">mean</a>                | 数组平均数                                            |
-| <a href="#r-range">range</a>               | 生成 起止数字间（包含起止数字）的升序数组             |
-| <a href="#r-rangerandom">rangeRandom</a>         | 生成两数之间指定长度（所需产生的个数）的随机数组      |
-| <a href="#r-rangescopestartzore">rangeScopeStartZore</a> | 生成最小数字 0 到max最大值 的升序数组                 |
-| <a href="#r-rangestep">rangeStep</a>           | 生成指定范围内指定步长的数组                          |
-| <a href="#r-sample">sample</a>              | 指定数组中获取随机数(1 位)                            |
-| <a href="#r-sum">sum</a>                 | 求和                                                  |
-| <a href="#r-timestotal">timesTotal</a>          | 数组中出现次数统计                                    |
-
-
+| 名称                                                     | 描述                                                  |
+| -------------------------------------------------------- | :---------------------------------------------------- |
+| <a href="#r-union">union</a>                             | 求数组并集                                            |
+| <a href="#r-unique">unique</a>                           | 数组去重                                              |
+| <a href="#r-intersection">intersection</a>               | 深度比较两者的值是否相等，值为基本类型                |
+| <a href="#r-arrayfill">arrayFill</a>                     | 生成一个指定长度的数字，并填充                        |
+| <a href="#r-arraytoobject">arrayToObject</a>             | 是否为日期                                            |
+| <a href="#r-arraytotree">arrayToTree</a>                 | 数组转树                                              |
+| <a href="#r-delby">delBy</a>                             | 根据条件删除数组中的值                                |
+| <a href="#r-except">except</a>                           | 求数组差集                                            |
+| <a href="#r-exchangepostion">exchangePostion</a>         | 交换数组中任一两个值的位置                            |
+| <a href="#r-flatten">flatten</a>                         | 指定深度扁平化数组                                    |
+| <a href="#r-group">group</a>                             | 一维数组转二维数组 (分组)                             |
+| <a href="#r-indexofall">indexOfAll</a>                   | 返回数组中某值的所有索引，数组形式返回                |
+| <a href="#r-insetpostion">insetPostion</a>               | 指定数组中某个索引的值 取出来，再插入到数组的任一位置 |
+| <a href="#r-isrepeat">isRepeat</a>                       | 数组内是否有重复值                                    |
+| <a href="#r-mean">mean</a>                               | 数组平均数                                            |
+| <a href="#r-range">range</a>                             | 生成 起止数字间（包含起止数字）的升序数组             |
+| <a href="#r-rangerandom">rangeRandom</a>                 | 生成两数之间指定长度（所需产生的个数）的随机数组      |
+| <a href="#r-rangescopestartzore">rangeScopeStartZore</a> | 生成最小数字 0 到 max 最大值 的升序数组               |
+| <a href="#r-rangestep">rangeStep</a>                     | 生成指定范围内指定步长的数组                          |
+| <a href="#r-sample">sample</a>                           | 指定数组中获取随机数(1 位)                            |
+| <a href="#r-sum">sum</a>                                 | 求和                                                  |
+| <a href="#r-timestotal">timesTotal</a>                   | 数组中出现次数统计                                    |
 
 ### R.union
 
-> *求数组并集*
+> _求数组并集_
 
 ```javascript
 R.union(value1, value2)
@@ -41,17 +37,17 @@ R.union(value1, value2)
 
 **参数：**
 
-​	1.`value1` {array} 传入的数组a；
+​ 1.`value1` {array} 传入的数组 a；
 
-​	2.`value2` {array} 传入的数组b
+​ 2.`value2` {array} 传入的数组 b
 
 **返回值：**
 
-​	`array`
+​ `array`
 
-​	[] 两数组的并集
+​ [] 两数组的并集
 
- **例子：**
+**例子：**
 
 ```javascript
 // 场景1：
@@ -83,8 +79,6 @@ union(a1, b1, 'id')
 ]
 ```
 
-
-
 ### R.unique
 
 > 去除重复值
@@ -95,24 +89,23 @@ R.unique(value1, value2)
 
 **参数：**
 
-​	1.`value1` {array} 检测的数组
+​ 1.`value1` {array} 检测的数组
 
-​	2.`value2` {string} item的key名
+​ 2.`value2` {string} item 的 key 名
 
 **返回值：**
 
-​	`array`
+​ `array`
 
-​	不存在重复值的新数组
+​ 不存在重复值的新数组
 
- **例子：**
+**例子：**
 
 ```javascript
 //场景1：
 let a = [1, 2, 3, 4, 5, 1, 2, 3]
 unique(a)
 // => [1,2,3,4,5]
-
 
 //场景2：
 let a1 = [
@@ -122,7 +115,7 @@ let a1 = [
     { id: 2, name: '李四', age: 21 }
 ]
 unique(a1)
-// => 
+// =>
 // [
 //     {id: 1, name: "张三", age: 20}
 //     {id: 2, name: "李四", age: 21}
@@ -131,10 +124,6 @@ unique(a1)
 //     {id: 5, name: "小红", age: 25}
 // ]
 ```
-
-
-
-
 
 ### R.intersection
 
@@ -146,17 +135,17 @@ R.intersection(value1, value2)
 
 **参数：**
 
-​	1.`value1` {array} 传入的数组a；
+​ 1.`value1` {array} 传入的数组 a；
 
-​	2.`value2` {array} 传入的数组b
+​ 2.`value2` {array} 传入的数组 b
 
 **返回值：**
 
-​	`array`
+​ `array`
 
-​	[] 两数组的交集
+​ [] 两数组的交集
 
- **例子：**
+**例子：**
 
 ```javascript
 // 场景1：
@@ -164,7 +153,6 @@ let a = [1, 2, 3, 4, 5]
 let b = [1, 2, 4, 5, 6]
 
 intersection(a, b) // [1,2,4,5]
-
 
 // 场景2：
 let a1 = [
@@ -180,11 +168,9 @@ let b1 = [
 intersection(a1, b1, 'id') // [ { id: 2, name: '李四', age: 21 }]
 ```
 
-
-
 ### R.arrayFill
 
-> *生成一个指定长度 每个值都填充为统一的 指定值*
+> _生成一个指定长度 每个值都填充为统一的 指定值_
 
 ```javascript
 R.arrayFill(value1, value2)
@@ -192,31 +178,29 @@ R.arrayFill(value1, value2)
 
 **参数：**
 
-​	1.`value1` {number} 生成的数组长度
+​ 1.`value1` {number} 生成的数组长度
 
-​	2.`value2` {any} 数组中item内容
+​ 2.`value2` {any} 数组中 item 内容
 
 **返回值：**
 
-​	`array`
+​ `array`
 
-​	[value2, value2, value2, .....]填充后的新数组
+​ [value2, value2, value2, .....]填充后的新数组
 
- **例子：**
+**例子：**
 
 ```javascript
-arrayFill(3, '1');
+arrayFill(3, '1')
 // => ['1', '1', '1']
- 
-arrayFill(3, {name: 'zhangsan'});
+
+arrayFill(3, { name: 'zhangsan' })
 // => [{name: 'zhangsan'}, {name: 'zhangsan'}, {name: 'zhangsan'}]
 ```
 
-
-
 ### R.arrayToTree
 
-> list转为树形数据
+> list 转为树形数据
 
 ```javascript
 R.arrayToTree(value1, value2, value3)
@@ -224,15 +208,15 @@ R.arrayToTree(value1, value2, value3)
 
 **参数：**
 
-​	1.`value1` {array} 原始数据列表
+​ 1.`value1` {array} 原始数据列表
 
-​	2.`value2` {string} 数据id key
+​ 2.`value2` {string} 数据 id key
 
-​	3.`value3` {string} 父级id key
+​ 3.`value3` {string} 父级 id key
 
 **返回值：**
 
-​	`array`
+​ `array`
 
 ```javascript
 [
@@ -253,19 +237,15 @@ R.arrayToTree(value1, value2, value3)
 ]
 ```
 
- **例子：**
+**例子：**
 
 ```javascript
-isArray(1);
+isArray(1)
 // => false
- 
-isArray([1, 2, 3, 4]);
+
+isArray([1, 2, 3, 4])
 // => true
 ```
-
-
-
-
 
 ### R.delBy
 
@@ -277,19 +257,19 @@ R.delBy(value1, value2, value3)
 
 **参数：**
 
-​	1.`value1` {array} 原始数据列表
+​ 1.`value1` {array} 原始数据列表
 
-​	2.`value2` {string} 条件
+​ 2.`value2` {string} 条件
 
-​	3.`value3` {boolean} 是否改变原始数组
+​ 3.`value3` {boolean} 是否改变原始数组
 
 **返回值：**
 
-​	`array`
+​ `array`
 
-​	[item1, item2, item3, ....]
+​ [item1, item2, item3, ....]
 
- **例子：**
+**例子：**
 
 ```javascript
 /**
@@ -408,8 +388,6 @@ R.delBy(value1, value2, value3)
  */
 ```
 
-
-
 ### R.except
 
 > 求数组差集
@@ -420,17 +398,17 @@ R.except(value1, value2)
 
 **参数：**
 
-​	1.`value1` 需要检测的值1
+​ 1.`value1` 需要检测的值 1
 
-​	2.`value2` 需要检测的值2
+​ 2.`value2` 需要检测的值 2
 
 **返回值：**
 
-​	`array`
+​ `array`
 
-​	[] 两数组的差集
+​ [] 两数组的差集
 
- **例子：**
+**例子：**
 
 ```javascript
 // 场景一
@@ -458,8 +436,6 @@ except(a1, b1, 'id')
 ]
 ```
 
-
-
 ### R.exchangePostion
 
 > 交换数组中任一两个值的位置
@@ -470,19 +446,19 @@ R.exchangePostion(value1, value2, value3)
 
 **参数：**
 
-​	1.`value1` {array} 原始数组
+​ 1.`value1` {array} 原始数组
 
-​	2.`value2` {number} 原始位置索引
+​ 2.`value2` {number} 原始位置索引
 
-​	3.`value3` {number} 新位置索引
+​ 3.`value3` {number} 新位置索引
 
-​	4.`?value3` {boolean} 是否改变原始数组
+​ 4.`?value3` {boolean} 是否改变原始数组
 
 **返回值：**
 
-​	`array`
+​ `array`
 
- **例子：**
+**例子：**
 
 ```javascript
 // 示例：
@@ -496,10 +472,6 @@ exchangePostion(a2, 4, 1，true) // [1, 5, 3, 4, 2, 6]
 console.log(a2) // [1, 5, 3, 4, 2, 6]
 ```
 
-
-
-
-
 ### R.flatten
 
 > 指定深度扁平化数组
@@ -510,29 +482,25 @@ R.flatten(value1, value2)
 
 **参数：**
 
-​	1.`value1` {array} 原始数组
+​ 1.`value1` {array} 原始数组
 
-​	2.`value2` {number} 扁平化向下查找层级，默认为`1`
+​ 2.`value2` {number} 扁平化向下查找层级，默认为`1`
 
 **返回值：**
 
-​	`array`
+​ `array`
 
-​	[] 扁平化后的新数组
+​ [] 扁平化后的新数组
 
- **例子：**
+**例子：**
 
 ```javascript
-flatten([1, 2, 3, [4, [5, 6, [7]]]]);
+flatten([1, 2, 3, [4, [5, 6, [7]]]])
 // => [1, 2, 3, 4, [5,6,[7]]]
 
-flatten([1, 2, 3, [4, [5, 6, [7]]]], 2);
+flatten([1, 2, 3, [4, [5, 6, [7]]]], 2)
 // => [1, 2, 3, 4, 5,6,[7]]
 ```
-
-
-
-
 
 ### R.group
 
@@ -544,32 +512,28 @@ R.group(value1, value2)
 
 **参数：**
 
-​	1.`value1` {array} 需要分组的一维数组
+​ 1.`value1` {array} 需要分组的一维数组
 
-​	1.`value2` {number} 平分基数（num 个为一组进行分组（归档）
+​ 1.`value2` {number} 平分基数（num 个为一组进行分组（归档）
 
 **返回值：**
 
-​	`array`
+​ `array`
 
-​	[[], [], []...] 分组成功后的数组
+​ [[], [], []...] 分组成功后的数组
 
- **例子：**
+**例子：**
 
 ```javascript
-group([1,2,3,4,5,6,7,8,9,10], 2);
+group([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2)
 // => [[1, 2], [3, 4], [5, 6], [7, 8], [9.10]]
 
-isNumber('123');
+isNumber('123')
 // => false
 
-isNumber(true);
+isNumber(true)
 // => false
 ```
-
-
-
-
 
 ### R.indexOfAll
 
@@ -581,39 +545,35 @@ R.indexOfAll(value1, value2, value3)
 
 **参数：**
 
-​	1.`value1` {array} 需要检测的值
+​ 1.`value1` {array} 需要检测的值
 
-​	2.`value2` {string} 键名
+​ 2.`value2` {string} 键名
 
-​	3.`value3` {string} 键值
+​ 3.`value3` {string} 键值
 
 **返回值：**
 
-​	`array`
+​ `array`
 
-​	新的索引数组
+​ 新的索引数组
 
- **例子：**
+**例子：**
 
 ```javascript
 let a1 = [
-	{ id: 1, name: '张三', age: 20, count: 100 },
- 	{ id: 2, name: '李四', age: 21, count: 50 },
- 	{ id: 2, name: '大卫', age: 21, count: 50 },
- 	{ id: 3, name: '阿呆', age: 23, count: 55 },
-	{ id: 3, name: '阿呆', age: 23, count: 55 }
-];
+    { id: 1, name: '张三', age: 20, count: 100 },
+    { id: 2, name: '李四', age: 21, count: 50 },
+    { id: 2, name: '大卫', age: 21, count: 50 },
+    { id: 3, name: '阿呆', age: 23, count: 55 },
+    { id: 3, name: '阿呆', age: 23, count: 55 }
+]
 indexOfAll(a1, 'id', 3)
 // => [3, 4]
 
-let a2 = [1, 2, 3, 1, 2, 3];
-indexOfAll(a2, 1);
+let a2 = [1, 2, 3, 1, 2, 3]
+indexOfAll(a2, 1)
 // => [0, 3]
 ```
-
-
-
-
 
 ### R.insetPostion
 
@@ -625,21 +585,21 @@ R.insetPostion(value1, value2, value3, value4)
 
 **参数：**
 
-​	1.`value1` {array} 操作的数组
+​ 1.`value1` {array} 操作的数组
 
-​	2.`value2` {number}  老位置索引
+​ 2.`value2` {number} 老位置索引
 
-​	3.`value3` {number} 新位置索引
+​ 3.`value3` {number} 新位置索引
 
-​	4.`?value4` {boolean} 是否改变原数组，默认不改变返回一个新数组
+​ 4.`?value4` {boolean} 是否改变原数组，默认不改变返回一个新数组
 
 **返回值：**
 
-​	`array`
+​ `array`
 
-​	[] 替换位置后的数组
+​ [] 替换位置后的数组
 
- **例子：**
+**例子：**
 
 ```javascript
 let a1 = [1, 2, 3, 4, 5, 6]
@@ -649,10 +609,6 @@ insetPostion(a1, 3, 1)
 console.log(a1)
 // => [1, 2, 3, 4, 5, 6]
 ```
-
-
-
-
 
 ### R.isRepeat
 
@@ -664,52 +620,38 @@ R.isRepeat(value)
 
 **参数：**
 
-​	1.`value` {array} 需要检测的值
+​ 1.`value` {array} 需要检测的值
 
 **返回值：**
 
-​	`boolean`
+​ `boolean`
 
-​	true：有重复的值，false没有重复的值
+​ true：有重复的值，false 没有重复的值
 
- **例子：**
+**例子：**
 
 ```javascript
 // 示例
-let a1 = [
-  { id: 1, name: '张三', age: 20 },
-  { id: 1, name: '李四', age: 20 },
-	{ id: 3, name: '小明', age: 23 },
-	{ id: 2, name: '大卫', age: 21 },
-	1,
-	3,
-	2,
-	{ 0: 1, 1: 2, 2: 3 },
-	[1, 2, 3]
-]
+let a1 = [{ id: 1, name: '张三', age: 20 }, { id: 1, name: '李四', age: 20 }, { id: 3, name: '小明', age: 23 }, { id: 2, name: '大卫', age: 21 }, 1, 3, 2, { 0: 1, 1: 2, 2: 3 }, [1, 2, 3]]
 isRepeat(a1)
 // => false
 
 // 示例2
 let a2 = [
-	{ id: 1, name: '张三', age: 20 },
-	{ id: 1, name: '张三', age: 20 },
-	{ id: 1, name: '李四', age: 20 },
-	{ id: 3, name: '小明', age: 23 },
-	{ id: 2, name: '大卫', age: 21 },
-  1,
-  3,
-	2,
-	{ 0: 1, 1: 2, 2: 3 },
-	[1, 2, 3]
+    { id: 1, name: '张三', age: 20 },
+    { id: 1, name: '张三', age: 20 },
+    { id: 1, name: '李四', age: 20 },
+    { id: 3, name: '小明', age: 23 },
+    { id: 2, name: '大卫', age: 21 },
+    1,
+    3,
+    2,
+    { 0: 1, 1: 2, 2: 3 },
+    [1, 2, 3]
 ]
 isHasRepeat(a2)
 // => true
 ```
-
-
-
-
 
 ### R.mean
 
@@ -721,17 +663,17 @@ R.mean(value1, value2)
 
 **参数：**
 
-​	1.`value1` {array} 数组
+​ 1.`value1` {array} 数组
 
-​	1.`value2` {string|function}  回调函数或者是key
+​ 1.`value2` {string|function} 回调函数或者是 key
 
 **返回值：**
 
-​	`number`
+​ `number`
 
-​	数组中的平均数
+​ 数组中的平均数
 
- **例子：**
+**例子：**
 
 ```javascript
 //1.复杂类型数据，函数返回自定义字段
@@ -751,8 +693,6 @@ mean(['4', 2, '8', 6])
 // => 5
 ```
 
-
-
 ### R.range
 
 > 生成 起止数字间（包含起止数字）的升序数组
@@ -763,27 +703,25 @@ R.range(value1, value2)
 
 **参数：**
 
-​	1.`value1` {number} 最小值
+​ 1.`value1` {number} 最小值
 
-​	2.`value2` {number} 最大值
+​ 2.`value2` {number} 最大值
 
 **返回值：**
 
-​	`array`
+​ `array`
 
-​	[`value1`, `... `, `value2`] 从最小值到最大值
+​ [`value1`, `... `, `value2`] 从最小值到最大值
 
- **例子：**
+**例子：**
 
 ```javascript
 range(0, 10)
 // => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-range(1,9)
+range(1, 9)
 // => [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
-
-
 
 ### R.rangeRandom
 
@@ -795,21 +733,21 @@ R.range(value1, value2, value3, value4)
 
 **参数：**
 
-​	1.`value1` {number} 起始值
+​ 1.`value1` {number} 起始值
 
-​	2.`value2` {number} 结束值
+​ 2.`value2` {number} 结束值
 
-​	3.`value3` {number} 指定生成的个数，默认`1`
+​ 3.`value3` {number} 指定生成的个数，默认`1`
 
-​	4.`value4` {boolean} 是否重复,默认重复
+​ 4.`value4` {boolean} 是否重复,默认重复
 
 **返回值：**
 
-​	`array`
+​ `array`
 
-​	[`value1`, `... `, `value2`] 从最小值到最大值
+​ [`value1`, `... `, `value2`] 从最小值到最大值
 
- **例子：**
+**例子：**
 
 ```javascript
 //默认取出0-10的随机数，由于第三位参数没传递，默认返回一个值
@@ -825,10 +763,6 @@ rangeRandom(20, 50, 8, true)
 // => [20, 40, 23, 35, 42, 45, 22, 39]
 ```
 
-
-
-
-
 ### R.rangeScopeStartZore
 
 > 生成 起止数字间（包含起止数字）的升序数组
@@ -839,15 +773,15 @@ R.rangeScopeStartZore(value)
 
 **参数：**
 
-​	1.`value` {number} 最大值
+​ 1.`value` {number} 最大值
 
 **返回值：**
 
-​	`array`
+​ `array`
 
-​	[`value1`, `... `, `value2`] 从最小值到最大值
+​ [`value1`, `... `, `value2`] 从最小值到最大值
 
- **例子：**
+**例子：**
 
 ```javascript
 rangeScopeStartZore(10)
@@ -856,10 +790,6 @@ rangeScopeStartZore(10)
 rangeScopeStartZore(5)
 // => [0, 1, 2, 3, 4, 5]
 ```
-
-
-
-
 
 ### R.rangeStep
 
@@ -871,19 +801,19 @@ R.rangeStep(value1, value2, value3)
 
 **参数：**
 
-​	1.`value1` {number} 最小值
+​ 1.`value1` {number} 最小值
 
-​	2.`value2` {number} 最大值
+​ 2.`value2` {number} 最大值
 
-​	3.`value3` {number} 步长
+​ 3.`value3` {number} 步长
 
 **返回值：**
 
-​	`array`
+​ `array`
 
-​	[`value1`, `... `, `value2`] 从最小值到最大值
+​ [`value1`, `... `, `value2`] 从最小值到最大值
 
- **例子：**
+**例子：**
 
 ```javascript
 rangeStep(0, 19, 2)
@@ -896,10 +826,6 @@ rangeStep(0, 19, 4)
 // => [0, 4, 8, 12, 16]
 ```
 
-
-
-
-
 ### R.sample
 
 > 取出数组中随机一项目
@@ -910,38 +836,34 @@ R.sample(value)
 
 **参数：**
 
-​	1.`value` {array} 操作数组
+​ 1.`value` {array} 操作数组
 
 **返回值：**
 
-​	`any`
+​ `any`
 
-​	数组中随机项
+​ 数组中随机项
 
- **例子：**
+**例子：**
 
 ```javascript
-sample([1,2,3,4,5])
+sample([1, 2, 3, 4, 5])
 // => 5
 
 let users = [
-  {
-    name: "张三"
-  },
-  {
-    name: "李四"
-  },
-  {
-    name: "王五"
-  }
+    {
+        name: '张三'
+    },
+    {
+        name: '李四'
+    },
+    {
+        name: '王五'
+    }
 ]
 sample(users)
 // => {name: "张三"}
 ```
-
-
-
-
 
 ### R.sum
 
@@ -953,17 +875,17 @@ R.sum(value1, value2)
 
 **参数：**
 
-​	1.`value1` {array} 数组
+​ 1.`value1` {array} 数组
 
-​	2.`?value2` {string} 数组对象key
+​ 2.`?value2` {string} 数组对象 key
 
 **返回值：**
 
-​	`number`
+​ `number`
 
-​	最终求和值
+​ 最终求和值
 
- **例子：**
+**例子：**
 
 ```javascript
 let a = [1, 2, 3, 4, 5]
@@ -979,10 +901,6 @@ sum(a1, 'age')
 // => 64
 ```
 
-
-
-
-
 ### R.timesTotal
 
 > 数组中出现次数统计
@@ -993,27 +911,26 @@ R.timesTotal(value1, value2, value3)
 
 **参数：**
 
-​	1.`value1` {array} 检测的数组
+​ 1.`value1` {array} 检测的数组
 
-​	2.`value2` {string} item的key名
+​ 2.`value2` {string} item 的 key 名
 
-​	3.`value3` {any} 检测值
+​ 3.`value3` {any} 检测值
 
 **返回值：**
 
-​	`array`
+​ `array`
 
-​	[`value1`, `... `, `value2`] 从最小值到最大值
+​ [`value1`, `... `, `value2`] 从最小值到最大值
 
- **例子：**
+**例子：**
 
 ```javascript
 let a1 = [1, 2, 3, 1, 5, 6, 1]
 timesTotal(a1, 1)
 // => 3
 
-let a2 = [{a: 1}, {a: 1}]
+let a2 = [{ a: 1 }, { a: 1 }]
 timesTotal(a2, 'a', 1)
 // => 2
 ```
-

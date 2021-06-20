@@ -1,11 +1,13 @@
-# 前端程序猿
+# 前端工具类
 
-![程序员](.\docs\.vuepress\public\home.png)
+![程序员](.\docs.vuepress\public\home.png)
 
-## 运行
+## 使用
 
+```bash
+> npm i rutilsjs --save
 ```
-git clone http://gitlab.midays.com/root/wiki.git
-yarn dev
-```
 
+```js
+import rutils from 'rutilsjs'
+```

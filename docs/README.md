@@ -2,8 +2,8 @@
 home: true
 heroImage: /home.png
 heroText: 前端程序猿
-tagline: 工具文档
-actionText: 开始 →
+tagline: rutils.js 集成了项目常用的工具类，包含了数组、数字、字符串、对象、文件等
+actionText: 进入 →
 actionLink: /library/
 features:
     - title: 学习
