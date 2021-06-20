@@ -1,10 +1,3 @@
-/*
- * @Description: 打包工具类 rutils.js 的打包配置
- * @Author: shufei
- * @Date: 2020-08-24 08:26:55
- * @LastEditTime: 2021-06-06 22:06:48
- * @LastEditors: Please set LastEditors
- */
 import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
@@ -47,7 +40,7 @@ buildFile.push({
     output: {
         file: `./build/index.js`,
         format: 'umd',
-        name: 'rutils',
+        name: 'rutil',
         sourcemap: false
     },
     plugins: [
@@ -66,26 +59,3 @@ buildFile.push({
     ]
 })
 export default buildFile
-// export default {
-//     input: `src/index.js`,
-//     output: {
-//         file: `./build/index.js`,
-//         format: 'umd',
-//         name: 'rutils',
-//         sourcemap: true
-//     },
-//     plugins: [
-//         resolve({
-//             jsnext: true,
-//             main: true,
-//             browser: true
-//         }),
-//         requireContext(),
-//         commonjs(),
-//         babel({
-//             exclude: 'node_modules/**',
-//             runtimeHelpers: true
-//         }),
-//         uglify()
-//     ]
-// }

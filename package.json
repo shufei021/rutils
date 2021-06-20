@@ -1,9 +1,9 @@
 {
-    "name": "handday",
-    "version": "1.0.19",
-    "description": "",
+    "name": "rutilsjs",
+    "version": "0.0.1",
+    "description": "Front-end tool library",
     "private": false,
-    "main": "./index.js",
+    "main": "./build/index.js",
     "dependencies": {
         "babel-core": "^6.26.3",
         "babel-loader": "^7.1.5",
@@ -28,6 +28,11 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
-    "author": "",
-    "license": "ISC"
+    "author": "shufei",
+    "license": "ISC",
+    "homepage": "https://shufei021.github.io/rutils/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shufei021/rutils.git"
+    }
 }
