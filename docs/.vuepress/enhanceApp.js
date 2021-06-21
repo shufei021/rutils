@@ -1,5 +1,3 @@
-// import rutils from './lib' 
-
 export default ({ router }) => {
     if (typeof process === 'undefined' || process.env.VUE_ENV !== 'server') {
         router.onReady(() => {
@@ -16,9 +14,11 @@ export default ({ router }) => {
             })
         })
     }
-    import('./lib/index.js').then(module => {
-        window.rutils = module.default  
-    }).catch(e => {
-        console.log(e)
-    })
+    import('./lib/index.js')
+        .then(module => {
+            window.rutils = module.default
+        })
+        .catch(e => {
+            console.log(e)
+        })
 }

@@ -2,18 +2,18 @@
 
 ## API
 
-| 名称                                           | 描述                 |
-| ---------------------------------------------- | :------------------- |
-| <a href="#r-ischrome">isChrome</a>             | 是否为谷歌浏览器     |
-| <a href="#r-ismobile">isMobile</a>             | 是否为移动设备       |
-| <a href="#r-isios">isIos</a>                   | 是否为 ios 设备      |
-| <a href="#r-isandroid">isAndroid</a>           | 是否为安卓设备       |
-| <a href="#r-iswx">isWx</a>                     | 是否为微信浏览器     |
-| <a href="#r-iswxmobile">isWxMobile</a>         | 是否为微信移动端     |
-| <a href="#r-iswxpc">isWxPc</a>                 | 是否为微信 PC        |
-| <a href="#r-iswxwork">isWxWork</a>             | 是否为企业微信       |
-| <a href="#r-iswxworkmobile">isWxWorkMobile</a> | 是否为企业微信移动端 |
-| <a href="#r-iswxworkpc">isWxWorkPc</a>         | 是否为企业微信 PC 端 |
+| 名称                                         | 描述                 |
+| -------------------------------------------- | :------------------- |
+| <a href="#ischrome">isChrome</a>             | 是否为谷歌浏览器     |
+| <a href="#ismobile">isMobile</a>             | 是否为移动设备       |
+| <a href="#isios">isIos</a>                   | 是否为 ios 设备      |
+| <a href="#isandroid">isAndroid</a>           | 是否为安卓设备       |
+| <a href="#iswx">isWx</a>                     | 是否为微信浏览器     |
+| <a href="#iswxmobile">isWxMobile</a>         | 是否为微信移动端     |
+| <a href="#iswxpc">isWxPc</a>                 | 是否为微信 PC        |
+| <a href="#iswxwork">isWxWork</a>             | 是否为企业微信       |
+| <a href="#iswxworkmobile">isWxWorkMobile</a> | 是否为企业微信移动端 |
+| <a href="#iswxworkpc">isWxWorkPc</a>         | 是否为企业微信 PC 端 |
 
 ### isChorme
 
