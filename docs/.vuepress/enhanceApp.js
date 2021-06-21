@@ -1,8 +1,9 @@
+// import rutils from './lib' 
+
 export default ({ router }) => {
     if (typeof process === 'undefined' || process.env.VUE_ENV !== 'server') {
         router.onReady(() => {
             const { app } = router
-
             app.$once('hook:mounted', () => {
                 setTimeout(() => {
                     const { hash } = document.location
@@ -15,4 +16,9 @@ export default ({ router }) => {
             })
         })
     }
+    import('./lib/index.js').then(module => {
+        window.rutils = module.default  
+    }).catch(e => {
+        console.log(e)
+    })
 }
