@@ -6,294 +6,261 @@
 | ---------------------------------------------- | :------------------- |
 | <a href="#r-ischrome">isChrome</a>             | 是否为谷歌浏览器     |
 | <a href="#r-ismobile">isMobile</a>             | 是否为移动设备       |
-| <a href="#r-isios">isIos</a>                   | 是否为ios设备        |
+| <a href="#r-isios">isIos</a>                   | 是否为 ios 设备      |
 | <a href="#r-isandroid">isAndroid</a>           | 是否为安卓设备       |
 | <a href="#r-iswx">isWx</a>                     | 是否为微信浏览器     |
 | <a href="#r-iswxmobile">isWxMobile</a>         | 是否为微信移动端     |
-| <a href="#r-iswxpc">isWxPc</a>                 | 是否为微信PC         |
+| <a href="#r-iswxpc">isWxPc</a>                 | 是否为微信 PC        |
 | <a href="#r-iswxwork">isWxWork</a>             | 是否为企业微信       |
 | <a href="#r-iswxworkmobile">isWxWorkMobile</a> | 是否为企业微信移动端 |
-| <a href="#r-iswxworkpc">isWxWorkPc</a>         | 是否为企业微信PC端   |
+| <a href="#r-iswxworkpc">isWxWorkPc</a>         | 是否为企业微信 PC 端 |
 
-### R.isChorme
+### isChorme
 
-> 是否为Chorme浏览器
+> 是否为 Chorme 浏览器
 
 ```javascript
-R.isChorme()
+rutils.isChorme()
 ```
 
 **参数：**
 
-​	无
+​ 无
 
 **返回值：**
 
-​	`boolean`
+​ `boolean`
 
-​	true: 是 | false: 否
+​ true: 是 | false: 否
 
- **例子：**
+**例子：**
 
 ```javascript
-isChorme()
+rutils.isChorme()
 // => true or false
 ```
 
-
-
-### R.isMobile
+### isMobile
 
 > 是否为移动端
 
 ```javascript
-R.isMobile()
+rutils.isMobile()
 ```
 
 **参数：**
 
-​	无
+​ 无
 
 **返回值：**
 
-​	`boolean`
+​ `boolean`
 
-​	true: 是 | false: 否
+​ true: 是 | false: 否
 
- **例子：**
+**例子：**
 
 ```javascript
-isMobile()
+rutils.isMobile()
 // => true or false
 ```
 
+### isIos
 
-
-
-
-### R.isIos
-
-> 是否为ios设备
+> 是否为 ios 设备
 
 ```javascript
-R.isIos()
+rutils..isIos()
 ```
 
 **参数：**
 
-​	无
+​ 无
 
 **返回值：**
 
-​	`boolean`
+​ `boolean`
 
-​	true: 是 | false: 否
+​ true: 是 | false: 否
 
- **例子：**
+**例子：**
 
 ```javascript
-isIos()
+rutils.isIos()
 // => true or false
 ```
 
+### isAndroid
 
-
-
-
-### R.isAndroid
-
-> 是否为ios设备
+> 是否为 ios 设备
 
 ```javascript
-R.isAndroid()
+rutils.isAndroid()
 ```
 
 **参数：**
 
-​	无
+​ 无
 
 **返回值：**
 
-​	`boolean`
+​ `boolean`
 
-​	true: 是 | false: 否
+​ true: 是 | false: 否
 
- **例子：**
+**例子：**
 
 ```javascript
-isAndroid()
+rutils.isAndroid()
 // => true or false
 ```
 
-
-
-
-
-### R.isWx
+### isWx
 
 > 是否为微信浏览器
 
 ```javascript
-R.isWx()
+rutils.isWx()
 ```
 
 **参数：**
 
-​	无
+​ 无
 
 **返回值：**
 
-​	`boolean`
+​ `boolean`
 
-​	true: 是 | false: 否
+​ true: 是 | false: 否
 
- **例子：**
+**例子：**
 
 ```javascript
 isWx()
 // => true or false
 ```
 
-
-
-
-
-### R.isWxMobile
+### isWxMobile
 
 > 是否为微信移动端
 
 ```javascript
-R.isWxMobile()
+rutils.isWxMobile()
 ```
 
 **参数：**
 
-​	无
+​ 无
 
 **返回值：**
 
-​	`boolean`
+​ `boolean`
 
-​	true: 是 | false: 否
+​ true: 是 | false: 否
 
- **例子：**
+**例子：**
 
 ```javascript
-isWxMobile()
+rutils.isWxMobile()
 // => true or false
 ```
 
+### isWxPc
 
-
-### R.isWxPc
-
-> 是否为微信PC端
+> 是否为微信 PC 端
 
 ```javascript
-R.isWxPc()
+rutils.isWxPc()
 ```
 
 **参数：**
 
-​	无
+​ 无
 
 **返回值：**
 
-​	`boolean`
+​ `boolean`
 
-​	true: 是 | false: 否
+​ true: 是 | false: 否
 
- **例子：**
+**例子：**
 
 ```javascript
-isWxPc()
+rutils.isWxPc()
 // => true or false
 ```
 
-
-
-
-
-### R.isWxWork
+### isWxWork
 
 > 是否为企业微信
 
 ```javascript
-R.isWxWork()
+rutils.isWxWork()
 ```
 
 **参数：**
 
-​	无
+​ 无
 
 **返回值：**
 
-​	`boolean`
+​ `boolean`
 
-​	true: 是 | false: 否
+​ true: 是 | false: 否
 
- **例子：**
+**例子：**
 
 ```javascript
-isWxWork()
+rutils.isWxWork()
 // => true or false
 ```
 
-
-
-
-
-### R.isWxWorkMobile
+### isWxWorkMobile
 
 > 是否为企业微信移动端
 
 ```javascript
-R.isWxWorkMobile()
+rutils.isWxWorkMobile()
 ```
 
 **参数：**
 
-​	无
+​ 无
 
 **返回值：**
 
-​	`boolean`
+​ `boolean`
 
-​	true: 是 | false: 否
+​ true: 是 | false: 否
 
- **例子：**
+**例子：**
 
 ```javascript
-isWxWorkMobile()
+rutils.isWxWorkMobile()
 // => true or false
 ```
 
+### isWxWorkPc
 
-
-
-
-### R.isWxWorkPc
-
-> 是否为企业微信PC端
+> 是否为企业微信 PC 端
 
 ```javascript
-R.isWxWorkPc()
+rutils.isWxWorkPc()
 ```
 
 **参数：**
 
-​	无
+​ 无
 
 **返回值：**
 
-​	`boolean`
+​ `boolean`
 
-​	true: 是 | false: 否
+​ true: 是 | false: 否
 
- **例子：**
+**例子：**
 
 ```javascript
-isWxWorkPc()
+rutils.isWxWorkPc()
 // => true or false
 ```
-
