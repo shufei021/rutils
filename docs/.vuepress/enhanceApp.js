@@ -1,6 +1,6 @@
 // import rutils from './lib' 
 
-export default ({ router }) => {
+export default ({ router,Vue }) => {
     if (typeof process === 'undefined' || process.env.VUE_ENV !== 'server') {
         router.onReady(() => {
             const { app } = router
@@ -12,13 +12,14 @@ export default ({ router }) => {
                         const element = document.getElementById(id)
                         if (element) element.scrollIntoView()
                     }
+                    import('./lib/index.js').then(module => {
+                        window.rutils = module.default  
+                    }).catch(e => {
+                        console.log(e)
+                    })
                 }, 500)
             })
         })
     }
-    import('./lib/index.js').then(module => {
-        window.rutils = module.default  
-    }).catch(e => {
-        console.log(e)
-    })
+    
 }
