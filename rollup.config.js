@@ -40,7 +40,7 @@ buildFile.push({
     output: {
         file: `./build/index.js`,
         format: 'umd',
-        name: 'rutil',
+        name: 'rutils',
         sourcemap: false
     },
     plugins: [

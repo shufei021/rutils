@@ -12,6 +12,8 @@ import isRegExp from './isRegExp'
 import isString from './isString'
 import isType from './isType'
 import isUndefined from './isUndefined'
+import getType from './getType'
+
 export default {
     isEmpty,
     isEquals,
@@ -25,5 +27,6 @@ export default {
     isRegExp,
     isString,
     isType,
-    isUndefined
+    isUndefined,
+    getType
 }

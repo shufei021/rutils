@@ -1,10 +1,13 @@
+import downloadByBase64 from "./downloadByBase64"
 /**
  * 根据 url下载图片
  * @param {string} url - 图片url地址
- * @return {Promise<dataURL>} :Base64
+ * @param {string} fileName - 图片名称
+ * @param {Number} w - 图片宽
+ * @param {Number} h - 图片高
  */
-const downloadByImgLink = function (url, w, h) {
-    return new Promise(resolve => {
+const downloadByImgLink = function (url,fileName, w, h) {
+    return new Promise((resolve,reject) => {
         let img = new Image()
         img.src = url
         img.crossOrigin = 'anonymous'
@@ -23,8 +26,10 @@ const downloadByImgLink = function (url, w, h) {
             // quality值越小，所绘制出的图像越模糊
             let base64 = canvas.toDataURL('image/png', quality)
             // 回调函数返回base64的值
+            downloadByBase64(base64)
             resolve(base64)
         }
+        img.onerror = e=>reject(e)
     })
 }
 export default downloadByImgLink
