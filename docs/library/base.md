@@ -4,7 +4,6 @@
 
 | 名称                                   | 描述                     |
 | -------------------------------------- | ------------------------ |
-| <a href="#gettype">getType</a>         | 获取值类型               |
 | <a href="#isempty">isEmpty</a>         | 是否为空                 |
 | <a href="#isequals">isEquals</a>       | 深度比较两者的值是否相等 |
 | <a href="#isarray">isArray</a>         | 是否为数组               |
@@ -19,51 +18,6 @@
 | <a href="#istype">isType</a>           | 是否为指定类型           |
 | <a href="#isundefined">isUndefined</a> | 是否为 undefined         |
 
-### getType
-
-> 获取值的类型，日常通过 `typeof` 、`instanceof` 无法精确获取值的原始类型。底层实现：`Object.prototype.toSring.call(value)` 就可以拿到值的最原始类型；
-
-```js
-rutils.getType(value)
-```
-
-**参数：**
-
-​ 1. `value` 需要检测的值；
-
-**返回：**
-
-​ `string`
-
-​ array、function、object、date、map、set、null、undefined 等数据类型
-
-**例子：**
-
-```javascript
-getType(null)
-// => 'null'
-
-getType(true)
-// => 'boolean'
-
-getType(1)
-// => 'number'
-
-getType([1, 2, 3])
-// => 'array'
-
-getType({ a: 1 })
-// => 'object'
-
-getType(new Set())
-// => 'set'
-
-getType(new Map())
-// => 'map'
-
-getType(function () {})
-// => 'function'
-```
 
 ### isEmpty
 
@@ -84,25 +38,25 @@ rutils.isEmpty(value)
 **例子：**
 
 ```javascript
-isEmpty(null)
+rutils.isEmpty(null)
 // => true
 
-isEmpty(true)
+rutils.isEmpty(true)
 // => true
 
-isEmpty(1)
+rutils.isEmpty(1)
 // => true
 
-isEmpty([1, 2, 3])
+rutils.isEmpty([1, 2, 3])
 // => false
 
-isEmpty({ a: 1 })
+rutils.isEmpty({ a: 1 })
 // => false
 
-isEmpty([])
+rutils.isEmpty([])
 // => ture
 
-isEmpty({})
+rutils.isEmpty({})
 // => ture
 ```
 
@@ -128,10 +82,10 @@ rutils.isEquals(value1, value2)
 **例子：**
 
 ```javascript
-isEquals(1, '1')
+rutils.isEquals(1, '1')
 // => false
 
-isEquals({ userName: 'zhangsan' }, { userName: 'lisi' })
+rutils.isEquals({ userName: 'zhangsan' }, { userName: 'lisi' })
 // => false
 ```
 
@@ -156,10 +110,10 @@ rutils.isArray(value)
 **例子：**
 
 ```javascript
-isArray(1)
+rutils.isArray(1)
 // => false
 
-isArray([1, 2, 3, 4])
+rutils.isArray([1, 2, 3, 4])
 // => true
 ```
 
@@ -184,10 +138,10 @@ rutils.isDate(value)
 **例子：**
 
 ```javascript
-isDate(new Date())
+rutils.isDate(new Date())
 // => true
 
-isDate('yyyy-mm-dd')
+rutils.isDate('yyyy-mm-dd')
 // => false
 ```
 
@@ -212,22 +166,22 @@ rutils.isBoolean(value)
 **例子：**
 
 ```javascript
-isBoolean(new Boolean())
+rutils.isBoolean(new Boolean())
 // => true
 
-isBoolean(true)
+rutils.isBoolean(true)
 // => true
 
-isBoolean(false)
+rutils.isBoolean(false)
 // => true
 
-isBoolean(false)
+rutils.isBoolean(false)
 // => true
 
-isBoolean('test')
+rutils.isBoolean('test')
 // => false
 
-isBoolean(0)
+rutils.isBoolean(0)
 // => false
 ```
 
@@ -252,22 +206,22 @@ rutils.isBoolean(value)
 **例子：**
 
 ```javascript
-isFunction(new Function())
+rutils.isFunction(new Function())
 // => true
 
 const fun1 = function () {
     console.log(111)
 }
-isFunction(fun1)
+rutils.isFunction(fun1)
 // => true
 
 const obj = {
     getData() {}
 }
-isFunction(obj.getData)
+rutils.isFunction(obj.getData)
 // => true
 
-isFunction(111)
+rutils.isFunction(111)
 // => false
 ```
 
@@ -292,13 +246,13 @@ rutils.isNull(value)
 **例子：**
 
 ```javascript
-isNull(null)
+rutils.isNull(null)
 // => true
 
-isNull(1)
+rutils.isNull(1)
 // => false
 
-isNull()
+rutils.isNull()
 // => false
 ```
 
@@ -323,13 +277,13 @@ rutils.isNumber(value)
 **例子：**
 
 ```javascript
-isNumber(123)
+rutils.isNumber(123)
 // => true
 
-isNumber('123')
+rutils.isNumber('123')
 // => false
 
-isNumber(true)
+rutils.isNumber(true)
 // => false
 ```
 
@@ -354,14 +308,14 @@ rutils.isObject(value)
 **例子：**
 
 ```javascript
-isObject({})
+rutils.isObject({})
 // => true
 
 function Person() {}
-isObject(new Person())
+rutils.isObject(new Person())
 // => true
 
-isObject(new Date())
+rutils.isObject(new Date())
 // => false
 ```
 
@@ -386,13 +340,13 @@ rutils.isRegExp(value)
 **例子：**
 
 ```javascript
-isRegExp(new RegExp('\\w+'))
+rutils.isRegExp(new RegExp('\\w+'))
 // => true
 
-isRegExp(/^[1][3,4,5,7,8][0-9]{9}$/)
+rutils.isRegExp(/^[1][3,4,5,7,8][0-9]{9}$/)
 // => true
 
-isRegExp(111)
+rutils.isRegExp(111)
 // => false
 ```
 
@@ -419,25 +373,25 @@ rutils.isType(value1, value2)
 **例子：**
 
 ```javascript
-isType({}, 'object')
+rutils.isType({}, 'object')
 // => true
 
-isType({}, 'Object')
+rutils.isType({}, 'Object')
 // => false, 注意小写
 
-isType([], 'array')
+rutils.isType([], 'array')
 // => true
 
-isType(new Set(), 'set')
+rutils.isType(new Set(), 'set')
 // => true
 
-isType(new Set(), 'Set')
+rutils.isType(new Set(), 'Set')
 // => false
 
-isType(new Map(), 'map')
+rutils.isType(new Map(), 'map')
 // => true
 
-isType(new Date(), 'object')
+rutils.isType(new Date(), 'object')
 // => false
 ```
 
@@ -462,16 +416,16 @@ rutils.isString(value1)
 **例子：**
 
 ```javascript
-isString('hello word!')
+rutils.isString('hello word!')
 // => true
 
-isString('')
+rutils.isString('')
 // => true
 
-isString(null)
+rutils.isString(null)
 // => false
 
-isString({})
+rutils.isString({})
 // => false
 ```
 
@@ -496,13 +450,13 @@ rutils.isUndefined(value)
 **例子：**
 
 ```javascript
-isUndefined(undefined)
+rutils.isUndefined(undefined)
 // => true
 
 const obj = {}
-isUndefined(obj.name)
+rutils.isUndefined(obj.name)
 // => true
 
-isUndefined('undefined')
+rutils.isUndefined('undefined')
 // => false
 ```
