@@ -26,7 +26,7 @@ const downloadByImgLink = function (url,fileName, w, h) {
             // quality值越小，所绘制出的图像越模糊
             let base64 = canvas.toDataURL('image/png', quality)
             // 回调函数返回base64的值
-            downloadByBase64(base64)
+            downloadByBase64(base64,fileName)
             resolve(base64)
         }
         img.onerror = e=>reject(e)

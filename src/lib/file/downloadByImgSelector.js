@@ -4,7 +4,7 @@
  * @param { String | Element } selector: Selector of img tag or img element
  * @param { String } name：Download Image Name
  */
-const downloadByImgSelector = function (selector, name,w,h) {
+const downloadByImgSelector = function (selector, name) {
     return new Promise((resolve,reject)=>{
         let image = new Image()
         // Solving cross domain canvas pollution problem
