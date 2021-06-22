@@ -2,94 +2,62 @@
 
 ## API
 
-| 名称                                                   | 描述             |
-| ------------------------------------------------------ | :--------------- |
-| <a href="#r-camelcase">camelCase</a>                   | 字符串转驼峰     |
-| <a href="#r-guid">guid</a>                             | 随机UUID         |
-| <a href="#r-randomhexcolorcode">randomHexColorCode</a> | 随机十六进制颜色 |
+| 名称                                                 | 描述             |
+| ---------------------------------------------------- | :--------------- |
+| <a href="#camelcase">camelCase</a>                   | 字符串转驼峰     |
+| <a href="#guid">guid</a>                             | 随机 UUID        |
+| <a href="#randomhexcolorcode">randomHexColorCode</a> | 随机十六进制颜色 |
 
+### camelCase
 
+字符转为大驼峰
 
-### R.camelCase
-
-> 字符转为大驼峰，
+**语法：**
 
 ```javascript
-R.camelCase(value)
+rutils.camelCase(val)
 ```
 
-**参数：**
-
-​	1. `value` {string} 需要转换的字符
-
-**返回值：**
-
-​	`string`
-
-​	返回大驼峰字符串
-
- **例子：**
+**示例：**
 
 ```javascript
-camelCase("hello_word")
+rutils.camelCase('hello_word')
 // => "HelloWord"
 
-camelCase("welcome_to_chengdu")
+rutils.camelCase('welcome_to_chengdu')
 // => "WelcomeToChengdu"
 ```
 
+### guid
 
+随机生成 36 位字符 ID, 如： `db9b82c8-784a-6d3d-b4f1-2e312c79071a`
 
-
-
-### R.guid
-
-> 随机生成36位字符ID, 类似UUID
+**语法：**
 
 ```javascript
-R.guid()
+rutils.guid()
 ```
 
-**参数：**
-
-​	无
-
-**返回值：**
-
-​	`string`
-
-​	36位随机字母、数字、下划线组成的id，如： `db9b82c8-784a-6d3d-b4f1-2e312c79071a`
-
- **例子：**
+**示例：**
 
 ```javascript
-guid()
+rutils.guid()
 // => "db9b82c8-784a-6d3d-b4f1-2e312c79071a"
 ```
 
+### randomHexColorCode
 
+随机十六进制颜色，如：`#0099ff`
 
-### R.randomHexColorCode
-
-> 随机十六进制颜色
+**语法：**
 
 ```javascript
-R.randomHexColorCode()
+rutils.randomHexColorCode()
 ```
 
-**参数：**
-
-​	无
-
-**返回值：**
-
-​	`string`
-
-​	随机十六进制颜色，如：`#0099ff`
-
- **例子：**
+**示例：**
 
 ```javascript
-randomHexColorCode()
+rutils.randomHexColorCode()
 // => "#0099ff"
 ```

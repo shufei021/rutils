@@ -2,238 +2,249 @@
 
 ## API
 
+| 名称                               | 描述               |
+| ---------------------------------- | :----------------- |
+| <a href="#add">add</a>             | 加                 |
+| <a href="#subtract">subtract</a>   | 减                 |
+| <a href="#multiply">multiply</a>   | 乘                 |
+| <a href="#devide">devide</a>       | 除                 |
+| <a href="#fmtnum">fmtNum</a>       | 数字格式化         |
+| <a href="#isinteger">isInteger</a> | 是否为整数         |
+| <a href="#isnum">isNum</a>         | 是否为数字         |
+| <a href="#round">round</a>         | 四舍五入到指定位数 |
 
+### add
 
-| 名称                                 | 描述（加、减、乘、除支持多个数据） |
-| ------------------------------------ | :--------------------------------- |
-| <a href="#r-add">add</a>             | 加                                 |
-| <a href="#r-merge">subtract</a>      | 减                                 |
-| <a href="#r-multiply">multiply</a>   | 乘                                 |
-| <a href="#r-devide">devide</a>       | 除                                 |
-| <a href="#r-calc">calc</a>           | 计算方法                           |
-| <a href="#r-fmtNum">fmtNum</a>       | 数字格式化                         |
-| <a href="#r-isinteger">isInteger</a> | 是否为整数                         |
-| <a href="#r-isnum">isNum</a>         | 是否为数字                         |
-| <a href="#r-round">round</a>         | *四舍五入到指定位数*               |
+两数或多数相加
 
-### R.add
-
-> 两数或多数相加的和
+**语法：**
 
 ```javascript
-R.add(value1, value2, value3)
+/**
+ * 相加
+ * @param {Number} a :加数
+ * @param {Number} b ：被加数
+ * @param {Number} digit ：结果保留位数
+ */
+rutils.add(a, b, digit)
 ```
 
-**参数：**
-
-​	1.`value1` {number | array} 加数，如果需要多个可传入 `array` 进行相加；
-
-​	2.`value2` {number} 被加数， <span style="color: #ff5722;">如果第一个参数为 `array`，那么第二个参数则为保留小数位数，第三个参数可不传</span>；
-
-​	3.`value3` {number} 结果保留位数；
-
-**返回值：**
-
-​	`number`
-
-​	计算后的和
-
- **例子：**
+**示例：**
 
 ```javascript
 // 两数相加
-add(1.325, 1.235, 2)
+rutils.add(1.325, 1.235, 2)
 // => 2.56
 
-// 多数相加，第一个参数为数字list，第二个则为保留位数
-add([1, 2, 3, 4, 5, 6, 7.124], 2)
+// 多数相加，第一个参数为数字数组，第二个则为保留位数
+rutils.add([1, 2, 3, 4, 5, 6, 7.124], 2)
 // => 28.12
-
 ```
 
+### subtract
 
+两数或多数相减
 
-### R.subtract
-
-> 两数或多数相减的值
+**语法：**
 
 ```javascript
-R.subtract(value1, value2, value3)
+/**
+ * 两数相减
+ * @param {Number} a :减数
+ * @param {Number} b ：被减数
+ * @param {Number} digit ：结果保留位数
+ */
+rutils.subtract((a = 0), (b = 0), digit)
 ```
 
-**参数：**
-
-​	1.`value1` {number | array} 减数，如果需要多个可传入 `array` 进行相减；
-
-​	2.`value2` {number} 被减数， <span style="color: #ff5722;">如果第一个参数为 `array`，那么第二个参数则为保留小数位数，第三个参数可不传</span>；
-
-​	3.`value3` {number} 结果保留位数；
-
-**返回值：**
-
-​	`number`
-
-​	计算后的值
-
- **例子：**
+**示例：**
 
 ```javascript
 // 1.两数相减
-subtract(1.325, 1.235, 2)
+rutils.subtract(1.325, 1.235, 2)
 // => 0.09
 
 // 2.多数相减，第一个参数为数字list，第二个则为保留位数
-subtract([30, 2, 3, 4, 5, 6, 7.124], 2)
+rutils.subtract([30, 2, 3, 4, 5, 6, 7.124], 2)
 // => 2.88
-
 ```
 
+### multiply
 
+两数或多数相乘的值
 
-
-
-### R.multiply
-
-> 两数或多数相乘的值
+**语法：**
 
 ```javascript
-R.multiply(value1, value2, value3)
+/**
+ * 两数相乘
+ * @param {*} a :乘数
+ * @param {*} b ：被乘数
+ * @param {*} digit ：结果保留位数
+ */
+rutils.multiply(a, b, digit)
 ```
 
-**参数：**
-
-​	1.`value1` {number | array} 乘数，如果需要多个可传入 `array` 进行相乘；
-
-​	2.`value2` {number} 被乘数， <span style="color: #ff5722;">如果第一个参数为 `array`，那么第二个参数则为保留小数位数，第三个参数可不传</span>；
-
-​	3.`value3` {number} 结果保留位数；
-
-**返回值：**
-
-​	`number`
-
-​	计算后的值
-
- **例子：**
+**示例：**
 
 ```javascript
 // 1.两数相乘
-multiply(1.325, 1.235, 2)
+rutils.multiply(1.325, 1.235, 2)
 // => 1.64
 
 // 2.多数相乘，第一个参数为数字list，第二个则为保留位数
-multiply([1, 2, 3, 4, 5, 6, 7.124], 2)
+rutils.multiply([1, 2, 3, 4, 5, 6, 7.124], 2)
 // => 5129.28
 
+rutils.multiply(1.1, 2.2) // 2.42
+rutils.multiply(1.13, 0.8, 0) // 1
+rutils.multiply(1.13, 0.8, 1) // "0.9"
+rutils.multiply(1.13, 0.8, 2) // "0.90"
+rutils.multiply(1.13, 0.8, 3) // "0.904"
+rutils.multiply(1.13, 0.8, 4) // "0.9040"
 ```
 
+### devide
 
+两数或多数相除的值
 
-
-
-### R.devide
-
-> 两数或多数相除的值
+**语法：**
 
 ```javascript
-R.devide(value1, value2, value3)
+/**
+ * 两数相除
+ * @param {Number} a :除数
+ * @param {Number} b ：被除数
+ * @param {Number} digit ：结果保留位数
+ */
+rutils.devide(a, b, digit)
 ```
 
-**参数：**
-
-​	1.`value1` {number | array} 除数，如果需要多个可传入 `array` 进行相除；
-
-​	2.`value2` {number} 被除数， <span style="color: #ff5722;">如果第一个参数为 `array`，那么第二个参数则为保留小数位数，第三个参数可不传</span>；
-
-​	3.`value3` {number} 结果保留位数；
-
-**返回值：**
-
-​	`number`
-
-​	计算后的值
-
- **例子：**
+**示例：**
 
 ```javascript
 // 1.两数相除
-devide(1.325, 1.235, 2)
+rutils.devide(1.325, 1.235, 2)
 // => 1.07
 
 // 2.多数相除，第一个参数为数字list，第二个则为保留位数
-devide([500, 1.2, 3, 4, 5, 6, 7.124], 2)
+rutils.devide([500, 1.2, 3, 4, 5, 6, 7.124], 2)
 // => 0.16
 
+rutils.devide() // ""
+rutils.devide(1) // ""
+rutils.devide(1, 3) // 0.3333333333333333
+rutils.devide(1, 3, 1) // "0.3"
+rutils.devide(1, 3, 2) // "0.33"
+
+rutils.devide() // ""
+rutils.devide([]) // ""
+rutils.devide([1, 3]) // 0.3333333333333333
+rutils.devide([1, 3, 3]) // 0.1111111111111111
+rutils.devide([1, 9]) // 0.1111111111111111
+rutils.devide([1, 9], 0) // 0
+rutils.devide([1, 9], 1) // "0.1"
+rutils.devide([1, 9], 2) // "0.11"
+rutils.devide([1, 9], 3) // "0.111"
 ```
 
+### fmtNum
 
+格式化数字
 
+语法：
 
-
-### R.isNum
-
-> 是否有效数字：排除 `NaN` 、 `Infinity`，数字字符串或数字，都为有效数字
-
-```javascript
-R.isNum(value)
+```js
+/**
+ * 数字格式化
+ * @param { String | Number } val : 有效数数字
+ * @param { Boolean } isThousands : 整数部分是否进行千分位,默认值 false
+ * @param { Number } digit : 小数部分四舍五入保留到的位数
+ */
+rutils.fmtNum(val, isThousands, len)
 ```
 
-**参数：**
+示例：
 
-​	1.`value` {number} 检测的值
+```js
+ * rutils.fmtNum() // ""
+ * rutils.fmtNum(11111111111.333555) // "11111111111.333555"
+ * rutils.fmtNum(11111111111.333555,false,3) // "11111111111.334"
+ * rutils.fmtNum(11111111111.333555,true) // "11,111,111,111.333555"
+ * rutils.fmtNum(11111111111.333555,true,3) // "11,111,111,111.334"
+```
 
-**返回值：**
+### round
 
-​	`boolean`
+四舍五入
 
-​	true: 是  |  false：否
+语法：
 
- **例子：**
+```js
+/**
+ * 四舍五入到指定位数
+ * @param {Number} n:小数
+ * @param {Number} decimals ：四舍五入到指定位数
+ */
+rutils.round(n, decimals)
+```
+
+示例：
+
+```js
+rutils.round(1.23456, 1) // 1.2
+rutils.round(1.23456, 2) // 1.23
+rutils.round(1.23456, 3) // 1.235
+rutils.round(1.23456, 4) // 1.2346
+rutils.round(1.23456, 5) // 1.23456
+```
+
+### isNum
+
+是否有效数字：排除 `NaN` 、 `Infinity`，数字字符串或数字，都为有效数字
 
 ```javascript
-let arr = [{}, [], undefined, null, 123, '123', Symbol('111'), function () {}, new Date(), false, /\d+/gi, NaN,Infinity]
+/**
+ * 判断是否是有效数字 不包含NaN
+ * 是否有效数字：排除 NaN Infinity，数字字符串 或是 数字，都为有效数字
+ * @param {any} val: 判断的值
+ */
+rutils.isNum(val)
+```
+
+**示例：**
+
+```javascript
+let arr = [{}, [], undefined, null, 123, '123', Symbol('111'), function () {}, new Date(), false, /\d+/gi, NaN, Infinity]
 arr.forEach(item => {
-  console.log(isNum(item))
-  // true: (123, '123')
-  // false: (other)
+    console.log(rutils.isNum(item))
+    // true: (123, '123')
+    // false: (other)
 })
 ```
 
+### isInteger
 
+是否为整数, 必须是数字类型
 
-
-
-### R.isInteger
-
-> 是否为整数, 必须是数字类型
+**语法：**
 
 ```javascript
-R.isInteger(value)
+rutils.isInteger(val)
 ```
 
-**参数：**
-
-​	1.`value1` {number} 检测的值
-
-**返回值：**
-
-​	`boolean`
-
-​	true: 是  |  false：否
-
- **例子：**
+**示例：**
 
 ```javascript
-isInteger(3)
+rutils.isInteger(3)
 // => true
 
-isInteger(3.11)
+rutils.isInteger(3.11)
 // => false
 
-isInteger('3')
+rutils.isInteger('3')
 // => false
 
-isInteger(NaN)
+rutils.isInteger(NaN)
 // => false
 ```
-

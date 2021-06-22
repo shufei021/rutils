@@ -20,6 +20,5 @@ export default ({ router,Vue }) => {
                 }, 500)
             })
         })
-    }
-    
+    } 
 }
