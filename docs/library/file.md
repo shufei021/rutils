@@ -203,6 +203,10 @@ rutils.downloadByImgSelector(imgSlector, fileName)
 </body>    
 
 <script>
-    rutils.downloadByImgSelector('#test', '测试下载')
+    rutils.downloadByImgSelector('#test', '测试下载').then(res=>{
+        console.log('下载成功')
+    }).catch(err=>{
+        console.log('下载失败')
+    })
 </script>
 ```
