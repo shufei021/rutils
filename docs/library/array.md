@@ -54,7 +54,7 @@ rutils.union(value1, value2)
 let a = [1, 2, 3, 4, 5]
 let b = [1, 2, 4, 5, 6]
 
-union(a, b) //[1,2,3,4,5,6]
+rutils.union(a, b) //[1,2,3,4,5,6]
 
 // 场景2：
 let a1 = [
@@ -69,7 +69,7 @@ let b1 = [
 ]
 
 // 通过 id 获取并集
-union(a1, b1, 'id')
+rutils.union(a1, b1, 'id')
 [
   {id: 1, name: "张三", age: 20}
   {id: 2, name: "李四", age: 21}
@@ -104,7 +104,7 @@ rutils.unique(value1, value2)
 ```javascript
 //场景1：
 let a = [1, 2, 3, 4, 5, 1, 2, 3]
-unique(a)
+rutils.unique(a)
 // => [1,2,3,4,5]
 
 //场景2：
@@ -114,7 +114,7 @@ let a1 = [
     { id: 3, name: '小红', age: 23 },
     { id: 2, name: '李四', age: 21 }
 ]
-unique(a1)
+rutils.unique(a1)
 // =>
 // [
 //     {id: 1, name: "张三", age: 20}
@@ -123,6 +123,9 @@ unique(a1)
 //     {id: 4, name: "小明", age: 24}
 //     {id: 5, name: "小红", age: 25}
 // ]
+
+// 推荐 rutils.unique(a1,'id') 进行去重
+
 ```
 
 ### intersection
@@ -152,7 +155,7 @@ rutils.intersection(value1, value2)
 let a = [1, 2, 3, 4, 5]
 let b = [1, 2, 4, 5, 6]
 
-intersection(a, b) // [1,2,4,5]
+rutils.intersection(a, b) // [1,2,4,5]
 
 // 场景2：
 let a1 = [
@@ -165,7 +168,7 @@ let b1 = [
     { id: 4, name: '小明', age: 24 },
     { id: 5, name: '小红', age: 25 }
 ]
-intersection(a1, b1, 'id') // [ { id: 2, name: '李四', age: 21 }]
+rutils.intersection(a1, b1, 'id') // [ { id: 2, name: '李四', age: 21 }]
 ```
 
 ### arrayFill
@@ -191,10 +194,10 @@ rutils.arrayFill(value1, value2)
 **例子：**
 
 ```javascript
-arrayFill(3, '1')
+rutils.arrayFill(3, '1')
 // => ['1', '1', '1']
 
-arrayFill(3, { name: 'zhangsan' })
+rutils.arrayFill(3, { name: 'zhangsan' })
 // => [{name: 'zhangsan'}, {name: 'zhangsan'}, {name: 'zhangsan'}]
 ```
 
@@ -404,7 +407,7 @@ rutils.except(value1, value2)
 // 场景一
 let a = [1, 2, 3, 4, 5]
 let b = [1, 2, 4, 5, 6]
-except(a, b) // [3,6]
+rutils.except(a, b) // [3,6]
 
 // 场景二，list对象
 let a1 = [
@@ -417,7 +420,7 @@ let b1 = [
     { id: 4, name: '小明', age: 24 },
     { id: 5, name: '小红', age: 25 }
 ]
-except(a1, b1, 'id')
+rutils.except(a1, b1, 'id')
 [
   {id: 1, name: "张三", age: 20}
   {id: 3, name: "小二", age: 23}
@@ -453,12 +456,12 @@ rutils.exchangePostion(value1, value2, value3)
 ```javascript
 // 示例：
 let a1 = [1, 2, 3, 4, 5, 6]
-exchangePostion(a1, 4, 1) // [1, 5, 3, 4, 2, 6]
+rutils.exchangePostion(a1, 4, 1) // [1, 5, 3, 4, 2, 6]
 console.log(a1) // [1, 2, 3, 4, 5, 6]
 
 // 示例2：
 let a2 = [1, 2, 3, 4, 5, 6]
-exchangePostion(a2, 4, 1，true) // [1, 5, 3, 4, 2, 6]
+rutils.exchangePostion(a2, 4, 1，true) // [1, 5, 3, 4, 2, 6]
 console.log(a2) // [1, 5, 3, 4, 2, 6]
 ```
 
@@ -485,10 +488,10 @@ rutils.flatten(value1, value2)
 **例子：**
 
 ```javascript
-flatten([1, 2, 3, [4, [5, 6, [7]]]])
+rutils.flatten([1, 2, 3, [4, [5, 6, [7]]]])
 // => [1, 2, 3, 4, [5,6,[7]]]
 
-flatten([1, 2, 3, [4, [5, 6, [7]]]], 2)
+rutils.flatten([1, 2, 3, [4, [5, 6, [7]]]], 2)
 // => [1, 2, 3, 4, 5,6,[7]]
 ```
 
@@ -518,11 +521,6 @@ rutils.group(value1, value2)
 group([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2)
 // => [[1, 2], [3, 4], [5, 6], [7, 8], [9.10]]
 
-isNumber('123')
-// => false
-
-isNumber(true)
-// => false
 ```
 
 ### indexOfAll
@@ -557,11 +555,11 @@ let a1 = [
     { id: 3, name: '阿呆', age: 23, count: 55 },
     { id: 3, name: '阿呆', age: 23, count: 55 }
 ]
-indexOfAll(a1, 'id', 3)
+rutils.indexOfAll(a1, 'id', 3)
 // => [3, 4]
 
 let a2 = [1, 2, 3, 1, 2, 3]
-indexOfAll(a2, 1)
+rutils.indexOfAll(a2, 1)
 // => [0, 3]
 ```
 
@@ -593,7 +591,7 @@ rutils.insetPostion(value1, value2, value3, value4)
 
 ```javascript
 let a1 = [1, 2, 3, 4, 5, 6]
-insetPostion(a1, 3, 1)
+rutils.insetPostion(a1, 3, 1)
 // => [1, 4, 2, 3, 5, 6]
 
 console.log(a1)
@@ -623,7 +621,7 @@ rutils.isrutilsepeat(value)
 ```javascript
 // 示例
 let a1 = [{ id: 1, name: '张三', age: 20 }, { id: 1, name: '李四', age: 20 }, { id: 3, name: '小明', age: 23 }, { id: 2, name: '大卫', age: 21 }, 1, 3, 2, { 0: 1, 1: 2, 2: 3 }, [1, 2, 3]]
-isrutilsepeat(a1)
+rutils.isrutilsepeat(a1)
 // => false
 
 // 示例2
@@ -639,7 +637,7 @@ let a2 = [
     { 0: 1, 1: 2, 2: 3 },
     [1, 2, 3]
 ]
-isHasrutilsepeat(a2)
+rutils.isHasrutilsepeat(a2)
 // => true
 ```
 
@@ -667,19 +665,19 @@ rutils.mean(value1, value2)
 
 ```javascript
 //1.复杂类型数据，函数返回自定义字段
-mean([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n)
+rutils.mean([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n)
 // => 5
 
 //2.传入key
-mean([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n')
+rutils.mean([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n')
 // => 5
 
 //3.不传递第二个参数
-mean([4, 2, 8, 6])
+rutils.mean([4, 2, 8, 6])
 // => 5
 
 //4.数组中item为字符串
-mean(['4', 2, '8', 6])
+rutils.mean(['4', 2, '8', 6])
 // => 5
 ```
 
@@ -706,10 +704,10 @@ rutils.range(value1, value2)
 **例子：**
 
 ```javascript
-range(0, 10)
+rutils.range(0, 10)
 // => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-range(1, 9)
+rutils.range(1, 9)
 // => [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
@@ -741,15 +739,15 @@ rutils.range(value1, value2, value3, value4)
 
 ```javascript
 //默认取出0-10的随机数，由于第三位参数没传递，默认返回一个值
-rangerutilsandom(0, 10)
+rutils.rangerutilsandom(0, 10)
 // => [3]
 
 //取出0-10的10位随机数，
-rangerutilsandom(0, 10, 10)
+rutils.rangerutilsandom(0, 10, 10)
 // => [79, 78, 88, 71, 9, 65, 60, 31, 43, 41]
 
 //取出20-50的8为随机数，不可重复
-rangerutilsandom(20, 50, 8, true)
+rutils.rangerutilsandom(20, 50, 8, true)
 // => [20, 40, 23, 35, 42, 45, 22, 39]
 ```
 
@@ -774,10 +772,10 @@ rutils.rangeScopeStartZore(value)
 **例子：**
 
 ```javascript
-rangeScopeStartZore(10)
+rutils.rangeScopeStartZore(10)
 // => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-rangeScopeStartZore(5)
+rutils.rangeScopeStartZore(5)
 // => [0, 1, 2, 3, 4, 5]
 ```
 
@@ -806,13 +804,13 @@ rutils.rangeStep(value1, value2, value3)
 **例子：**
 
 ```javascript
-rangeStep(0, 19, 2)
+rutils.rangeStep(0, 19, 2)
 // => [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
 
-rangeStep(0, 19, 3)
+rutils.rangeStep(0, 19, 3)
 // => [0, 3, 6, 9, 12, 15, 18]
 
-rangeStep(0, 19, 4)
+rutils.rangeStep(0, 19, 4)
 // => [0, 4, 8, 12, 16]
 ```
 
@@ -837,7 +835,7 @@ rutils.sample(value)
 **例子：**
 
 ```javascript
-sample([1, 2, 3, 4, 5])
+rutils.sample([1, 2, 3, 4, 5])
 // => 5
 
 let users = [
@@ -851,7 +849,7 @@ let users = [
         name: '王五'
     }
 ]
-sample(users)
+rutils.sample(users)
 // => {name: "张三"}
 ```
 
@@ -879,7 +877,7 @@ rutils.sum(value1, value2)
 
 ```javascript
 let a = [1, 2, 3, 4, 5]
-sum(a)
+rutils.sum(a)
 // => 15
 
 let a1 = [
@@ -887,7 +885,7 @@ let a1 = [
     { id: 2, name: '李四', age: 21 },
     { id: 3, name: '小二', age: 23 }
 ]
-sum(a1, 'age')
+rutils.sum(a1, 'age')
 // => 64
 ```
 
@@ -917,10 +915,10 @@ rutils.timesTotal(value1, value2, value3)
 
 ```javascript
 let a1 = [1, 2, 3, 1, 5, 6, 1]
-timesTotal(a1, 1)
+rutils.timesTotal(a1, 1)
 // => 3
 
 let a2 = [{ a: 1 }, { a: 1 }]
-timesTotal(a2, 'a', 1)
+rutils.timesTotal(a2, 'a', 1)
 // => 2
 ```

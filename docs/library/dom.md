@@ -37,7 +37,7 @@ rutils.backTop(value1, value2)
 
 ​ 1.`value1` { string } 回到顶部的元素 ID
 
-​ 1.`?value2` { string } 按钮距离底部间距, 默认为：`100`
+​ 1.`value2` { string } 按钮距离底部间距, 默认为：`100`
 
 **返回值：**
 
