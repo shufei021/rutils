@@ -27,7 +27,7 @@ const get = function (k) {
 
 const set = function (k, v) {
     if (isString(k)) {
-        _set(k, v) //set(key,val)
+        _set(k, _stringify(v)) //set(key,val)
     } else if (isArray(k)) {
         //set([{key1:val1},{key2:val2}]) or set([{key1:val1,k11:val22},{key2:val2}])
         for (let i = 0; i < k.length; i++) {
