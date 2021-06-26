@@ -26,7 +26,7 @@
 | isLandlineTelephone      | 座机电话(国内),如: 0341-86091234                         |
 | isPassport               | 护照（包含香港、澳门）                                   |
 | isChineseCharacter       | 中文/汉字                                                |
-| isNumber                 | 数字                                                     |
+| isNumberStr              | 是否整数字符串                                           |
 | isDecimal                | 小数                                                     |
 | isInteger                | 整数                                                     |
 | isQQNum                  | QQ                                                       |

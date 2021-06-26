@@ -274,6 +274,8 @@ rutils.isNumber('123')
 
 rutils.isNumber(true)
 // => false
+rutils.isNumber(NaN)
+// => true
 ```
 
 ### isObject
