@@ -19,9 +19,9 @@
 | <a href="#insetpostion">insetPostion</a>               | 数组值插入交换                                |
 | <a href="#flatten">flatten</a>                         | 数组扁平化                                    |
 | <a href="#indexofall">indexOfAll</a>                   | 数组索引获取                                  |
-| <a href="#isrepeat">isrutilsepeat</a>                  | 数组值是否重复                                |
+| <a href="#isrepeat">isRepeat</a>                       | 数组值是否重复                                |
 | <a href="#range">range</a>                             | 数组生成 起止数字间（包含起止数字）的升序数组 |
-| <a href="#rangerandom">rangerutilsandom</a>            | 数组生成 两数之间指定长度的随机数组           |
+| <a href="#rangerandom">rangeRandom</a>                 | 数组生成 两数之间指定长度的随机数组           |
 | <a href="#rangescopestartzore">rangeScopeStartZore</a> | 数组生成 最小数字 0 到 max 最大值 的升序数组  |
 | <a href="#rangestep">rangeStep</a>                     | 数组生成 指定范围内指定步长的数组             |
 | <a href="#sample">sample</a>                           | 数组中获取随机数 1 个                         |
@@ -37,7 +37,7 @@ rutils.union(value1, value2)
 
 **参数：**
 
-​ 1.`value1` {array} 传入的数组 a；
+​ 1.`value1` {array} 传入的数组 a
 
 ​ 2.`value2` {array} 传入的数组 b
 
@@ -54,7 +54,7 @@ rutils.union(value1, value2)
 let a = [1, 2, 3, 4, 5]
 let b = [1, 2, 4, 5, 6]
 
-union(a, b) //[1,2,3,4,5,6]
+rutils.union(a, b) //[1,2,3,4,5,6]
 
 // 场景2：
 let a1 = [
@@ -69,7 +69,7 @@ let b1 = [
 ]
 
 // 通过 id 获取并集
-union(a1, b1, 'id')
+rutils.union(a1, b1, 'id')
 [
   {id: 1, name: "张三", age: 20}
   {id: 2, name: "李四", age: 21}
@@ -104,7 +104,7 @@ rutils.unique(value1, value2)
 ```javascript
 //场景1：
 let a = [1, 2, 3, 4, 5, 1, 2, 3]
-unique(a)
+rutils.unique(a)
 // => [1,2,3,4,5]
 
 //场景2：
@@ -114,7 +114,7 @@ let a1 = [
     { id: 3, name: '小红', age: 23 },
     { id: 2, name: '李四', age: 21 }
 ]
-unique(a1)
+rutils.unique(a1)
 // =>
 // [
 //     {id: 1, name: "张三", age: 20}
@@ -152,7 +152,7 @@ rutils.intersection(value1, value2)
 let a = [1, 2, 3, 4, 5]
 let b = [1, 2, 4, 5, 6]
 
-intersection(a, b) // [1,2,4,5]
+rutils.intersection(a, b) // [1,2,4,5]
 
 // 场景2：
 let a1 = [
@@ -165,7 +165,7 @@ let b1 = [
     { id: 4, name: '小明', age: 24 },
     { id: 5, name: '小红', age: 25 }
 ]
-intersection(a1, b1, 'id') // [ { id: 2, name: '李四', age: 21 }]
+rutils.intersection(a1, b1, 'id') // [ { id: 2, name: '李四', age: 21 }]
 ```
 
 ### arrayFill
@@ -191,10 +191,10 @@ rutils.arrayFill(value1, value2)
 **例子：**
 
 ```javascript
-arrayFill(3, '1')
+rutils.arrayFill(3, '1')
 // => ['1', '1', '1']
 
-arrayFill(3, { name: 'zhangsan' })
+rutils.arrayFill(3, { name: 'zhangsan' })
 // => [{name: 'zhangsan'}, {name: 'zhangsan'}, {name: 'zhangsan'}]
 ```
 
@@ -210,31 +210,33 @@ rutils.arrayToTree(value1, value2, value3)
 
 ​ 1.`value1` {array} 原始数据列表
 
-​ 2.`value2` {string} 数据 id key
+​ 2.`value2` {string} 数据 id key, 默认 null
 
-​ 3.`value3` {string} 父级 id key
+​ 3.`value3` {string} 父级 id key, 默认 pid
 
 **返回值：**
 
 ​ `array`
 
 ```javascript
-[
-  id: 1,
-	name: '1',
-  children: [
-  	{
-  		id: 2,
-  		name: '1-1',
-  		children: [
- 				{
-  				id: 3,
-  				name: '1-1-1'
-  			}
-			]
-  	}
-	]
+const currentArray = [
+    { id: '01', name: '张大大', pid: null, job: '项目经理' },
+    { id: '02', name: '小亮', pid: '01', job: '产品leader' },
+    { id: '03', name: '小美', pid: '01', job: 'UIleader' },
+    { id: '04', name: '老马', pid: '01', job: '技术leader' },
+    { id: '05', name: '老王', pid: '01', job: '测试leader' },
+    { id: '06', name: '老李', pid: '01', job: '运维leader' },
+    { id: '07', name: '小丽', pid: '02', job: '产品经理' },
+    { id: '08', name: '大光', pid: '02', job: '产品经理' },
+    { id: '09', name: '小高', pid: '03', job: 'UI设计师' },
+    { id: '10', name: '小刘', pid: '04', job: '前端工程师' },
+    { id: '11', name: '小华', pid: '04', job: '后端工程师' },
+    { id: '12', name: '小李', pid: '04', job: '后端工程师' },
+    { id: '13', name: '小赵', pid: '05', job: '测试工程师' },
+    { id: '14', name: '小强', pid: '05', job: '测试工程师' },
+    { id: '15', name: '小涛', pid: '06', job: '运维工程师' }
 ]
+rutils.arrayToTree(currentArray)
 ```
 
 ### delBy
@@ -265,10 +267,10 @@ rutils.delBy(value1, value2, value3)
 /**
  * 用法1：
  * let a1 = [1, 2, 3, 4, 5, 6]
- * delBy(a1, 2)// [1, 3, 4, 5, 6]
+ * rutils.delBy(a1, 2)// [1, 3, 4, 5, 6]
  * a1 // [1, 2, 3, 4, 5, 6]
  * let a1 = [1, 2, 3, 4, 5, 6]
- * delBy(a1, 2, true)// [1, 3, 4, 5, 6]
+ * rutils.delBy(a1, 2, true)// [1, 3, 4, 5, 6]
  * a1 // [1, 3, 4, 5, 6]
  *
  *
@@ -284,7 +286,7 @@ rutils.delBy(value1, value2, value3)
  *    { id: 2, name: '帆老板', age: 19 }
  * ]
  * // 删除 a1 数组中 id 为 2的值
- * delBy(a1, item => item.id === 2) //  等价于 handday.arr.delBy(a1, { id: 2 })
+ * rutils.delBy(a1, item => item.id === 2) //  等价于 handday.arr.delBy(a1, { id: 2 })
  * console.log(a1)
  * //
  * [
@@ -309,7 +311,7 @@ rutils.delBy(value1, value2, value3)
  *     { id: 2, name: '帆老板', age: 19 }
  * ]
  * // 删除 只要 id 是 1 或 2的值
- * delBy(a1, { id: [1, 2] })
+ * rutils.delBy(a1, { id: [1, 2] })
  * console.log(a1)
  * //
  * [
@@ -331,7 +333,7 @@ rutils.delBy(value1, value2, value3)
  *     { id: 2, name: '帆老板', age: 19 }
  * ]
  * // 删除 a1 数组中 id值为 2，或 name值为 全老板  PS：注意是或的关系
- * delBy(a1, { id: 2, name: '全老板' })
+ * rutils.delBy(a1, { id: 2, name: '全老板' })
  * console.log(a1)
  *
  *
@@ -353,7 +355,7 @@ rutils.delBy(value1, value2, value3)
  *     { id: 6, name: '黄老板', age: 23 }
  * ]
  * // 只要 id值为 2 ，name值 是 全老板 或 卫老板，age值是23 ，对应的值都从数组中删除掉
- * delBy(a1, { id: 2, name: ['全老板', '卫老板'], age: 23 })
+ * rutils.delBy(a1, { id: 2, name: ['全老板', '卫老板'], age: 23 })
  * console.log(a1)
  * //
  * [
@@ -370,7 +372,7 @@ rutils.delBy(value1, value2, value3)
  *
  * let a1 = [1, 2, 3, 4, 5, 2]
  * // 删除 给出的数组范围的值
- * delBy(a1, [2, 3, 4])
+ * rutils.delBy(a1, [2, 3, 4])
  * console.log(a1) //[1,5]
  *
  *
@@ -404,7 +406,7 @@ rutils.except(value1, value2)
 // 场景一
 let a = [1, 2, 3, 4, 5]
 let b = [1, 2, 4, 5, 6]
-except(a, b) // [3,6]
+rutils.except(a, b) // [3,6]
 
 // 场景二，list对象
 let a1 = [
@@ -417,13 +419,15 @@ let b1 = [
     { id: 4, name: '小明', age: 24 },
     { id: 5, name: '小红', age: 25 }
 ]
-except(a1, b1, 'id')
+rutils.except(a1, b1, 'id')
+/*
 [
   {id: 1, name: "张三", age: 20}
   {id: 3, name: "小二", age: 23}
   {id: 4, name: "小明", age: 24}
   {id: 5, name: "小红", age: 25}
 ]
+*/
 ```
 
 ### exchangePostion
@@ -442,7 +446,7 @@ rutils.exchangePostion(value1, value2, value3)
 
 ​ 3.`value3` {number} 新位置索引
 
-​ 4.`?value3` {boolean} 是否改变原始数组
+​ 4.`value3` {boolean} 是否改变原始数组
 
 **返回值：**
 
@@ -453,12 +457,12 @@ rutils.exchangePostion(value1, value2, value3)
 ```javascript
 // 示例：
 let a1 = [1, 2, 3, 4, 5, 6]
-exchangePostion(a1, 4, 1) // [1, 5, 3, 4, 2, 6]
+rutils.exchangePostion(a1, 4, 1) // [1, 5, 3, 4, 2, 6]
 console.log(a1) // [1, 2, 3, 4, 5, 6]
 
 // 示例2：
 let a2 = [1, 2, 3, 4, 5, 6]
-exchangePostion(a2, 4, 1，true) // [1, 5, 3, 4, 2, 6]
+rutils.exchangePostion(a2, 4, 1，true) // [1, 5, 3, 4, 2, 6]
 console.log(a2) // [1, 5, 3, 4, 2, 6]
 ```
 
@@ -485,10 +489,10 @@ rutils.flatten(value1, value2)
 **例子：**
 
 ```javascript
-flatten([1, 2, 3, [4, [5, 6, [7]]]])
+rutils.flatten([1, 2, 3, [4, [5, 6, [7]]]])
 // => [1, 2, 3, 4, [5,6,[7]]]
 
-flatten([1, 2, 3, [4, [5, 6, [7]]]], 2)
+rutils.flatten([1, 2, 3, [4, [5, 6, [7]]]], 2)
 // => [1, 2, 3, 4, 5,6,[7]]
 ```
 
@@ -515,13 +519,13 @@ rutils.group(value1, value2)
 **例子：**
 
 ```javascript
-group([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2)
+rutils.group([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2)
 // => [[1, 2], [3, 4], [5, 6], [7, 8], [9.10]]
 
-isNumber('123')
+rutils.isNumber('123')
 // => false
 
-isNumber(true)
+rutils.isNumber(true)
 // => false
 ```
 
@@ -557,11 +561,11 @@ let a1 = [
     { id: 3, name: '阿呆', age: 23, count: 55 },
     { id: 3, name: '阿呆', age: 23, count: 55 }
 ]
-indexOfAll(a1, 'id', 3)
+rutils.indexOfAll(a1, 'id', 3)
 // => [3, 4]
 
 let a2 = [1, 2, 3, 1, 2, 3]
-indexOfAll(a2, 1)
+rutils.indexOfAll(a2, 1)
 // => [0, 3]
 ```
 
@@ -581,7 +585,7 @@ rutils.insetPostion(value1, value2, value3, value4)
 
 ​ 3.`value3` {number} 新位置索引
 
-​ 4.`?value4` {boolean} 是否改变原数组，默认不改变返回一个新数组
+​ 4.`value4` {boolean} 是否改变原数组，默认不改变返回一个新数组
 
 **返回值：**
 
@@ -593,19 +597,19 @@ rutils.insetPostion(value1, value2, value3, value4)
 
 ```javascript
 let a1 = [1, 2, 3, 4, 5, 6]
-insetPostion(a1, 3, 1)
+rutils.insetPostion(a1, 3, 1)
 // => [1, 4, 2, 3, 5, 6]
 
 console.log(a1)
 // => [1, 2, 3, 4, 5, 6]
 ```
 
-### isrutilsepeat
+### isRepeat
 
 > 数组内是否有重复值
 
 ```javascript
-rutils.isrutilsepeat(value)
+rutils.isRepeat(value)
 ```
 
 **参数：**
@@ -623,7 +627,7 @@ rutils.isrutilsepeat(value)
 ```javascript
 // 示例
 let a1 = [{ id: 1, name: '张三', age: 20 }, { id: 1, name: '李四', age: 20 }, { id: 3, name: '小明', age: 23 }, { id: 2, name: '大卫', age: 21 }, 1, 3, 2, { 0: 1, 1: 2, 2: 3 }, [1, 2, 3]]
-isrutilsepeat(a1)
+rutils.isRepeat(a1)
 // => false
 
 // 示例2
@@ -639,7 +643,7 @@ let a2 = [
     { 0: 1, 1: 2, 2: 3 },
     [1, 2, 3]
 ]
-isHasrutilsepeat(a2)
+rutils.isRepeat(a2)
 // => true
 ```
 
@@ -667,19 +671,19 @@ rutils.mean(value1, value2)
 
 ```javascript
 //1.复杂类型数据，函数返回自定义字段
-mean([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n)
+rutils.mean([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], o => o.n)
 // => 5
 
 //2.传入key
-mean([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n')
+rutils.mean([{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], 'n')
 // => 5
 
 //3.不传递第二个参数
-mean([4, 2, 8, 6])
+rutils.mean([4, 2, 8, 6])
 // => 5
 
 //4.数组中item为字符串
-mean(['4', 2, '8', 6])
+rutils.mean(['4', 2, '8', 6])
 // => 5
 ```
 
@@ -706,19 +710,19 @@ rutils.range(value1, value2)
 **例子：**
 
 ```javascript
-range(0, 10)
+rutils.range(0, 10)
 // => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-range(1, 9)
+rutils.range(1, 9)
 // => [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-### rangerutilsandom
+### rangeRandom
 
 > 生成两数之间指定长度（所需产生的个数）的随机数组
 
 ```javascript
-rutils.range(value1, value2, value3, value4)
+rutils.rangeRandom(value1, value2, value3, value4)
 ```
 
 **参数：**
@@ -741,29 +745,29 @@ rutils.range(value1, value2, value3, value4)
 
 ```javascript
 //默认取出0-10的随机数，由于第三位参数没传递，默认返回一个值
-rangerutilsandom(0, 10)
+rutils.rangeRandom(0, 10)
 // => [3]
 
 //取出0-10的10位随机数，
-rangerutilsandom(0, 10, 10)
+rutils.rangeRandom(0, 10, 10)
 // => [79, 78, 88, 71, 9, 65, 60, 31, 43, 41]
 
 //取出20-50的8为随机数，不可重复
-rangerutilsandom(20, 50, 8, true)
+rutils.rangeRandom(20, 50, 8, true)
 // => [20, 40, 23, 35, 42, 45, 22, 39]
 ```
 
 ### rangeScopeStartZore
 
-> 生成 起止数字间（包含起止数字）的升序数组
+> 生成 最小数字 0 到 max 最大值 的升序数组
 
 ```javascript
-rutils.rangeScopeStartZore(value)
+rutils.rangeScopeStartZore(max)
 ```
 
 **参数：**
 
-​ 1.`value` {number} 最大值
+​ 1.`max` {number} 最大值
 
 **返回值：**
 
@@ -774,10 +778,10 @@ rutils.rangeScopeStartZore(value)
 **例子：**
 
 ```javascript
-rangeScopeStartZore(10)
+rutils.rangeScopeStartZore(10)
 // => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-rangeScopeStartZore(5)
+rutils.rangeScopeStartZore(5)
 // => [0, 1, 2, 3, 4, 5]
 ```
 
@@ -806,13 +810,13 @@ rutils.rangeStep(value1, value2, value3)
 **例子：**
 
 ```javascript
-rangeStep(0, 19, 2)
+rutils.rangeStep(0, 19, 2)
 // => [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
 
-rangeStep(0, 19, 3)
+rutils.rangeStep(0, 19, 3)
 // => [0, 3, 6, 9, 12, 15, 18]
 
-rangeStep(0, 19, 4)
+rutils.rangeStep(0, 19, 4)
 // => [0, 4, 8, 12, 16]
 ```
 
@@ -837,7 +841,7 @@ rutils.sample(value)
 **例子：**
 
 ```javascript
-sample([1, 2, 3, 4, 5])
+rutils.sample([1, 2, 3, 4, 5])
 // => 5
 
 let users = [
@@ -851,7 +855,7 @@ let users = [
         name: '王五'
     }
 ]
-sample(users)
+rutils.sample(users)
 // => {name: "张三"}
 ```
 
@@ -879,7 +883,7 @@ rutils.sum(value1, value2)
 
 ```javascript
 let a = [1, 2, 3, 4, 5]
-sum(a)
+rutils.sum(a)
 // => 15
 
 let a1 = [
@@ -887,7 +891,7 @@ let a1 = [
     { id: 2, name: '李四', age: 21 },
     { id: 3, name: '小二', age: 23 }
 ]
-sum(a1, 'age')
+rutils.sum(a1, 'age')
 // => 64
 ```
 
@@ -917,10 +921,10 @@ rutils.timesTotal(value1, value2, value3)
 
 ```javascript
 let a1 = [1, 2, 3, 1, 5, 6, 1]
-timesTotal(a1, 1)
+rutils.timesTotal(a1, 1)
 // => 3
 
 let a2 = [{ a: 1 }, { a: 1 }]
-timesTotal(a2, 'a', 1)
+rutils.timesTotal(a2, 'a', 1)
 // => 2
 ```

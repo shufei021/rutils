@@ -21,173 +21,146 @@
 
 ### getType
 
-> 获取值的类型，日常通过 `typeof` 、`instanceof` 无法精确获取值的原始类型。底层实现：`Object.prototype.toSring.call(value)` 就可以拿到值的最原始类型；
+> 获取值类型
+
+**语法：**
 
 ```js
 rutils.getType(value)
 ```
 
-**参数：**
-
-​ 1. `value` 需要检测的值；
-
-**返回：**
-
-​ `string`
-
-​ array、function、object、date、map、set、null、undefined 等数据类型
-
-**例子：**
+**示例：**
 
 ```javascript
-getType(null)
+rutils.getType(null)
 // => 'null'
 
-getType(true)
+rutils.getType(true)
 // => 'boolean'
 
-getType(1)
+rutils.getType(1)
 // => 'number'
 
-getType([1, 2, 3])
+rutils.getType([1, 2, 3])
 // => 'array'
 
-getType({ a: 1 })
+rutils.getType({ a: 1 })
 // => 'object'
 
-getType(new Set())
+rutils.getType(new Set())
 // => 'set'
 
-getType(new Map())
+rutils.getType(new Map())
 // => 'map'
 
-getType(function () {})
+rutils.getType(function() {})
 // => 'function'
 ```
 
 ### isEmpty
 
+**语法：**
+
 ```js
 rutils.isEmpty(value)
 ```
 
-**参数：**
-
-​ 1. `value` 需要检测的值；
-
-**返回：**
-
-​ `boolean`
-
-​ true：表示为空 | false 不为空
-
 **例子：**
 
 ```javascript
-isEmpty(null)
+rutils.isEmpty(null)
 // => true
 
-isEmpty(true)
+rutils.isEmpty(true)
 // => true
 
-isEmpty(1)
+rutils.isEmpty(1)
 // => true
 
-isEmpty([1, 2, 3])
+rutils.isEmpty([1, 2, 3])
 // => false
 
-isEmpty({ a: 1 })
+rutils.isEmpty({ a: 1 })
 // => false
 
-isEmpty([])
+rutils.isEmpty([])
 // => ture
 
-isEmpty({})
+rutils.isEmpty({})
 // => ture
 ```
 
 ### isEquals
 
-> 判断两个数据是否相同，值支持基本类型（string/number/boolean...）
+> 判断两个值是否相同
+
+**语法：**
 
 ```js
 rutils.isEquals(value1, value2)
 ```
 
-**参数：**
-
-1. `value1 ` {any} 需要检测的值 1
-2. `value2` {any} 需要检测的值 2
-
-**返回：**
-
-​ `boolean`
-
-​ true:相同 | false:不同
-
-**例子：**
+**示例：**
 
 ```javascript
-isEquals(1, '1')
+rutils.isEquals(1, '1')
 // => false
 
-isEquals({ userName: 'zhangsan' }, { userName: 'lisi' })
+rutils.isEquals({ userName: 'zhangsan' }, { userName: 'lisi' })
 // => false
+let a1 = { user: 'zhangsan', info: { age: 22, ad: { name: '十里店' } } }
+let b1 = { user: 'zhangsan', info: { age: 22, ad: { name: '十里店' } } }
+rutils.isEquals(a1, b1)
+// => true
+
+let a = { user: 'zhangsan', info: { age: 22, ad: { name: '十里店', time: new Date('2022/1/1') } } }
+let b = { user: 'zhangsan', info: { age: 22, ad: { name: '十里店', time: new Date('2022/1/1') } } }
+rutils.isEquals(a, b)
+// => true
+
+let arr1 = [{ user: 'zhangsan', info: { age: 22, ad: { name: '十里店', time: new Date('2022/1/1') } } }]
+let arr2 = [{ user: 'zhangsan', info: { age: 22, ad: { name: '十里店', time: new Date('2022/1/1') } } }]
+rutils.isEquals(arr1, arr2)
+// => true
 ```
 
 ### isArray
 
 > 判断数据是否为数组
 
+**语法：**
+
 ```js
 rutils.isArray(value)
 ```
 
-**参数：**
-
-​ 1. `value` {any} 需要检测的值
-
-**返回：**
-
-​ `boolean`
-
-​ true:是 | false:否
-
-**例子：**
+**示例：**
 
 ```javascript
-isArray(1)
+rutils.isArray(1)
 // => false
 
-isArray([1, 2, 3, 4])
+rutils.isArray([1, 2, 3, 4])
 // => true
 ```
 
 ### isDate
 
-> 数据是否为日期对象,注：日期对象生效`new Date()`
+> 数据是否为日期对象`
+
+**语法：**
 
 ```js
 rutils.isDate(value)
 ```
 
-**参数：**
-
-​ 1. `value` 需要检测的值
-
-**返回：**
-
-​ `boolean`
-
-​ true：是 | false 否
-
-**例子：**
+**示例：**
 
 ```javascript
-isDate(new Date())
+rutils.isDate(new Date())
 // => true
 
-isDate('yyyy-mm-dd')
+rutils.isDate('yyyy-mm-dd')
 // => false
 ```
 
@@ -195,39 +168,31 @@ isDate('yyyy-mm-dd')
 
 > 数据是否布尔
 
+**语法：**
+
 ```js
 rutils.isBoolean(value)
 ```
 
-**参数：**
-
-​ 1. `value` 需要检测的值
-
-**返回：**
-
-​ `boolean`
-
-​ true:是 | false:否
-
-**例子：**
+**示例：**
 
 ```javascript
-isBoolean(new Boolean())
+rutils.isBoolean(new Boolean())
 // => true
 
-isBoolean(true)
+rutils.isBoolean(true)
 // => true
 
-isBoolean(false)
+rutils.isBoolean(false)
 // => true
 
-isBoolean(false)
+rutils.isBoolean(false)
 // => true
 
-isBoolean('test')
+rutils.isBoolean('test')
 // => false
 
-isBoolean(0)
+rutils.isBoolean(0)
 // => false
 ```
 
@@ -235,70 +200,57 @@ isBoolean(0)
 
 > 值是否为函数
 
+**语法：**
+
 ```js
 rutils.isBoolean(value)
 ```
 
-**参数：**
-
-​ 1.`value` 需要检测的值
-
-**返回：**
-
-​ `boolean`
-
-​ true:是 | false:否
-
-**例子：**
+**示例：**
 
 ```javascript
-isFunction(new Function())
+rutils.isFunction(new Function())
 // => true
 
-const fun1 = function () {
+const fun1 = function() {
     console.log(111)
 }
-isFunction(fun1)
+rutils.isFunction(fun1)
 // => true
 
 const obj = {
     getData() {}
 }
-isFunction(obj.getData)
+rutils.isFunction(obj.getData)
 // => true
 
-isFunction(111)
+rutils.isFunction(111)
 // => false
+
+rutils.isFunction(() => ({}))
+// => true
 ```
 
 ### isNull
 
 > 值是否为空值
 
+**语法：**
+
 ```js
 rutils.isNull(value)
 ```
 
-**参数：**
-
-​ 1. `value` 需要检测的值
-
-**返回：**
-
-​ `boolean`
-
-​ true:是 | false:否
-
-**例子：**
+**示例：**
 
 ```javascript
-isNull(null)
+rutils.isNull(null)
 // => true
 
-isNull(1)
+rutils.isNull(1)
 // => false
 
-isNull()
+rutils.isNull()
 // => false
 ```
 
@@ -306,62 +258,46 @@ isNull()
 
 > 值是否为数字
 
+**语法：**
+
 ```js
 rutils.isNumber(value)
 ```
 
-**参数：**
-
-​ 1. `value` 需要检测的值
-
-**返回：**
-
-​ `boolean`
-
-​ true:是 | false:否
-
-**例子：**
+**示例：**
 
 ```javascript
-isNumber(123)
+rutils.isNumber(123)
 // => true
 
-isNumber('123')
+rutils.isNumber('123')
 // => false
 
-isNumber(true)
+rutils.isNumber(true)
 // => false
 ```
 
 ### isObject
 
-> 值是否为对象，注意：{}、new Object(), 内部实现为：`Object.prototype.toString.call(value) === '[object Object]'`
+> 值是否为纯净的对象
+
+**语法：**
 
 ```js
 rutils.isObject(value)
 ```
 
-**参数：**
-
-​ 1. `value` 需要检测的值
-
-**返回：**
-
-​ `boolean`
-
-​ true:是 | false:否
-
-**例子：**
+**示例：**
 
 ```javascript
-isObject({})
+rutils.isObject({})
 // => true
 
 function Person() {}
-isObject(new Person())
+rutils.isObject(new Person())
 // => true
 
-isObject(new Date())
+rutils.isObject(new Date())
 // => false
 ```
 
@@ -369,75 +305,57 @@ isObject(new Date())
 
 > 值是否为正则表达式
 
+**语法：**
+
 ```js
 rutils.isRegExp(value)
 ```
 
-**参数：**
-
-​ 1. `value` 需要检测的值
-
-**返回：**
-
-​ `boolean`
-
-​ true:是 | false:否
-
-**例子：**
+**示例：**
 
 ```javascript
-isRegExp(new RegExp('\\w+'))
+rutils.isRegExp(new RegExp('\\w+'))
 // => true
 
-isRegExp(/^[1][3,4,5,7,8][0-9]{9}$/)
+rutils.isRegExp(/^[1][3,4,5,7,8][0-9]{9}$/)
 // => true
 
-isRegExp(111)
+rutils.isRegExp(111)
 // => false
 ```
 
 ### isType
 
-> 值是否为指定类型，底层调用的是 `Object.prototype.toString.call(value1)`
+> 值是否为指定类型`
+
+**语法：**
 
 ```js
-rutils.isType(value1, value2)
+rutils.isType(value, type)
 ```
 
-**参数：**
-
-​ 1. `value1` {any} 需要检测的值 1
-
-​ 2. `value2` {String} 需要检测的值的类型，小驼峰, 如：（map、set、date、array....）等
-
-**返回：**
-
-​ `boolean`
-
-​ true:是 | false:否
-
-**例子：**
+**示例：**
 
 ```javascript
-isType({}, 'object')
+rutils.isType({}, 'object')
 // => true
 
-isType({}, 'Object')
+rutils.isType({}, 'Object')
 // => false, 注意小写
 
-isType([], 'array')
+rutils.isType([], 'array')
 // => true
 
-isType(new Set(), 'set')
+rutils.isType(new Set(), 'set')
 // => true
 
-isType(new Set(), 'Set')
+rutils.isType(new Set(), 'Set')
 // => false
 
-isType(new Map(), 'map')
+rutils.isType(new Map(), 'map')
 // => true
 
-isType(new Date(), 'object')
+rutils.isType(new Date(), 'object')
 // => false
 ```
 
@@ -445,33 +363,25 @@ isType(new Date(), 'object')
 
 > 值是否为字符串类型
 
+**语法：**
+
 ```js
-rutils.isString(value1)
+rutils.isString(value)
 ```
 
-**参数：**
-
-​ 1.`value1` {any} 需要检测的值 1
-
-**返回：**
-
-​ `boolean`
-
-​ true:是 | false:否
-
-**例子：**
+**示例：**
 
 ```javascript
-isString('hello word!')
+rutils.isString('hello word!')
 // => true
 
-isString('')
+rutils.isString('')
 // => true
 
-isString(null)
+rutils.isString(null)
 // => false
 
-isString({})
+rutils.isString({})
 // => false
 ```
 
@@ -479,30 +389,22 @@ isString({})
 
 > 值是否为字符串类型
 
+**语法：**
+
 ```js
 rutils.isUndefined(value)
 ```
 
-**参数：**
-
-​ 1.`value` {any} 需要检测的值
-
-**返回：**
-
-​ `boolean`
-
-​ true:是 | false:否
-
-**例子：**
+**示例：**
 
 ```javascript
-isUndefined(undefined)
+rutils.isUndefined(undefined)
 // => true
 
 const obj = {}
-isUndefined(obj.name)
+rutils.isUndefined(obj.name)
 // => true
 
-isUndefined('undefined')
+rutils.isUndefined('undefined')
 // => false
 ```
