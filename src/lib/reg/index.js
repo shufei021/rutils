@@ -160,7 +160,7 @@ const isInteger = number => {
  * 验证数字
  * @param { string } value
  */
-const isNumber = value => /^\d{1,}$/g.test(value)
+const isNumberStr = value => /^\d{1,}$/g.test(value)
 
 /**
  *
@@ -218,7 +218,7 @@ export default {
     isChineseCharacter,
     isDecimal,
     isInteger,
-    isNumber,
+    isNumberStr,
     isQQNum,
     isNumAndStr,
     isEnglish,
