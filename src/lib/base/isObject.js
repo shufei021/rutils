@@ -1,3 +1,4 @@
+import getType from './getType'
 /*
  * @Description:isObject 是否是对象类型
  *
