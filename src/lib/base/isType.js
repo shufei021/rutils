@@ -1,3 +1,4 @@
+import getType from "./getType";
 /**
  * @description: 判断传入的值和类型 是否匹配
  * @param  {*} value ：传入的值
