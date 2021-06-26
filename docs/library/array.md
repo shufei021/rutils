@@ -123,6 +123,8 @@ rutils.unique(a1)
 //     {id: 4, name: "小明", age: 24}
 //     {id: 5, name: "小红", age: 25}
 // ]
+
+// 推荐 rutils.unique(a1,'id') 进行去重
 ```
 
 ### intersection

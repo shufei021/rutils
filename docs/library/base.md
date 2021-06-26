@@ -4,7 +4,6 @@
 
 | 名称                                   | 描述                     |
 | -------------------------------------- | ------------------------ |
-| <a href="#gettype">getType</a>         | 获取值类型               |
 | <a href="#isempty">isEmpty</a>         | 是否为空                 |
 | <a href="#isequals">isEquals</a>       | 深度比较两者的值是否相等 |
 | <a href="#isarray">isArray</a>         | 是否为数组               |

@@ -1,284 +1,212 @@
 # 文件相关
 
+> 可直接复制相关代码 在控制台输出结果
+
 ## API
 
-| 名称                                                       | 描述                                                                                              |
-| ---------------------------------------------------------- | :------------------------------------------------------------------------------------------------ |
-| <a href="#base64toblob">base64ToBlob</a>                   | base64 转为流                                                                                     |
-| <a href="#base64tofile">base64ToFile</a>                   | base64 转文件                                                                                     |
-| <a href="#blobtobase64">blobToBase64</a>                   | 文件流转为 base64                                                                                 |
-| <a href="#blobtofile">blobToFile</a>                       | 文件流转为 File 文件                                                                              |
-| <a href="#bytesformat">bytesFormat</a>                     | 字节自动转换为：B、KB、MB、GB、TB....                                                             |
-| <a href="#downloadbybase64">downloadByBase64</a>           | base64 文件下载                                                                                   |
-| <a href="#downloadbyimglink">downloadByImgLink</a>         | 根据图片 UrutilsL 下载图片                                                                        |
-| <a href="#downloadbyimgselector">downloadByImgSelector</a> | 根据 img 标签选择器下载图片，如：`<img src="xxx.png" id="img" />`,`downloadByImgSelector('#img')` |
+| 名称                                                       | 描述    |
+| ---------------------------------------------------------- | :--------------------------------- |
+| <a href="#base64toblob">base64ToBlob</a>                   | base64 转 blob  |
+| <a href="#base64tofile">base64ToFile</a>                   | base64 转 file     |
+| <a href="#blobtobase64">blobToBase64</a>                   | blob 转 base64           |
+| <a href="#blobtofile">blobToFile</a>                       | blob 转  file          |
+| <a href="#filetobase64">fileToBase64</a>                   | file 转  base64          |
+| <a href="#filetoblob">fileToBlob</a>                       | file 转  blob          |
+| <a href="#bytesformat">bytesFormat</a>                     | 字节自动转换为：B、KB、MB、GB、TB    |
+| <a href="#downloadbybase64">downloadByBase64</a>           | base64 文件下载   |
+| <a href="#downloadbyimglink">downloadByImgLink</a>         | 根据图片 imgUrl 下载图片   |
+| <a href="#downloadbyimgselector">downloadByImgSelector</a> | 根据 img 标签选择器下载图片|
 
 ### base64ToBlob
 
-> base64 转为文件流
+> base64 转 blob
+
+**语法：**
 
 ```javascript
-rutils.base64ToBlob(value)
+rutils.base64ToBlob(base64)
 ```
 
-**参数：**
-
-​ 1.`value` { string } base64
-
-**返回值：**
-
-​ `blob`
-
-​ 文件流
-
-**例子：**
+**示例：**
 
 ```javascript
-let res = base64ToBlob('data:image/png;base64,......')
-console.log(Object.prototype.toString.call(res) === '[object Bolb]') //判断数据类型
-// => true
+rutils.base64ToBlob('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFrSURBVDhPjZJLLwNRFMe7EWInTUmEaGi9pyo0fYSi2pIQZSdsfQsbawtfwEotWvpWTZBYkZA2io2NT1Btqljoy/zde9thWmM4yS9z7p3zS86ZM4rhsB0CXNjBntrAJDQSDIRmwEUqNZQf8lB4Fmq/pYLP/A059wWnoIs4peUunwmG6CISmXs85B6RyWfxXHhBtpBjbN5so3m/V1puPxiDKeaCEGW+jHw5j+JHCSWSb93uoMmtkZY7Dg0wHi9VVWAkMgelh2PzagNWMrPt67v8KSs9Oih2W9Do7mFog1boj+bl5XfSKo14+g4XqTiu00lcphKwxFbQ6TPKy6/FNybXh+1kFSqvXl7meZ4Vu843YCJn59k6HKdrbE10bllZiG7/BBr21Gj1jqKNMEjEX/dMV2WOLVdVsJzeiWvE1Mhqvxnj0QVcPSUZNKd34hoxNTJtif6eKo+eQXNxm/XUyAL9oWmG1DsxkvL/sOMTgE8YwIjgtWoAAAAASUVORK5CYII=')
+// Blob {size: 470, type: "image/png"} 
 ```
 
 ### base64ToFile
 
-> base64 转为 File 文件
+> base64 转 file
 
+**语法：**
 ```javascript
-rutils.base64ToFile(value1, value2)
+rutils.base64ToFile(base64, fileName)
 ```
 
-**参数：**
-
-​ 1.`value1` {string} base64 字符
-
-​ 2.`value2` {string} 文件名称，如：`测试文件.png`
-
-**返回值：**
-
-​ `file`
-
-​ 返回的数据为 `new File()`
+**示例：**
+```js
+rutils.base64ToFile('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFrSURBVDhPjZJLLwNRFMe7EWInTUmEaGi9pyo0fYSi2pIQZSdsfQsbawtfwEotWvpWTZBYkZA2io2NT1Btqljoy/zde9thWmM4yS9z7p3zS86ZM4rhsB0CXNjBntrAJDQSDIRmwEUqNZQf8lB4Fmq/pYLP/A059wWnoIs4peUunwmG6CISmXs85B6RyWfxXHhBtpBjbN5so3m/V1puPxiDKeaCEGW+jHw5j+JHCSWSb93uoMmtkZY7Dg0wHi9VVWAkMgelh2PzagNWMrPt67v8KSs9Oih2W9Do7mFog1boj+bl5XfSKo14+g4XqTiu00lcphKwxFbQ6TPKy6/FNybXh+1kFSqvXl7meZ4Vu843YCJn59k6HKdrbE10bllZiG7/BBr21Gj1jqKNMEjEX/dMV2WOLVdVsJzeiWvE1Mhqvxnj0QVcPSUZNKd34hoxNTJtif6eKo+eQXNxm/XUyAL9oWmG1DsxkvL/sOMTgE8YwIjgtWoAAAAASUVORK5CYII=','测试名称')
+// File {name: "测试名称", lastModified: 1624334190275, lastModifiedDate: Tue Jun 22 2021 11:56:30 GMT+0800 (中国标准时间), webkitRelativePath: "", size: 470, …}
+```
 
 ### blobToBase64
 
-> blob 文件流转为 Base64
+> blob 转 base64
 
+**语法：**
 ```javascript
-rutils.blobToBase64(value)
+rutils.blobToBase64(Blob)
 ```
 
-**参数：**
-
-​ 1.`value1` {blob} 文件流数据
-
-**返回值：**
-
-​ `string`
-
-​ 转换后的 base64 字符串
-
-**例子：**
+**示例：**
 
 ```javascript
-
+rutils.blobToBase64(rutils.base64ToBlob('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFrSURBVDhPjZJLLwNRFMe7EWInTUmEaGi9pyo0fYSi2pIQZSdsfQsbawtfwEotWvpWTZBYkZA2io2NT1Btqljoy/zde9thWmM4yS9z7p3zS86ZM4rhsB0CXNjBntrAJDQSDIRmwEUqNZQf8lB4Fmq/pYLP/A059wWnoIs4peUunwmG6CISmXs85B6RyWfxXHhBtpBjbN5so3m/V1puPxiDKeaCEGW+jHw5j+JHCSWSb93uoMmtkZY7Dg0wHi9VVWAkMgelh2PzagNWMrPt67v8KSs9Oih2W9Do7mFog1boj+bl5XfSKo14+g4XqTiu00lcphKwxFbQ6TPKy6/FNybXh+1kFSqvXl7meZ4Vu843YCJn59k6HKdrbE10bllZiG7/BBr21Gj1jqKNMEjEX/dMV2WOLVdVsJzeiWvE1Mhqvxnj0QVcPSUZNKd34hoxNTJtif6eKo+eQXNxm/XUyAL9oWmG1DsxkvL/sOMTgE8YwIjgtWoAAAAASUVORK5CYII=')).then(base64=>{
+    console.log(base64)
+})
 ```
 
 ### blobToFile
 
-> 文件流转为 File 对象
+>  blob 转 file 
 
+**语法：**
 ```javascript
-rutils.blobToFile(value1, value2)
+rutils.blobToFile(Blob, fileName)
 ```
 
-**参数：**
-
-​ 1.`value1` {blob} blob 文件流数据；
-
-​ 1.`value2` {string} 文件名称；
-
-**返回值：**
-
-​ `file`
-
-​ 转换后的 `new File()` 数据
-
-**例子：**
+**示例：**
+```js
+rutils.blobToFile(rutils.base64ToBlob('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFrSURBVDhPjZJLLwNRFMe7EWInTUmEaGi9pyo0fYSi2pIQZSdsfQsbawtfwEotWvpWTZBYkZA2io2NT1Btqljoy/zde9thWmM4yS9z7p3zS86ZM4rhsB0CXNjBntrAJDQSDIRmwEUqNZQf8lB4Fmq/pYLP/A059wWnoIs4peUunwmG6CISmXs85B6RyWfxXHhBtpBjbN5so3m/V1puPxiDKeaCEGW+jHw5j+JHCSWSb93uoMmtkZY7Dg0wHi9VVWAkMgelh2PzagNWMrPt67v8KSs9Oih2W9Do7mFog1boj+bl5XfSKo14+g4XqTiu00lcphKwxFbQ6TPKy6/FNybXh+1kFSqvXl7meZ4Vu843YCJn59k6HKdrbE10bllZiG7/BBr21Gj1jqKNMEjEX/dMV2WOLVdVsJzeiWvE1Mhqvxnj0QVcPSUZNKd34hoxNTJtif6eKo+eQXNxm/XUyAL9oWmG1DsxkvL/sOMTgE8YwIjgtWoAAAAASUVORK5CYII='), 'fileName')
+// File {name: "fileName", lastModified: 1624340040360, lastModifiedDate: Tue Jun 22 2021 13:34:00 GMT+0800 (中国标准时间), webkitRelativePath: "", size: 470, …}
+```
 
 ### fileToBase64
 
-> 文件流转文件
+> file 转 base64
+
+**语法：**
 
 ```javascript
-rutils.fileToBase64(value)
+rutils.fileToBase64(file)
 ```
 
-**参数：**
-
-​ 1.`value` {file} file 文件对象
-
-**返回值：**
-
-​ `string`
-
-​ 转换后的 base64 字符数据
-
-**例子：**
+**示例：**
 
 ```javascript
-rutils.fileToBase64(new File())
+rutils.fileToBase64(rutils.base64ToFile('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFrSURBVDhPjZJLLwNRFMe7EWInTUmEaGi9pyo0fYSi2pIQZSdsfQsbawtfwEotWvpWTZBYkZA2io2NT1Btqljoy/zde9thWmM4yS9z7p3zS86ZM4rhsB0CXNjBntrAJDQSDIRmwEUqNZQf8lB4Fmq/pYLP/A059wWnoIs4peUunwmG6CISmXs85B6RyWfxXHhBtpBjbN5so3m/V1puPxiDKeaCEGW+jHw5j+JHCSWSb93uoMmtkZY7Dg0wHi9VVWAkMgelh2PzagNWMrPt67v8KSs9Oih2W9Do7mFog1boj+bl5XfSKo14+g4XqTiu00lcphKwxFbQ6TPKy6/FNybXh+1kFSqvXl7meZ4Vu843YCJn59k6HKdrbE10bllZiG7/BBr21Gj1jqKNMEjEX/dMV2WOLVdVsJzeiWvE1Mhqvxnj0QVcPSUZNKd34hoxNTJtif6eKo+eQXNxm/XUyAL9oWmG1DsxkvL/sOMTgE8YwIjgtWoAAAAASUVORK5CYII=','测试名称')).then(Base64=>{
+    console.log(Base64)
+})
 ```
 
 ### fileToBlob
 
-> 文件转为文件流，由于有异步操作，所以返回值为一个`Promise`
+> file 转 blob
+
+**语法：**
 
 ```javascript
-rutils.fileToBlob(value)
+rutils.fileToBlob(file)
 ```
 
-**参数：**
-
-​ 1.`value` {file} File 文件
-
-**返回值：**
-
-​ `promise<blob>`
-
-​ `Promise.resolve(res)`， res 则为 `new Blob` 文件流数据
-
-**例子：**
+**示例：**
 
 ```javascript
-// 异步
-fileToBlob(new File())
-    .then(data => {
-        let dataType = Object.prototype.toString.call(data)
-        console.log(dataType === '[object Blob]')
-        // => true
-    })
-    .catch(err => {
-        console.log(err)
+rutils.fileToBlob(rutils.base64ToFile('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFrSURBVDhPjZJLLwNRFMe7EWInTUmEaGi9pyo0fYSi2pIQZSdsfQsbawtfwEotWvpWTZBYkZA2io2NT1Btqljoy/zde9thWmM4yS9z7p3zS86ZM4rhsB0CXNjBntrAJDQSDIRmwEUqNZQf8lB4Fmq/pYLP/A059wWnoIs4peUunwmG6CISmXs85B6RyWfxXHhBtpBjbN5so3m/V1puPxiDKeaCEGW+jHw5j+JHCSWSb93uoMmtkZY7Dg0wHi9VVWAkMgelh2PzagNWMrPt67v8KSs9Oih2W9Do7mFog1boj+bl5XfSKo14+g4XqTiu00lcphKwxFbQ6TPKy6/FNybXh+1kFSqvXl7meZ4Vu843YCJn59k6HKdrbE10bllZiG7/BBr21Gj1jqKNMEjEX/dMV2WOLVdVsJzeiWvE1Mhqvxnj0QVcPSUZNKd34hoxNTJtif6eKo+eQXNxm/XUyAL9oWmG1DsxkvL/sOMTgE8YwIjgtWoAAAAASUVORK5CYII=','测试名称'))
+    .then(blob => {
+        console.log(blob)
     })
 ```
 
 ### bytesFormat
 
-> 文件大小字节格式化，B、KB、MB、GB、TB...
->
-> 分别有：`['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']`
+> 文件大小字节格式化成 `['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']`
 
+**语法：**
 ```javascript
-rutils.bytesFormat(value)
+rutils.bytesFormat(bytes)
 ```
 
-**参数：**
-
-​ 1.`value` {number} 文件的大小, 单位：`字节`
-
-**返回值：**
-
-​ `string`
-
-​ 格式化后的文件大小，如：30KB、2MB、50GB....
-
-**例子：**
+**示例：**
 
 ```javascript
-bytesFormat(1024)
+rutils.bytesFormat(1024)
 // => "1.00 KB"
 
-bytesFormat(2399624)
+rutils.bytesFormat(2399624)
 // => "2.29 MB"
 
-bytesFormat(3100399624)
+rutils.bytesFormat(3100399624)
 // => "2.89 GB"
 
-bytesFormat(3100399621124)
+rutils.bytesFormat(3100399621124)
 // => "2.82 TB"
 ```
 
 ### downloadByBase64
 
-> 通过 base64 字符串下载文件
+> 通过 base64 下载文件
 
 ```javascript
-rutils.downloadByBase64(value1, value2)
+rutils.downloadByBase64(base64, fileName)
 ```
 
-**参数：**
-
-​ 1.`value1` {string} base64 字符串
-
-​ 1.`value2` {string} 文件名称；
-
-**返回值：**
-
-​ `void`
-
-**例子：**
+**示例：**
 
 ```javascript
-//提示：文件下载的时候不需处理掉头部，头部全部传入方法中，方法内部坐了头部信息处理；
-downloadByBase64('data:image/png;base64,......', '测试base64下载.png')
+rutils.downloadByBase64('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFrSURBVDhPjZJLLwNRFMe7EWInTUmEaGi9pyo0fYSi2pIQZSdsfQsbawtfwEotWvpWTZBYkZA2io2NT1Btqljoy/zde9thWmM4yS9z7p3zS86ZM4rhsB0CXNjBntrAJDQSDIRmwEUqNZQf8lB4Fmq/pYLP/A059wWnoIs4peUunwmG6CISmXs85B6RyWfxXHhBtpBjbN5so3m/V1puPxiDKeaCEGW+jHw5j+JHCSWSb93uoMmtkZY7Dg0wHi9VVWAkMgelh2PzagNWMrPt67v8KSs9Oih2W9Do7mFog1boj+bl5XfSKo14+g4XqTiu00lcphKwxFbQ6TPKy6/FNybXh+1kFSqvXl7meZ4Vu843YCJn59k6HKdrbE10bllZiG7/BBr21Gj1jqKNMEjEX/dMV2WOLVdVsJzeiWvE1Mhqvxnj0QVcPSUZNKd34hoxNTJtif6eKo+eQXNxm/XUyAL9oWmG1DsxkvL/sOMTgE8YwIjgtWoAAAAASUVORK5CYII=', '测试')
 ```
 
 ### downloadByImgLink
 
-> 通过一个图片的 `UrutilsL` 下载一张图片
+> 通过图片的 `imgUrl` 进行下载
 
+**语法：**
 ```javascript
-rutils.downloadByImgLink(value1, value2, value3)
+rutils.downloadByImgLink(imgUrl,fileName, width, height)
 ```
 
-**参数：**
-
-​ 1.`value1` {string} 图片的 UrutilsL 地址
-
-​ 2.`value2` {number} 图片宽度，默认为自身宽；
-
-​ 3.`value3` {number} 图片高度，默认为自身高；
-
-**返回值：**
-
-​ `promise<string>`
-
-​ 返回为`Promise`，其`resolve`中数据为图片的 base64 字符；
-
-**例子：**
+**示例：**
 
 ```javascript
-// 1.默认用法
-downloadByImgLink('https://pics5.baidu.com/feed/26607a01094d08f17d.png')
 
-// 2.设置自定义宽、高
-downloadByImgLink('https://pics5.baidu.com/feed/26607a01094d08f17d.png', 200, 200)
+rutils.downloadByImgLink('https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1340127580,1407454083&fm=26&gp=0.jpg','头像').then(res=>{
+    console.log('下载成功')
+}).catch(err=>{
+    console.log('下载失败')
+})
+
+// 设置下载图标的宽、高
+rutils.downloadByImgLink('https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1340127580,1407454083&fm=26&gp=0.jpg','头像', 200, 200).then(res=>{
+    console.log('下载成功')
+}).catch(err=>{
+    console.log('下载失败')
+})
 ```
 
 ### downloadByImgSelector
 
 > 通过 DOM 中的 img 标签，使用选择器下载图片
 
+**语法：**
 ```javascript
-rutils.downloadByImgSelector(value1, value2)
+rutils.downloadByImgSelector(imgSlector, fileName)
 ```
 
-**参数：**
+**示例：**
 
-​ 1.`value1` {stirng} dom 中的 img 标签选择器，如：`#user-avatar`；
-
-​ 1.`value2` {string} 图片名称；
-
-**返回值：**
-
-​ `void`
-
-**例子：**
+<img src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=251289958,1860898046&fm=26&gp=0.jpg" id="test" />
 
 ```html
-<img src="https://pics5.baidu.com/feed/26607a01094d08f17d.png" id="test-img" />
+<body>
+    <img id="test" src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=251289958,1860898046&fm=26&gp=0.jpg"  />
+</body>    
 
 <script>
-    downloadByImgSelector('#test-img', '测试下载图片.png')
+    rutils.downloadByImgSelector('#test', '测试下载').then(res=>{
+        console.log('下载成功')
+    }).catch(err=>{
+        console.log('下载失败')
+    })
 </script>
 ```
