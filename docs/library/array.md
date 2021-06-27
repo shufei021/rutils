@@ -14,6 +14,8 @@
 | <a href="#group">group</a>                             | 数组分组                                      |
 | <a href="#mean">mean</a>                               | 数组平均数                                    |
 | <a href="#arrayfill">arrayFill</a>                     | 数组填充                                      |
+| <a href="#pick">pick</a>                               | 数组筛选                                      |
+| <a href="#make">make</a>                               | 数组项重组                                    |
 | <a href="#delby">delBy</a>                             | 数组条件删除                                  |
 | <a href="#exchangepostion">exchangePostion</a>         | 数组值位置交换                                |
 | <a href="#insetpostion">insetPostion</a>               | 数组值插入交换                                |
@@ -239,6 +241,85 @@ const currentArray = [
     { id: '15', name: '小涛', pid: '06', job: '运维工程师' }
 ]
 rutils.arrayToTree(currentArray)
+```
+
+### arrayToObject
+
+> 数组转对象
+
+**语法：**
+
+```js
+rutils.arrayToObject(array)
+```
+
+**示例：**
+
+```js
+rutils.arrayToObject([1, 2, 3]) //{0: 1, 1: 2, 2: 3}
+rutils.arrayToObject([{ A: 1 }, { b: 2 }]) // {0:{A:1},1:{b:2}}
+```
+
+### pick
+
+> json 数组，属性筛选
+
+**语法：**
+
+```js
+rutils.pick(array, keys)
+```
+
+**示例：**
+
+```js
+let arr = [
+    {uuid: "32317268-a82f-384c-33a1-20b48c69fa07", name: "张三", time: "2021-06-28 15:07:18", age: 20}
+    {uuid: "514c416f-379b-fc13-853c-291026504bb9", name: "李四", time: "2021-06-29 15:07:18", age: 21}
+    {uuid: "e2b03c8b-654a-3c48-c853-19aeccf4d00e", name: "小红", time: "2021-06-30 15:07:18", age: 22}
+    {uuid: "d1135ef4-f11e-d9ee-39b2-82119174fd5c", name: "李明", time: "2021-07-01 15:07:18", age: 23}
+]
+rutils.pick(arr,['uuid','name'])
+
+/*
+[
+    {uuid: "32317268-a82f-384c-33a1-20b48c69fa07", name: "张三"}
+    {uuid: "514c416f-379b-fc13-853c-291026504bb9", name: "李四"}
+    {uuid: "e2b03c8b-654a-3c48-c853-19aeccf4d00e", name: "小红"}
+    {uuid: "d1135ef4-f11e-d9ee-39b2-82119174fd5c", name: "李明"}
+]
+*/
+```
+
+### make
+
+> json 数组 项重组
+
+**语法：**
+
+```js
+rutils.make(array, k1, k2)
+```
+
+**示例：**
+
+```js
+let arr = [
+    {uuid: "32317268-a82f-384c-33a1-20b48c69fa07", name: "张三", time: "2021-06-28 15:07:18", age: 20}
+    {uuid: "514c416f-379b-fc13-853c-291026504bb9", name: "李四", time: "2021-06-29 15:07:18", age: 21}
+    {uuid: "e2b03c8b-654a-3c48-c853-19aeccf4d00e", name: "小红", time: "2021-06-30 15:07:18", age: 22}
+    {uuid: "d1135ef4-f11e-d9ee-39b2-82119174fd5c", name: "李明", time: "2021-07-01 15:07:18", age: 23}
+]
+// 数组项 指定某项值 为 key，某项值 为 value
+rutils.make(arr, 'uuid', 'age')
+/*
+[
+    {32317268-a82f-384c-33a1-20b48c69fa07: 20}
+    {514c416f-379b-fc13-853c-291026504bb9: 21}
+    {e2b03c8b-654a-3c48-c853-19aeccf4d00e: 22}
+    {d1135ef4-f11e-d9ee-39b2-82119174fd5c: 23}
+]
+*/
 ```
 
 ### delBy
