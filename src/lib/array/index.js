@@ -21,6 +21,8 @@ import timesTotal from './timesTotal'
 import unique from './unique'
 import union from './union'
 import isRepeat from './isRepeat'
+import pick from './pick'
+import make from './make'
 /**
  * 数组
  */
@@ -47,5 +49,7 @@ export default {
     sample,
     sum,
     timesTotal,
-    unique
+    unique,
+    make,
+    pick
 }
