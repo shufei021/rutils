@@ -23,6 +23,8 @@ import union from './union'
 import isRepeat from './isRepeat'
 import pick from './pick'
 import make from './make'
+import getTreeNode from './getTreeNode'
+
 /**
  * 数组
  */
@@ -51,5 +53,6 @@ export default {
     timesTotal,
     unique,
     make,
-    pick
+    pick,
+    getTreeNode
 }
