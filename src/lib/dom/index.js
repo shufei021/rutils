@@ -22,6 +22,7 @@ import getScrollXY from "./getScrollXY";
 import dynamicAddCss from "./dynamicAddCss";
 import dynamicAddScript from "./dynamicAddScript";
 import createElement from "./createElement";
+import isScrollBottom from "./isScrollBottom";
 
 export default {
     bindEvent,
@@ -48,4 +49,5 @@ export default {
     dynamicAddCss,
     dynamicAddScript,
     createElement,
+    isScrollBottom
 };
