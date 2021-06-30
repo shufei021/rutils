@@ -1,6 +1,6 @@
 /*
  * @Description: 重写javascript原生方法,兼容
- * @Author: 格格梳
+ * @Author: shufei
  * @Date: 2021-05-10 16:31:17
  * @LastEditTime: 2021-06-06 11:38:42
  */
@@ -22,6 +22,7 @@ if (!String.prototype.padStart) {
     }
     /* eslint-disable */
 }
+
 
 if (!String.prototype.padEnd) {
     String.prototype.padEnd = function padEnd(targetLength, padString) {
