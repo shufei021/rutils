@@ -167,11 +167,11 @@ rutils.fmtNum(val, isThousands, len)
 示例：
 
 ```js
- * rutils.fmtNum() // ""
- * rutils.fmtNum(11111111111.333555) // "11111111111.333555"
- * rutils.fmtNum(11111111111.333555,false,3) // "11111111111.334"
- * rutils.fmtNum(11111111111.333555,true) // "11,111,111,111.333555"
- * rutils.fmtNum(11111111111.333555,true,3) // "11,111,111,111.334"
+  rutils.fmtNum() // ""
+  rutils.fmtNum(11111111111.333555) // "11111111111.333555"
+  rutils.fmtNum(11111111111.333555,false,3) // "11111111111.334"
+  rutils.fmtNum(11111111111.333555,true) // "11,111,111,111.333555"
+  rutils.fmtNum(11111111111.333555,true,3) // "11,111,111,111.334"
 ```
 
 ### round
