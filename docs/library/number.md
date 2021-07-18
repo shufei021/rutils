@@ -54,7 +54,7 @@ rutils.add([1, 2, 3, 4, 5, 6, 7.124], 2)
  * @param {Number} b ：被减数
  * @param {Number} digit ：结果保留位数
  */
-rutils.subtract((a = 0), (b = 0), digit)
+rutils.subtract(a, b, digit)
 ```
 
 **示例：**
@@ -78,9 +78,9 @@ rutils.subtract([30, 2, 3, 4, 5, 6, 7.124], 2)
 ```javascript
 /**
  * 两数相乘
- * @param {*} a :乘数
- * @param {*} b ：被乘数
- * @param {*} digit ：结果保留位数
+ * @param { Number } a :乘数
+ * @param { Number } b ：被乘数
+ * @param { Number } digit ：结果保留位数
  */
 rutils.multiply(a, b, digit)
 ```
@@ -160,18 +160,20 @@ rutils.devide([1, 9], 3) // "0.111"
  * @param { String | Number } val : 有效数数字
  * @param { Boolean } isThousands : 整数部分是否进行千分位,默认值 false
  * @param { Number } digit : 小数部分四舍五入保留到的位数
+ * @param { Boolean } isCalc : 计算结果是否 Number 处理
  */
-rutils.fmtNum(val, isThousands, len)
+rutils.fmtNum(val, isThousands, len, isCalc)
 ```
 
 示例：
 
 ```js
-  rutils.fmtNum() // ""
-  rutils.fmtNum(11111111111.333555) // "11111111111.333555"
-  rutils.fmtNum(11111111111.333555,false,3) // "11111111111.334"
-  rutils.fmtNum(11111111111.333555,true) // "11,111,111,111.333555"
-  rutils.fmtNum(11111111111.333555,true,3) // "11,111,111,111.334"
+rutils.fmtNum() // ""
+rutils.fmtNum(11111111111.333555) // "11111111111.333555"
+rutils.fmtNum(11111111111.333555, false, 3) // "11111111111.334"
+rutils.fmtNum(11111111111.333555, true) // "11,111,111,111.333555"
+rutils.fmtNum(11111111111.333555, true, 3) // "11,111,111,111.334"
+rutils.fmtNum(1.45, false, 3, true) // 1.45
 ```
 
 ### round
@@ -183,8 +185,8 @@ rutils.fmtNum(val, isThousands, len)
 ```js
 /**
  * 四舍五入到指定位数
- * @param {Number} n:小数
- * @param {Number} decimals ：四舍五入到指定位数
+ * @param { Number } n:小数
+ * @param { Number } decimals ：四舍五入到指定位数
  */
 rutils.round(n, decimals)
 ```
@@ -215,7 +217,7 @@ rutils.isNum(val)
 **示例：**
 
 ```javascript
-let arr = [{}, [], undefined, null, 123, '123', Symbol('111'), function () {}, new Date(), false, /\d+/gi, NaN, Infinity]
+let arr = [{}, [], undefined, null, 123, '123', Symbol('111'), function() {}, new Date(), false, /\d+/gi, NaN, Infinity]
 arr.forEach(item => {
     console.log(rutils.isNum(item))
     // true: (123, '123')
