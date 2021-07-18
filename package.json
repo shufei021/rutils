@@ -1,6 +1,6 @@
 {
     "name": "rutilsjs",
-    "version": "0.0.1",
+    "version": "0.0.4",
     "description": "Front-end tool library",
     "private": false,
     "main": "./build/index.js",
