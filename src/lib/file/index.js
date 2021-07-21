@@ -8,6 +8,7 @@ import fileToBlob from './fileToBlob'
 import downloadByBase64 from './downloadByBase64'
 import downloadByImgLink from './downloadByImgLink'
 import downloadByImgSelector from './downloadByImgSelector'
+import bufferFileDownload from './bufferFileDownload'
 
 export default {
     bytesFormat,
@@ -19,5 +20,6 @@ export default {
     fileToBlob,
     downloadByBase64,
     downloadByImgLink,
-    downloadByImgSelector
+    downloadByImgSelector,
+    bufferFileDownload
 }
