@@ -25,6 +25,19 @@ import pick from './pick'
 import make from './make'
 import getTreeNode from './getTreeNode'
 
+import arrayRestore from './arrayRestore'
+import arrayGroup from './arrayGroup'
+import arrayAt from './arrayAt'
+import arrayRepeat from './arrayRepeat'
+import arraySubstr from './arraySubstr'
+import delByIndexs from './delByIndexs'
+import findIndexs from './findIndexs'
+import groupArchive from './groupArchive'
+import groupState from './groupState'
+import lastFind from './lastFind'
+import lastFindIndex from './lastFindIndex'
+import rangeGenerater from './rangeGenerater'
+
 /**
  * 数组
  */
@@ -54,5 +67,17 @@ export default {
     unique,
     make,
     pick,
-    getTreeNode
+    getTreeNode,
+    arrayGroup,
+    arrayAt,
+    arrayRepeat,
+    arraySubstr,
+    delByIndexs,
+    findIndexs,
+    groupArchive,
+    groupState,
+    lastFind,
+    lastFindIndex,
+    rangeGenerater,
+    arrayRestore
 }
