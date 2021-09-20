@@ -37,6 +37,9 @@ import groupState from './groupState'
 import lastFind from './lastFind'
 import lastFindIndex from './lastFindIndex'
 import rangeGenerater from './rangeGenerater'
+import getTreePath from './getTreePath'
+import queryTreeNode from './queryTreeNode'
+import queryTreePath from './queryTreePath'
 
 /**
  * 数组
@@ -79,5 +82,8 @@ export default {
     lastFind,
     lastFindIndex,
     rangeGenerater,
-    arrayRestore
+    arrayRestore,
+    getTreePath,
+    queryTreeNode,
+    queryTreePath
 }
