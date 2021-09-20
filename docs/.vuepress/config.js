@@ -14,7 +14,7 @@ module.exports = {
             { text: '首页', link: '/' },
             { text: '文档', link: '/library/' },
             { text: 'github', link: 'https://github.com/shufei021/rutils' },
-            { text: '友情链接', link: 'https://shufei021.github.io/rdate/' }
+            { text: '日期时间工具', link: 'https://shufei021.github.io/rdate/' }
         ],
         sidebarDepth: 2,
         // sidebar: 'auto'

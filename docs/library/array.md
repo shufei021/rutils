@@ -1,5 +1,10 @@
 # 数组相关
 
+::: tip 说明
+目前编写数组相关方法 30+，涵盖数组的各种操作，可在当前页面 F12 打开控制台直接 CV 到控制看结果，
+没有没有你想要的方法，请联系 <span style="color:#26B1F6">QQ 1017981699</span> 或是 <span style="color:#26B1F6">github</span> 提 <span style="color:#26B1F6">issue</span>，我会尽快处理
+:::
+
 ## API
 
 | 名称                                                   | 描述                                          |
@@ -28,6 +33,20 @@
 | <a href="#rangestep">rangeStep</a>                     | 数组生成 指定范围内指定步长的数组             |
 | <a href="#sample">sample</a>                           | 数组中获取随机数 1 个                         |
 | <a href="#timestotal">timesTotal</a>                   | 数组中出现次数统计                            |
+| <a href="#arrayrestore">arrayRestore</a>               | 数组状态还原                                  |
+| <a href="#arraygroup">arrayGroup </a>                  | 按数组原状态顺序分组                          |
+| <a href="#arrayat">arrayAt</a>                         | 数组负索引访问                                |
+| <a href="#arrayrepeat ">arrayRepeat </a>               | 数组复制                                      |
+| <a href="#arraysubstr">arraySubstr</a>                 | 数组截取                                      |
+| <a href="#delbyindexs">delByIndexs</a>                 | 数组值多个删除                                |
+| <a href="#grouparchive">groupArchive</a>               | 数组归档                                      |
+| <a href="#lastfind">lastFind</a>                       | 数组反向查询                                  |
+| <a href="#lastfindindex">lastFindIndex</a>             | 数组反向查询索引                              |
+| <a href="#gettreepath">getTreePath</a>                 | 获取树路径                                    |
+| <a href="#querytreenode">queryTreeNode</a>             | 查询树节点                                    |
+| <a href="#querytreepath">queryTreePath</a>             | 查询树路径                                    |
+
+[[toc]]
 
 ### union
 
@@ -1010,4 +1029,374 @@ rutils.timesTotal(a1, 1)
 let a2 = [{ a: 1 }, { a: 1 }]
 rutils.timesTotal(a2, 'a', 1)
 // => 2
+```
+
+### arrayRestore
+
+> 有时候，我们需要还原数组 改变顺序之前的顺序状态，因此，我们需求一个 数组顺序状态还原方法来帮我解决这个问题
+
+语法：
+
+```javascript
+/**
+ * @description: 数组状态还原
+ * @param { Array } list: 有两值交换后的数组
+ * @param { Number } oldIndex: 交换项索引
+ * @param { Number } newIndex：被交换项索引
+ * @param { Boolean } isDeep：是否给改变原数组
+ */
+```
+
+示例：
+
+```javascript
+const oldArr = [1, 2, 3, 4, 5, 6, 7]
+const oldIndex = 5
+const newIndex = 2
+// 在拖拽排序中，我们把 数组 的索引 5的值 6 拖到索引 2的位置，之前的顺势往下排，得到 [1, 2, 6, 3, 4, 5,  7]
+
+// 现在，你想借助 改变后的数组 [1, 2, 6, 3, 4, 5,  7] 和 改变时的 新旧索引 还原数组改变之前的状态，我们这样做
+
+rutils.arrayRestore([1, 2, 6, 3, 4, 5, 7], oldIndex, newIndex) // [1, 2, 3, 4, 5, 6, 7]
+```
+
+### arrayGroup
+
+语法：
+
+```javascript
+/**
+ * @description: 数组按标识进行分组 （分组后顺序不变）
+ * @param {Array} list：分组的数组
+ * @param {String} typeStr：分组的标识
+ * @return {Array}
+ */
+```
+
+> 某些场景，按理说根据条件归档已经够用了，但是有些特殊情况，我们不想集中归档，我们想根据条件按顺序进行归档，如下：
+
+```javascript
+const list = [
+    { name: '1', type: 0 },
+
+    { name: '2', type: 1 },
+    { name: '3', type: 1 },
+    { name: '4', type: 1 },
+
+    { name: '5', type: 0 },
+    { name: '6', type: 0 },
+
+    { name: '7', type: 2 },
+    { name: '8', type: 2 },
+    { name: '9', type: 2 },
+
+    { name: '10', type: 0 },
+    { name: '11', type: 0 }
+]
+// 需求=> 转换成
+/*
+[ 
+    
+    [{name:'1',type:0}], 
+
+    [{name:'2',type:1}, {name:'3',type:1}, {name:'4',type:1}], 
+
+    [{name:'5',type:0}, {name:'6',type:0}], 
+
+    [{name:'7',type:2}, {name:'8',type:2}, {name:'9',type:2}], 
+
+    [{name:'10',type:0},{name:'11',type:0}], 
+]
+*/
+// 此时 arrayGroup 就可以排上用场了
+
+rutils.arrayGroup(list, 'type')
+```
+
+### arrayAt
+
+> 我们知道数组你如果想访问数组的最后一个 或 倒数第几个，你必须用 数组的长度 通过减去来计算 需要访问的索引值，该方法让你用负数简单的就能够访问倒数值
+
+语法：
+
+```javascript
+/**
+ * @description: 根据索引访问数组项
+ * @param { Array } arr：数组
+ * @param { Number } index：索引，默认 0
+ */
+```
+
+示例：
+
+```javascript
+// 最新的提案已经出来，最新谷歌浏览器已经支持了
+;[1, 2, 3, 4]
+    .at() // 1
+    [(1, 2, 3, 4)].at(1) // 2
+    [(1, 2, 3, 4)].at(2) // 3
+    [(1, 2, 3, 4)].at(3) // 4
+    [(1, 2, 3, 4)].at(4) // undefined
+    [(1, 2, 3, 4)].at(-1) // 4
+    [(1, 2, 3, 4)].at(-2) // 3
+    [(1, 2, 3, 4)].at(-3) // 2
+    [(1, 2, 3, 4)].at(-4) // 1
+    [(1, 2, 3, 4)].at(-5) // undefined
+
+// 我们自己实现的效果一样，无需考虑兼容
+rutils.arrayAt([1, 2, 3, 4]) // 1
+rutils.arrayAt([1, 2, 3, 4], 1) // 2
+rutils.arrayAt([1, 2, 3, 4], 2) // 3
+rutils.arrayAt([1, 2, 3, 4], 3) // 4
+rutils.arrayAt([1, 2, 3, 4], 4) // undefined
+rutils.arrayAt([1, 2, 3, 4], -1) // 4
+rutils.arrayAt([1, 2, 3, 4], -2) // 3
+rutils.arrayAt([1, 2, 3, 4], -3) // 2
+rutils.arrayAt([1, 2, 3, 4], -4) // 1
+rutils.arrayAt([1, 2, 3, 4], -5) // undefined
+```
+
+### arrayRepeat
+
+> 你一定知道字符串的 repeat 方法，但是数组却没有 repeat 方法，没有关系，arrayRepeat 就是做这样的事的方法
+
+语法：
+
+```javascript
+/**
+ * @description: 数组复制
+ * @param {Array} arr:需要复制的数组
+ * @param {Number} n: 复制的次数，默认 0
+ */
+```
+
+示例：
+
+```javascript
+rutils.arrayRepeat([1, 2, 3]) // [1, 2, 3]    不传复制次数 默认是不复制 返回原数组
+rutils.arrayRepeat([1, 2, 3], 1) //  [1, 2, 3, 1, 2, 3] 复制 1 遍
+rutils.arrayRepeat([1, 2, 3], 2) // [1, 2, 3, 1, 2, 3, 1, 2, 3] 复制 2 遍
+rutils.arrayRepeat([1, 2, 3], 3) // [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3] 复制 3 遍
+rutils.arrayRepeat([{ name: 'lisi' }], 1) // [{name: "lisi"},{name: "lisi"}] 复制 1 遍
+```
+
+### arraySubstr
+
+> PS: 该方法并不是 和 slice 一样，二是和字符串的 substr 类似
+
+语法：
+
+```javascript
+/**
+ * @description: 让数组拥有和字符串的substr 一样的功能
+ * @param { Array } arr：数组
+ * @param { Number } startIndex：开始截取的索引值
+ * @param { Number} len：截取的长度
+ */
+```
+
+示例：
+
+```javascript
+'12345'.substr(0, 1) // '1'
+'12345'.substr(0, 2) // '12'
+'12345'.substr(0, 3) // '123'
+'12345'.substr(1, 3) // '234'
+
+let arr = [1, 2, 3, 4, 5]
+rutils.arraySubstr(arr, 0, 1) // [1]
+rutils.arraySubstr(arr, 0, 2) // [1,2]
+rutils.arraySubstr(arr, 0, 3) // [1,2,3]
+rutils.arraySubstr(arr, 1, 3) // [2,3,4]
+```
+
+### delByIndexs
+
+> 根据索引数组删除数组对应索引的值，我们知道从正序开始删除会改变数组的长度，进而下一次的删除索引就会错乱，delByIndexs 方法就是解决此问题的
+
+语法：
+
+```javascript
+/**
+ * @description: 数组删除
+ * @param {Array} delIndexs:需要删除的索引数组
+ * @param {Number} isDeep: 是否深度克隆
+ */
+```
+
+示例：
+
+```javascript
+const list = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }]
+// findIndexs 在上面已经实现，查询满足条件的所有所有值
+const delIndexs = rutils.findIndexs(list, i => [2, 4, 7].includes(i.id)) // [1, 3, 6]
+rutils.delByIndexs(list, delIndexs) // [{ id: 1 }, { id: 3 },  { id: 5 }, { id: 6 }]
+```
+
+### groupArchive
+
+> 根据条件归档
+
+语法：
+
+```javascript
+/**
+ * @description:归档， 对一维 json 数组进行归档（根据 key）
+ * @param {Array} arr:一维数组
+ * @param {String} key：key 字符串
+ */
+```
+
+示例：
+
+```javascript
+let books = [
+    { date: '2月', name: '化学书' },
+    { date: '1月', name: '历史书' },
+    { date: '2月', name: '数学书' },
+    { date: '3月', name: '语文书' },
+    { date: '1月', name: '地理书' }
+]
+rutils.groupArchive(books, 'date')
+/* 
+[
+    [
+        {date: "2月", name: "化学书"}
+        {date: "2月", name: "数学书"}
+    ],
+     [
+        {date: "1月", name: "历史书"}
+        {date: "1月", name: "地理书"}
+    ],
+     [
+        {date: "3月", name: "语文书"}
+    ],
+] 
+*/
+```
+
+### lastFind
+
+> 数组 find 正向查询，但是没有 反向查询，lastFind 就是做这个事的
+
+语法：
+
+```javascript
+/**
+ * @description:反向查找
+ * @param {Array} arr:数组
+ * @param {Function} cb 回调函数
+ */
+```
+
+示例：
+
+```javascript
+const list = [
+    { type: 1, subType: 11 },
+    { type: 2, subType: 22 },
+    { type: 3, subType: 33 },
+    { type: 4, subType: 44 },
+    { type: 5, subType: 55 },
+    { type: 3, subType: 34 },
+    { type: 7, subType: 77 }
+]
+list.find(i => i.type == 3) //{type: 3, subType: 33}
+rutils.lastFind(list, i => i.type == 3) //{type: 3, subType: 34}
+rutils.lastFind(list, i => i.type == 33) //undefined
+```
+
+### lastFindIndex
+
+> 数组 find 正向查询索引，但是没有 反向查询索引，lastFindIndex 就是做这个事的
+
+语法：
+
+```javascript
+/**
+ * @description:反向查找索引
+ * @param {Array} arr:数组
+ * @param {Function} cb 回调函数
+ */
+```
+
+示例：
+
+```javascript
+const list = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 3 }, { id: 7 }]
+rutils.lastFindIndex(list, i => i.id == 3) // 5
+rutils.lastFindIndex(list, i => i.id == 33) // -1
+```
+
+### getTreePath
+
+> 根据 树 的 id 根据完整的路径
+
+语法：
+
+```javascript
+/**
+ * @description: 查询树任一节点的完整路径
+ * @param { Array } list：树数组
+ * @param { String } id：节点id
+ * @param { String } idAlias：id别名,默认 id
+ * @param { String } nameAlias：name别名，默认 name
+ * @param { String } children：children别名，默认 children
+ * @param { Boolean } isTextPath：是否返回文字路径，默认 true
+ */
+ getTreePath(list, id, { idAlias = 'id', nameAlias = 'name', children = 'children' }, isTextPath = true)
+```
+
+示例：
+
+```js
+
+rutils.getTreePath(cityData, '仙桃市', { idAlias: 'text', nameAlias: 'value' }))
+rutils.getTreePath(cityData, '429004', { idAlias: 'value', nameAlias: 'text' }, false))
+```
+
+### queryTreeNode
+
+> 查询树节点
+
+语法：
+
+```javascript
+/**
+ * @description: 查询树节点
+ * @param { Object | Array } tree:树
+ * @param { String } id：id
+ * @param { String } idAlias：id别名
+ * @param { String } children：children：别名
+ */
+
+queryTreeNode(tree,id,{idAlias = 'id',  children = 'children'})
+```
+
+示例：
+
+```javascript
+rutils.queryTreeNode(cityData, '429004', { idAlias: 'value', nameAlias: 'text' })
+```
+
+### queryTreePath
+
+> 根据用户自定义条件 查询 树节点
+
+语法：
+
+```javascript
+/**
+ * @description: 找到树节点
+ * @param { Object | Array } tree 树
+ * @param { Function } func：回调函数
+ * @param { Array } path：路径
+ */
+queryTreePath(tree, func, (path = []))
+```
+
+示例：
+
+```javascript
+rutils.queryTreePath(cityData, node => node.value === '429004')
 ```

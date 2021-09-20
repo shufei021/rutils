@@ -1,5 +1,7 @@
 # 对象相关
 
+<p><img src="/rutils/lm.jpg" alt="图片" width="100%"></p>
+
 ## API
 
 | 名称                                 | 描述             |
@@ -121,7 +123,7 @@ let users = {
     pebbles: { age: 1, active: true }
 }
 
-rutils.findKey(users, function (o) {
+rutils.findKey(users, function(o) {
     return o.age < 40
 })
 // => 'barney' (iteration order is not guaranteed)
