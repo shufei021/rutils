@@ -1351,8 +1351,8 @@ rutils.lastFindIndex(list, i => i.id == 33) // -1
 
 ```js
 
-rutils.getTreePath(cityData, '仙桃市', { idAlias: 'text', nameAlias: 'value' }))
-rutils.getTreePath(cityData, '429004', { idAlias: 'value', nameAlias: 'text' }, false))
+rutils.getTreePath(cityList, '仙桃市', { idAlias: 'text', nameAlias: 'value' }))
+rutils.getTreePath(cityList, '429004', { idAlias: 'value', nameAlias: 'text' }, false))
 ```
 
 ### queryTreeNode
@@ -1376,7 +1376,7 @@ queryTreeNode(tree,id,{idAlias = 'id',  children = 'children'})
 示例：
 
 ```javascript
-rutils.queryTreeNode(cityData, '429004', { idAlias: 'value', nameAlias: 'text' })
+rutils.queryTreeNode(cityList, '429004', { idAlias: 'value', nameAlias: 'text' })
 ```
 
 ### queryTreePath
@@ -1398,5 +1398,5 @@ queryTreePath(tree, func, (path = []))
 示例：
 
 ```javascript
-rutils.queryTreePath(cityData, node => node.value === '429004')
+rutils.queryTreePath(cityList, node => node.value === '429004')
 ```
