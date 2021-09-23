@@ -1,10 +1,10 @@
 # rutils.js
 
-> rutils.js 是一款使用 JavaScript 语言编写的前端工具库
+> rutils.js is a front-end tool library written in JavaScript language 
 
-[rutils.js 文档](https://shufei021.github.io/rutils/)
+[rutils.js docs](https://shufei021.github.io/rutils/)
 
-## 使用
+## how to use 
 
 node.js
 
