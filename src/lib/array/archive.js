@@ -18,3 +18,10 @@ export default archive
  *
  *
  */
+/**
+ // We can use the reduce of the array to achieve 
+ const archive = function (list = [], key) {
+      return list.reduce((p, c) => ({ ...p, [c[key]]: p[c[key]] ? [...p[c[key]], c] : [c] }), {})
+ }
+
+*/
