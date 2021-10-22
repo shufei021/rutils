@@ -23,6 +23,7 @@ import union from './union'
 import isRepeat from './isRepeat'
 import pick from './pick'
 import make from './make'
+import treeToArray from './treeToArray'
 import getTreeNode from './getTreeNode'
 
 import arrayRestore from './arrayRestore'
@@ -69,6 +70,7 @@ export default {
     timesTotal,
     unique,
     make,
+    treeToArray,
     pick,
     getTreeNode,
     arrayGroup,
