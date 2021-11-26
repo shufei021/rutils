@@ -53,13 +53,26 @@ const setExpired = function (...arg) {
     }
 }
 
-const get = function (k) {
+const get = function (k,d) {
     if (isString(k)) {
-        return _parse(k)
+        let ret = null
+        try {
+            ret =  _parse(k)
+        } catch (e) {
+            ret = _get(k)
+        }
+        return d!==undefined && !ret? d:ret
     } else if (Array.isArray(k)) {
+        if(!k.length) return {}
         return k.reduce((p, c) => {
+            let rt = null
             if (isString(c) && c in local) {
-                p[c] = _parse(c)
+                try {
+                    rt = _parse(c)
+                } catch (e) {
+                    rt = _get(c)
+                }
+                p[c] = rt
             }
             return p
         }, {})
