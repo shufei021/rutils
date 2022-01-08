@@ -140,6 +140,7 @@ const clearAllExpired = function () {
     let keys = Object.keys(local)
     let len = keys.length
     for (let i = 0; i < len; i++) {
+        let k = keys[i]
         let o = _parse(k)
         if (o && 'expiredTime' in o) _remove(k)
     }
