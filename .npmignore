@@ -1,7 +1,0 @@
-node_modules/
-src/
-rollup.config.js
-.babelrc
-package-lock.json
-package.json
-README.MD

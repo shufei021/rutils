@@ -1,17 +1,26 @@
-# rutils.js
+# Rtuils
 
-> rutils.js is a front-end tool library written in JavaScript language 
+It's a Tool library, method collection.
 
-[rutils.js docs](https://shufei021.github.io/rutils/)
 
-## how to use 
 
-node.js
+## Usage
 
-```js
-> npm i rutilsjs -save
+- install
+
+```shell
+npm install rutilsjs --save
+
+# or
+
+yarn add rutilsjs
 ```
 
-```js
-import rutils from 'rutilsjs'
+- example
+
+```javascript
+
 ```
+
+
+## License

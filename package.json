@@ -1,38 +1,78 @@
 {
-    "name": "rutilsjs",
-    "version": "0.0.5",
-    "description": "Front-end tool library",
-    "private": false,
-    "main": "./build/index.js",
-    "dependencies": {
-        "babel-core": "^6.26.3",
-        "babel-loader": "^7.1.5",
-        "babel-plugin-external-helpers": "^6.22.0",
-        "babel-plugin-transform-runtime": "^6.23.0",
-        "babel-preset-env": "^1.7.0",
-        "babel-preset-latest": "^6.24.1",
-        "babel-preset-stage-2": "^6.24.1",
-        "babel-register": "^6.26.0",
-        "rollup-plugin-babel": "^4.4.0",
-        "rollup-plugin-commonjs": "^10.1.0",
-        "rollup-plugin-uglify": "^6.0.4",
-        "rollup-plugin-node-resolve": "^5.2.0"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.12.9",
-        "@babel/preset-env": "^7.12.7",
-        "@rollup/log": "^0.1.0",
-        "rollup-plugin-require-context": "^1.0.0"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "shufei",
-    "license": "ISC",
-    "homepage": "https://shufei021.github.io/rutils/",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/shufei021/rutils.git"
-    }
+  "name": "rutil",
+  "version": "0.0.1",
+  "description": "工具库",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "LICENSE",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "sideEffects": "false",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shufei021/rutils.git"
+  },
+  "author": "Simon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shufei021/rutils/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "homepage": "https://github.com/shufei021/rutils#readme",
+  "scripts": {
+    "build": "gulp build",
+    "api": "api-extractor run",
+    "test": "jest --coverage --verbose -u",
+    "lint": "eslint --ext .js,.ts --format=pretty ./src",
+    "lint:fix": "eslint --fix --ext .js,.ts --format=pretty ./src",
+    "changelog": "gulp changelog",
+    "version": "yarn changelog && git add CHANGELOG.md",
+    "release": "yarn test && yarn build && np --no-cleanup --yolo --any-branch",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@microsoft/api-extractor": "^7.18.17",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/gulp": "^4.0.9",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.6",
+    "@yueqing/lint": "^1.4.0",
+    "chalk": "^4.1.2",
+    "conventional-changelog": "^3.1.24",
+    "fs-extra": "^10.0.0",
+    "gulp": "^4.0.2",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "lint-staged": "^11.2.6",
+    "np": "^7.5.0",
+    "rollup": "^2.59.0",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.16.0",
+    "rollup-plugin-uglify": "^6.0.4"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --fix --format=pretty"
+    ]
+  }
 }
