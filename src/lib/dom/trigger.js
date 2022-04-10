@@ -4,6 +4,7 @@
  * @param {String} EventType : 触发事件类型
  */
 const trigger = function (Node, EventType) {
+    if(!Node)return
     // 创建事件类型
     let evt = document.createEvent('Events')
     // 初始化对应类型的事件

@@ -7,6 +7,8 @@ import multiply from './multiply'
 import round from './round'
 import subtract from './subtract'
 import isInteger from './isInteger'
+import sumBigNumber from './sumBigNumber'
+
 export default {
     add,
     calc,
@@ -16,5 +18,6 @@ export default {
     multiply,
     round,
     subtract,
-    isInteger
+    isInteger,
+    sumBigNumber
 }

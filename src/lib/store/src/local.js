@@ -7,7 +7,7 @@ const _stringify = JSON.stringify
 const isString = v => typeof v === 'string'
 const isObject = v => Object.prototype.toString.call(v) === '[object Object]'
 const isNum = n => (typeof n == 'symbol' ? false : !isNaN(parseFloat(n)) && isFinite(n))
-
+const hasOwn =(o,a)=> Object.prototype.hasOwnProperty.call(o,a)
 const set = function (a, b) {
     if (isString(a)) {
         _set(a, isString(b) ? b : _stringify(b))
@@ -58,6 +58,12 @@ const get = function (k,d) {
         let ret = null
         try {
             ret =  _parse(k)
+            if(!isObject(ret)) {
+                ret = _get(k)
+                if(ret === "false" || ret === "true") {
+                    ret =  _parse(k)
+                }
+            }
         } catch (e) {
             ret = _get(k)
         }
@@ -66,7 +72,7 @@ const get = function (k,d) {
         if(!k.length) return {}
         return k.reduce((p, c) => {
             let rt = null
-            if (isString(c) && c in local) {
+            if (isString(c) && hasOwn(local,c)) {
                 try {
                     rt = _parse(c)
                 } catch (e) {
@@ -140,7 +146,6 @@ const clearAllExpired = function () {
     let keys = Object.keys(local)
     let len = keys.length
     for (let i = 0; i < len; i++) {
-        let k = keys[i]
         let o = _parse(k)
         if (o && 'expiredTime' in o) _remove(k)
     }
@@ -155,11 +160,24 @@ const each = function (cb) {
     }
 }
 
+const getOnce = function (k,d) {
+    const ret = get(k,d)
+    if(typeof k==='string'){
+        hasOwn(local,k)&& _remove(k)
+    }else if(Array.isArray(k)&&k.length){
+        for(let i=0;i<k.length;i++){
+            hasOwn(local,k[i])&& _remove(k[i])
+        }
+    }
+    return ret
+}
+
 export default {
     set,
     get,
     del,
     each,
+    getOnce,
     setExpired,
     getExpired,
     clearAll,

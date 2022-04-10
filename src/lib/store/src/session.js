@@ -8,18 +8,27 @@ const _parse = v => JSON.parse(_get(v))
 const isString = v => typeof v === 'string'
 const isObject = v => Object.prototype.toString.call(v) === '[object Object]'
 const isArray = Array.isArray
-
-const get = function (k) {
+const get = function (k,d) {
     if (isString(k)) {
+        let ret = null
         try {
-            return _parse(k)
+            ret = _parse(k)
         } catch (e) {
-            return _get(k)
+            ret = _get(k)
         }
+        return d!==undefined && !ret? d:ret
     } else if (isArray(k)) {
+        if(!k.length) return {}
         return k.reduce((p, c) => {
-            let i = _parse(c)
-            i && (p[c] = i)
+            let rt = null
+            if (isString(c)) {
+                try {
+                    rt = _parse(c)
+                } catch (e) {
+                    rt = _get(c)
+                }
+                rt&& (p[c] = rt)
+            }
             return p
         }, {})
     }

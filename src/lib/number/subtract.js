@@ -5,7 +5,7 @@ import calc from './calc'
  * @param {Number} b ：被减数
  * @param {Number} digit ：结果保留位数
  */
-const subtract = function (a = 0, b = 0, digit) {
+const subtract = function (a, b, digit) {
     return Array.isArray(a) ? (a.length ? a.reduce((p, c) => subtract(p, c, b)) : 0) : calc(1, a, b, digit)
 }
 export default subtract

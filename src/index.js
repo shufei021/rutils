@@ -22,6 +22,9 @@ import file from './lib/file'
 // store
 import store from './lib/store'
 
+// other
+import * as other from './lib/other'
+
 export default {
     ...base,
     ...array,
@@ -30,8 +33,9 @@ export default {
     ...browser,
     ...object,
     ...string,
-    ...reg,
+    reg,
     ...url,
     ...file,
-    ...store
+    ...store,
+    ...other
 }

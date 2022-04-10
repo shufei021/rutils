@@ -2,31 +2,31 @@
  * @Description: 状态分组 - groupState
  * @Author: shufei
  * @Date: 2021-09-08 19:50:20
- * @LastEditTime: 2021-09-08 20:00:16
- * @LastEditors: shufei
+ * @LastEditTime: 2022-04-09 17:13:56
+ * @LastEditors: Please set LastEditors
  */
 /**
- * @description: 数组按标识进行分组 （分组后顺序不变）
- * @param {Array} list：分组的数组
- * @param {String} typeStr：分组的标识
- * @return {Array}
- */
-const groupState = function(list,typeStr){
-    const ret = [] 
-    let p = 0
-    let n = 0
-    for(let i=1,len=list.length;i<len;i++){
-      if(list[i-1][typeStr] !== list[i][typeStr]){
-        n = i
-        ret.push(list.slice(p,n))
-        p = i
-      }
-      if(i===len-1)ret.push(list.slice(p))
-    }
-    return ret
-}
-export default groupState
-    
+ * @description: 数组按标识进行分组 （分组后顺序不变）
+ * @param {Array} list：分组的数组
+ * @param {String} typeStr：分组的标识
+ * @return {Array}
+ */
+const groupState = function (list, typeStr) {
+    const ret = [];
+    let p = 0;
+    let n = 0;
+    for (let i = 1, len = list.length; i < len; i++) {
+        if (list[i - 1][typeStr] !== list[i][typeStr]) {
+            n = i;
+            ret.push(list.slice(p, n));
+            p = i;
+        }
+        if (i === len - 1) ret.push(list.slice(p));
+    }
+    return ret;
+};
+export default groupState;
+
 /**
  * 示例：
  * 

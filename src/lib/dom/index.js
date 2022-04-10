@@ -24,6 +24,12 @@ import dynamicAddScript from "./dynamicAddScript";
 import createElement from "./createElement";
 import isScrollBottom from "./isScrollBottom";
 import isScrollerVisible from "./isScrollerVisible";
+import getElementByClassName from "./getElementByClassName";
+import getScrollDirection from "./getScrollDirection";
+import getScrollerWidth from "./getScrollerWidth";
+import selectRangeByElement from "./selectRangeByElement";
+import selectTextByElement from "./selectTextByElement";
+import addStyleCss from "./addStyleCss";
 
 export default {
     bindEvent,
@@ -51,5 +57,11 @@ export default {
     dynamicAddScript,
     createElement,
     isScrollBottom,
-    isScrollerVisible
+    isScrollerVisible,
+    getElementByClassName,
+    getScrollDirection,
+    getScrollerWidth,
+    selectRangeByElement,
+    selectTextByElement,
+    addStyleCss
 };
