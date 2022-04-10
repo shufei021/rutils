@@ -11,6 +11,7 @@
 | <a href="#findkey">findKey</a>       | 查询某个值的 key |
 | <a href="#merge">merge</a>           | 合并两个对象     |
 | <a href="#convertkey">convertKey</a> | 转换 key         |
+| <a href="#objectrebuild">objectRebuild</a> | 对象重组         |
 
 ### clone
 
@@ -214,4 +215,32 @@ var a = {
 // 把原始的 name 换成 userNmae， 把原始的age 换成 ageNum
 convertKey(a, { name: 'userName', age: 'ageNum' }, true)
 // => { userName: "张三", ageNum: 30 }
+```
+
+### objectRebuild
+
+> 对象重组，常用于后端接口参数的过滤
+
+```javascript
+/**
+ * @description 对象组装
+ * @param {Object} o 对象
+ * @param {Object | Array} filter 
+ * @returns 重组后的对象
+ */
+```
+
+**示例**
+
+```javascript
+// 需求处理的对象
+const obj = {a: 1, b: 2}
+
+// 后端需要的 需要转换的key的映射，即 把 obj 中的 键 a 替换成 键 A1
+const keysObj = {
+    'a':'A1',
+}
+objectRebuild(obj,keysObj) // {A1: 1}
+
+objectRebuild(obj,['a','b1']) // {a: 1, b1: undefined}
 ```

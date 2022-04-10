@@ -388,7 +388,7 @@ rutils.isString({})
 
 ### isUndefined
 
-> 值是否为字符串类型
+> 值是否为undefined类型
 
 **语法：**
 

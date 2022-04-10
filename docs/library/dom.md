@@ -24,7 +24,11 @@
 | <a href="#loadscript">loadScript</a>               | 加载外部脚本                                               |
 | <a href="#smoothscroll">smoothScroll</a>           | 顺滑的滚动到当前元素                                       |
 | <a href="#isscrollbottom">isScrollBottom</a>       | 元素是否滚动到最底部                                       |
-
+| <a href="#addstylecss">addStyleCss</a>             | 添加style的css                                       |
+| <a href="#getscrolldirection">getScrollDirection</a>             | 获取滚动方向                                       |
+| <a href="#getscrollerwidth">getScrollerWidth</a>             | 获取滚动条宽带                                       |
+| <a href="#selectrangebyelement">selectRangeByElement</a>             | 通过元素选中范围值                                       |
+| <a href="#selecttextbyelement">selectTextByElement</a>             | 通过元素选中文本                                       |
 ### backTop
 
 > 回到顶部
@@ -705,4 +709,95 @@ rutils.isScrollBottom('.scoll-wrap')
 // 2.元素
 rutils.isScrollBottom(document.querySelector('.scoll-wrap'))
 // => true
+```
+
+
+### addstylecss
+
+> 添加style中的css，常用于rem转换后的class类，再重置成 像px单位
+
+**语法**
+```javascript
+addStyleCss(styleId,arr)
+```
+
+**参数**
+```javascript
+/**
+ *  根据style 的id 找到对应的style 标签，在里面插入css
+ * @param {*} styleId : style 的 id 值
+ * @param {*} arr ：样式列表
+ * @returns viod
+ */
+```
+
+### getScrollDirection
+
+> 获取滚动方向
+
+**语法**
+```javascript
+getScrollDirection(scroller)
+```
+
+**参数**
+```javascript
+/**
+ * @description 获取滚动方向
+ * @param { Element | HTMLElement | Window } scroller 滚动容器元素
+ * @returns Object {x,y}
+ */
+```
+
+### getScrollerWidth
+
+> 获取滚动条宽度
+
+**语法**
+```javascript
+getScrollerWidth(el)
+```
+
+**参数**
+```javascript
+/**
+ * 获取滚动条宽度
+ * @param {*} el 滚动容器,非必填
+ * @returns 滚动条宽度
+ */
+```
+
+### selectRangeByElement
+
+> 通过元素选中文本
+
+**语法**
+```javascript
+selectRangeByElement(o, fn)
+```
+
+**参数**
+```javascript
+/**
+ * @description 通过元素进行范围选中
+ * @param {Element} o 
+ * @param {Function} fn 
+ */
+```
+
+### selectTextByElement
+
+> 通过元素选中文本
+
+**语法**
+```javascript
+selectTextByElement(element)
+```
+
+**参数**
+```javascript
+/**
+ * @description 设置元素里面文字呈选中状态
+ * @param {Element | String} element 
+ */
 ```
