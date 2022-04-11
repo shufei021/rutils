@@ -13,7 +13,7 @@ const print = function (){
             fun.apply(null,e)
         }
     })
-  }
+}
 export default ({ router, Vue }) => {
     if (typeof process === 'undefined' || process.env.VUE_ENV !== 'server') {
         router.onReady(() => {
@@ -41,6 +41,38 @@ export default ({ router, Vue }) => {
                                 content: new Date().toLocaleString()
                             })
                             window.rutils = module.default
+
+                            const {
+                                createElement,
+                                addStyleCss
+                            } = rutils
+
+                            const backTopButton = createElement('div',{})
+                            backTopButton.class = 'BACK_TOP'
+                            backTopButton.innerHTML = 'Top'
+                            backTopButton.id = 'BACK_TOP'
+                            document.body.appendChild(backTopButton)
+                            addStyleCss('BACK_TOP',[`#BACK_TOP{
+                                display: none;
+                                font-size: 16px;
+                                backgroundColor: #61dafb;
+                                color: #000000;
+                                padding:10px 25px;
+                                white-space: nowrap;
+                                transition: background-color 0.2s ease-out;
+                                position: fixed;
+                                right: 0;
+                                z-index: 100000;
+                                cursor: pointer;
+                                bottom: 50px;
+                                background-color: #61dafb;
+                                color: #fff;}`])
+                                window.onscroll = function(){
+                                    backTopButton.style.display =scrollY>=2400? 'block':'none'
+                                }
+                                backTopButton.onclick = function(){
+                                    window.scrollTo(0,0)
+                                }
                         })
                         .catch(e => {
                             console.log(e)

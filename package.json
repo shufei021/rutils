@@ -14,7 +14,7 @@
         "deploy": "bash deploy.sh"
     },
     "devDependencies": {
-        "@vuepress/plugin-back-to-top": "^2.0.0-beta.26",
+        "@vuepress/plugin-back-to-top": "^2.0.0-beta.38",
         "@vuepress/plugin-medium-zoom": "^1.8.2",
         "gh-pages": "^3.2.2",
         "vuepress": "^1.5.3"

@@ -29,6 +29,7 @@
 | <a href="#getscrollerwidth">getScrollerWidth</a>             | 获取滚动条宽带                                       |
 | <a href="#selectrangebyelement">selectRangeByElement</a>             | 通过元素选中范围值                                       |
 | <a href="#selecttextbyelement">selectTextByElement</a>             | 通过元素选中文本                                       |
+| <a href="#copytext">copyText</a>             | 复制文本内容                                       |
 ### backTop
 
 > 回到顶部
@@ -767,9 +768,20 @@ getScrollerWidth(el)
  */
 ```
 
+**示例**
+
+```js
+// 如果是异步设置了滚动条宽度，且传入了el，则返回值是一个Promise对象
+rutis.getScrollerWidth(el).then(width=>{
+    console.log(width)
+})
+// 如果想直接获取滚动条宽度，什么不需求传，返回值就是滚动条的宽度值
+rutis.getScrollerWidth()
+```
+
 ### selectRangeByElement
 
-> 通过元素选中文本
+> 主动选中文本范围 触发回调
 
 **语法**
 ```javascript
@@ -785,9 +797,15 @@ selectRangeByElement(o, fn)
  */
 ```
 
+```js
+rutils.selectByElement(document, (txt, tar)=> {
+    alert("文字属于" + tar.tagName + "元素，选中内容为：" + txt);
+})
+```
+
 ### selectTextByElement
 
-> 通过元素选中文本
+> 手动选中元素里面的内容函数
 
 **语法**
 ```javascript
@@ -800,4 +818,34 @@ selectTextByElement(element)
  * @description 设置元素里面文字呈选中状态
  * @param {Element | String} element 
  */
+```
+
+```js
+// html 
+
+/*
+<body>
+ <div class="container">js手动选中元素里面的内容函数</div>
+</body>
+
+*/
+rutils.selectTextByElement('.container')// 类 container 元素里面的内容都被选中
+```
+
+### copyText
+
+> 复制文本内容
+
+**语法**
+```js
+copyText(copyContentStr)
+```
+
+**参数**
+
+`@param {String} copyContentStr:` 传入的复制的文本内容
+
+**示例**
+```js
+rutils.copyText('测试的文本内容')
 ```

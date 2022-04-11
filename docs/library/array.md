@@ -41,11 +41,11 @@
 | <a href="#querytreenode">queryTreeNode</a>             | 查询树节点                                    |
 | <a href="#querytreepath">queryTreePath</a>             | 查询树路径                                    |
 
-[[toc]]
-
 ### union
 
 > 求数组并集
+
+**语法**
 
 ```javascript
 rutils.union(value1, value2)
@@ -53,15 +53,9 @@ rutils.union(value1, value2)
 
 **参数：**
 
-​ 1.`value1` {array} 传入的数组 a
-
-​ 2.`value2` {array} 传入的数组 b
-
-**返回值：**
-
-​ `array`
-
-​ [] 两数组的并集
+`@param { Array } value1:`传入的数组,必填<br/>
+`@param { Array } value2:`传入的数组,必填<br/>
+`@return Array `两数组的并集
 
 **例子：**
 
@@ -105,9 +99,9 @@ rutils.unique(value1, value2)
 
 **参数：**
 
-​ 1.`value1` {array} 检测的数组
+​ `value1` {array} 检测的数组
 
-​ 2.`value2` {string} item 的 key 名
+​ `value2` {string} item 的 key 名
 
 **返回值：**
 
@@ -153,9 +147,9 @@ rutils.intersection(value1, value2)
 
 **参数：**
 
-​ 1.`value1` {array} 传入的数组 a；
+`value1` {array} 传入的数组 a；
 
-​ 2.`value2` {array} 传入的数组 b
+​`value2` {array} 传入的数组 b
 
 **返回值：**
 
@@ -188,7 +182,7 @@ rutils.intersection(a1, b1, 'id') // [ { id: 2, name: '李四', age: 21 }]
 
 ### arrayFill
 
-> _生成一个指定长度 每个值都填充为统一的 指定值_
+> 生成一个指定长度 每个值都填充为统一的 指定值
 
 ```javascript
 rutils.arrayFill(value1, value2)
@@ -196,9 +190,9 @@ rutils.arrayFill(value1, value2)
 
 **参数：**
 
-​ 1.`value1` {number} 生成的数组长度
+​ `value1` {number} 生成的数组长度
 
-​ 2.`value2` {any} 数组中 item 内容
+​`value2` {any} 数组中 item 内容
 
 **返回值：**
 
@@ -226,11 +220,11 @@ rutils.arrayToTree(value1, value2, value3)
 
 **参数：**
 
-​ 1.`value1` {array} 原始数据列表
+​ `value1` {array} 原始数据列表
 
-​ 2.`value2` {string} 数据 id key, 默认 null
+​`value2` {string} 数据 id key, 默认 null
 
-​ 3.`value3` {string} 父级 id key, 默认 pid
+​`value3` {string} 父级 id key, 默认 pid
 
 **返回值：**
 
@@ -346,11 +340,11 @@ rutils.delBy(value1, value2, value3)
 
 **参数：**
 
-​ 1.`value1` {array} 原始数据列表
+​`value1` {array} 原始数据列表
 
-​ 2.`value2` {string} 条件
+​`value2` {string} 条件
 
-​ 3.`value3` {boolean} 是否改变原始数组
+​`value3` {boolean} 是否改变原始数组
 
 **返回值：**
 
@@ -487,9 +481,9 @@ rutils.except(value1, value2)
 
 **参数：**
 
-​ 1.`value1` 需要检测的值 1
+​ `value1` 需要检测的值 1
 
-​ 2.`value2` 需要检测的值 2
+​ `value2` 需要检测的值 2
 
 **返回值：**
 
@@ -537,11 +531,11 @@ rutils.exchangePostion(value1, value2, value3)
 
 **参数：**
 
-​ 1.`value1` {array} 原始数组
+​ `value1` {array} 原始数组
 
-​ 2.`value2` {number} 原始位置索引
+​ `value2` {number} 原始位置索引
 
-​ 3.`value3` {number} 新位置索引
+​`value3` {number} 新位置索引
 
 ​ 4.`value3` {boolean} 是否改变原始数组
 
@@ -573,9 +567,9 @@ rutils.flatten(value1, value2)
 
 **参数：**
 
-​ 1.`value1` {array} 原始数组
+​ `value1` {array} 原始数组
 
-​ 2.`value2` {number} 扁平化向下查找层级，默认为`1`
+​ `value2` {number} 扁平化向下查找层级，默认为`1`
 
 **返回值：**
 
@@ -603,9 +597,9 @@ rutils.group(value1, value2)
 
 **参数：**
 
-​ 1.`value1` {array} 需要分组的一维数组
+​ `value1` {array} 需要分组的一维数组
 
-​ 1.`value2` {number} 平分基数（num 个为一组进行分组（归档）
+​ `value2` {number} 平分基数（num 个为一组进行分组（归档）
 
 **返回值：**
 
@@ -636,11 +630,11 @@ rutils.indexOfAll(value1, value2, value3)
 
 **参数：**
 
-​ 1.`value1` {array} 需要检测的值
+​ `value1` {array} 需要检测的值
 
-​ 2.`value2` {string} 键名
+​ `value2` {string} 键名
 
-​ 3.`value3` {string} 键值
+​`value3` {string} 键值
 
 **返回值：**
 
@@ -676,11 +670,11 @@ rutils.insetPostion(value1, value2, value3, value4)
 
 **参数：**
 
-​ 1.`value1` {array} 操作的数组
+​ `value1` {array} 操作的数组
 
-​ 2.`value2` {number} 老位置索引
+​ `value2` {number} 老位置索引
 
-​ 3.`value3` {number} 新位置索引
+​`value3` {number} 新位置索引
 
 ​ 4.`value4` {boolean} 是否改变原数组，默认不改变返回一个新数组
 
@@ -711,7 +705,7 @@ rutils.isRepeat(value)
 
 **参数：**
 
-​ 1.`value` {array} 需要检测的值
+​ `value` {array} 需要检测的值
 
 **返回值：**
 
@@ -754,9 +748,9 @@ rutils.mean(value1, value2)
 
 **参数：**
 
-​ 1.`value1` {array} 数组
+​ `value1` {array} 数组
 
-​ 1.`value2` {string|function} 回调函数或者是 key
+​ `value2` {string|function} 回调函数或者是 key
 
 **返回值：**
 
@@ -794,9 +788,9 @@ rutils.range(value1, value2)
 
 **参数：**
 
-​ 1.`value1` {number} 最小值
+​`value1` {number} 最小值
 
-​ 2.`value2` {number} 最大值
+`value2` {number} 最大值
 
 **返回值：**
 
@@ -824,11 +818,11 @@ rutils.rangeRandom(value1, value2, value3, value4)
 
 **参数：**
 
-​ 1.`value1` {number} 起始值
+​`value1` {number} 起始值
 
-​ 2.`value2` {number} 结束值
+​`value2` {number} 结束值
 
-​ 3.`value3` {number} 指定生成的个数，默认`1`
+​`value3` {number} 指定生成的个数，默认`1`
 
 ​ 4.`value4` {boolean} 是否重复,默认重复
 
@@ -864,7 +858,7 @@ rutils.rangeScopeStartZore(max)
 
 **参数：**
 
-​ 1.`max` {number} 最大值
+​`max` {number} 最大值
 
 **返回值：**
 
@@ -892,11 +886,11 @@ rutils.rangeStep(value1, value2, value3)
 
 **参数：**
 
-​ 1.`value1` {number} 最小值
+​`value1` {number} 最小值
 
-​ 2.`value2` {number} 最大值
+​`value2` {number} 最大值
 
-​ 3.`value3` {number} 步长
+​`value3` {number} 步长
 
 **返回值：**
 
@@ -927,7 +921,7 @@ rutils.sample(value)
 
 **参数：**
 
-​ 1.`value` {array} 操作数组
+​`value` {array} 操作数组
 
 **返回值：**
 
@@ -966,9 +960,9 @@ rutils.sum(value1, value2)
 
 **参数：**
 
-​ 1.`value1` {array} 数组
+​`value1` {array} 数组
 
-​ 2.`?value2` {string} 数组对象 key
+​`?value2` {string} 数组对象 key
 
 **返回值：**
 
@@ -1002,11 +996,11 @@ rutils.timesTotal(value1, value2, value3)
 
 **参数：**
 
-​ 1.`value1` {array} 检测的数组
+​`value1` {array} 检测的数组
 
-​ 2.`value2` {string} item 的 key 名
+​`value2` {string} item 的 key 名
 
-​ 3.`value3` {any} 检测值
+​`value3` {any} 检测值
 
 **返回值：**
 

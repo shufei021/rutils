@@ -37,7 +37,8 @@ module.exports = {
                         '/library/url.md',
                         '/library/reg.md',
                         '/library/dom.md',
-                        '/library/file.md'
+                        '/library/file.md',
+                        '/library/other.md'
                     ]
                 }
             ]
