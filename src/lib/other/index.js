@@ -1,5 +1,5 @@
-export { default as simplifyProcess } from './simplifyProcess' 
+export { default as simplify } from './simplify' 
 export { default as caputured } from './caputured' 
 export { default as nestedHandler } from './nestedHandler' 
-export { default as superSimplify } from './superSimplify' 
+export { default as simplifyFunc } from './simplifyFunc' 
 export { default as descartes } from './descartes' 
