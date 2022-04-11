@@ -30,6 +30,7 @@ import getScrollerWidth from "./getScrollerWidth";
 import selectRangeByElement from "./selectRangeByElement";
 import selectTextByElement from "./selectTextByElement";
 import addStyleCss from "./addStyleCss";
+import copyText from "./copyText";
 
 export default {
     bindEvent,
@@ -63,5 +64,6 @@ export default {
     getScrollerWidth,
     selectRangeByElement,
     selectTextByElement,
-    addStyleCss
+    addStyleCss,
+    copyText
 };
