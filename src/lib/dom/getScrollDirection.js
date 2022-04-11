@@ -3,7 +3,7 @@
  * @param { Element | HTMLElement | Window } scroller 滚动容器元素
  * @returns Object {x,y}
  */
-export default function getScrollDirection(scroller) {
+export default function getScrollDirection(scroller=window) {
     const scrollLeft = scroller === window ? scrollX : scroller.scrollLeft;
     const scrollTop = scroller === window ? scrollY : scroller.scrollTop;
     if (scroller.oldScrollLeft === undefined) scroller.oldScrollLeft = 0;

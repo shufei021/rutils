@@ -7,11 +7,8 @@ import getType from "../base/getType";
  * @param {Object} nodeAttrs 元素属性
  * @return {Element} 创建完成的元素
  */
-const createElement = (elName, elAttrs) => {
-    if (elName) {
-        const el = document.createElement(elName);
-        return getType(elAttrs) === "object" ? setAttr(el, elAttrs) : el;
-    }
+const createElement = (elName='div', elAttrs) => {
+    const el = document.createElement(elName);
+    return getType(elAttrs) === "object" ? setAttr(el, elAttrs) : el;
 };
-
 export default createElement
