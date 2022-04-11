@@ -12,5 +12,5 @@ features:
       details: 享受技术带来的革新，与时俱进。
     - title: 成长
       details: 记录心境路程，在不断的跌倒中成长。
-footer: MIT Licensed | Copyright © 2021-rutils
+footer: MIT Licensed | Copyright © 2022-rutils
 ---

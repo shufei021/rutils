@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-11 10:58:50
+ * @LastEditTime: 2022-04-11 11:05:49
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \rutils\docs\library\reg.md
+-->
 # 正则相关
 
 ## API
@@ -38,15 +46,15 @@
 ### 示例
 
 ```javascript
-rutils.isInteger(1.1)
+rutils.reg.isInteger(1.1)
 // => false
 
-rutils.isInteger(2)
+rutils.reg.isInteger(2)
 // => true
 
-rutils.isInteger(NaN)
+rutils.reg.isInteger(NaN)
 // => false
 
-rutils.isInteger('1')
+rutils.reg.isInteger('1')
 // => true
 ```
