@@ -1,5 +1,19 @@
 // import rutils from './lib'
-
+const print = function (){
+    Array.from(arguments).forEach(item=>{
+        if( Object.prototype.toString.call(item).slice(8,-1) === 'Object'){
+            let e = [
+                `%c ${item.title} %c ${item.content} `,
+                `padding: 1px; border-radius: 3px 0 0 3px; color: #fff; background: #606060;`,
+                `padding: 1px; border-radius: 0 3px 3px 0; color: #fff; background: ${item.backgroundColor?item.backgroundColor:'#1475b2'};`
+            ]
+            let fun = function(){
+                return window.console && "function" === typeof window.console.log &&(item = console).log.apply(e, arguments)
+            }
+            fun.apply(null,e)
+        }
+    })
+  }
 export default ({ router, Vue }) => {
     if (typeof process === 'undefined' || process.env.VUE_ENV !== 'server') {
         router.onReady(() => {
@@ -14,6 +28,18 @@ export default ({ router, Vue }) => {
                     }
                     import('./lib/index.js')
                         .then(module => {
+                            print({
+                                title: "Name",
+                                content: 'rutils',
+                                backgroundColor:"#42c02e"
+                            },{
+                                title: "Version",
+                                content: '1.0.0',
+                                backgroundColor:"#1475b2"
+                            },{
+                                title: "Build Date",
+                                content: new Date().toLocaleString()
+                            })
                             window.rutils = module.default
                         })
                         .catch(e => {

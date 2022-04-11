@@ -1,10 +1,5 @@
 # 数组相关
 
-::: tip 说明
-目前编写数组相关方法 30+，涵盖数组的各种操作，可在当前页面 F12 打开控制台直接 CV 到控制看结果，
-没有没有你想要的方法，请联系 <span style="color:#26B1F6">QQ 1017981699</span> 或是 <span style="color:#26B1F6">github</span> 提 <span style="color:#26B1F6">issue</span>，我会尽快处理
-:::
-
 ## API
 
 | 名称                                                   | 描述                                          |
