@@ -38,6 +38,7 @@ module.exports = {
                         '/library/reg.md',
                         '/library/dom.md',
                         '/library/file.md',
+                        '/library/env.md',
                         '/library/other.md'
                     ]
                 }

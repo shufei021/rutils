@@ -38,10 +38,10 @@ export default ({ router, Vue }) => {
                                 backgroundColor:"#1475b2"
                             },{
                                 title: "Build Date",
-                                content: new Date().toLocaleString()
+                                content:'2022/4/14 10:37:25'
+                                // new Date().toLocaleString()
                             })
                             window.rutils = module.default
-
                             const {
                                 createElement,
                                 addStyleCss

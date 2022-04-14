@@ -14,6 +14,7 @@
 | <a href="#simplify">simplify</a>           | 简化函数 key为数组字符串     |
 | <a href="#simplifyFunc">simplifyFunc</a> | 简化函数 key为对象字符串         |
 | <a href="#descartes">descartes</a>       | 笛卡尔积组装函数 |
+| <a href="#bfs">bfs</a>       | 树节点遍历函数 |
 ### caputured
 
 > 异步简化函数
@@ -336,4 +337,106 @@ const others = ["a", "b", "c"]
 
 rutils.descartes([colors, sizes, others])
 
+```
+### bfs
+
+> 树节点广度遍历
+
+**语法**
+
+```js
+bfs(data, cb)
+```
+
+**参数**
+
+` @param {Object | Array} data :`  树节点 或 children 数组<br/>
+` @param {Function | Object} cb :` 每个节点的回调函数 或 一个对象（包含children的别名 children 属性和 每项回调函数cb属性）
+
+**示例**
+
+```js
+const data = {
+    name:"data",
+    children:[
+        {
+            name:"converters",
+            children:[
+                {
+                    name:"TextConverters",
+                    value:721
+                },
+                {
+                    name:"DelimitedTextConverter",
+                    value:4294
+                },
+                {
+                    name:"GraphMLConverter",
+                    value:9800
+                },
+                {
+                    name:"IDataConverter",
+                    value:1314
+                },
+                {
+                    name:"JSONConverter",
+                    value:2220
+                }
+            ]
+        }
+    ]
+}
+
+// 给树(没有 children 或 children数组为空数组的)节点添加一个leaf叶子属性
+bfs(data,{
+    cb(item){
+        if(!item.children || !item.children.length){
+            item.leaf = true
+        }
+    }
+})
+// 等价于
+bfs(data,(item)=>{
+    if(!item.children || !item.children.length){
+        item.leaf = true
+    }
+})
+
+const list = [
+    {
+        name:"converters",
+        child:[
+            {
+                name:"TextConverters",
+                value:721
+            },
+            {
+                name:"DelimitedTextConverter",
+                value:4294
+            },
+            {
+                name:"GraphMLConverter",
+                value:9800
+            },
+            {
+                name:"IDataConverter",
+                value:1314
+            },
+            {
+                name:"JSONConverter",
+                value:2220
+            }
+        ]
+    }
+]
+// 给树(没有 child 或 child 数组为空数组的)节点添加一个leaf叶子属性
+rutils.bfs(list,{
+    children:'child',// children 别名
+    cb(item){
+        if(!item.child || !item.child.length){
+            item.leaf = true
+        }
+    }
+})
+console.log(list)
 ```

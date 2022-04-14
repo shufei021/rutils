@@ -772,11 +772,11 @@ getScrollerWidth(el)
 
 ```js
 // 如果是异步设置了滚动条宽度，且传入了el，则返回值是一个Promise对象
-rutis.getScrollerWidth(el).then(width=>{
+rutils.getScrollerWidth(el).then(width=>{
     console.log(width)
 })
 // 如果想直接获取滚动条宽度，什么不需求传，返回值就是滚动条的宽度值
-rutis.getScrollerWidth()
+rutils.getScrollerWidth()
 ```
 
 ### selectRangeByElement
