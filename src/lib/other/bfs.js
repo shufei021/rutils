@@ -5,7 +5,7 @@
  */
 
 export default function bfs(data, cb) {
-    const list = Array.isArray(data) ? data : [data];
+    const list = Array.isArray(data) ? [...data] : [data];
     const aliasChidren = cb.children || "children";
     while (list.length) {
         const item = list.shift();

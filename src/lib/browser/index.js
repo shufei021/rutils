@@ -1,6 +1,6 @@
 const u = window.navigator.userAgent
 const isTencentAgent = u.match(/MicroMessenger/i) == 'MicroMessenger'
-const isChrome = () => u.match(/Chrome/i)
+const isChrome = () => !!u.match(/Chrome/i)
 const isMobile = () => !!(u.match(/(iPhone|iPad|iPod)/i) || u.match(/Android/i) || u.match(/Windows Phone/i) || u.match(/IEMobile/i))
 const isIos = () => !!u.match(/(iPhone|iPad|iPod)/i)
 const isAndroid = () => !!u.match(/Android/i)
@@ -12,6 +12,18 @@ const isWxWorkMobile = () => isTencentAgent && u.match(/wxwork/i) == 'wxwork' &&
 const isWxWorkPc = () => isTencentAgent && u.match(/wxwork/i) == 'wxwork' && u.match(/Mobile/i) != 'Mobile'
 const isFirefox = ()=> u.includes('Firefox')
 const isSafari = ()=>/Safari/.test(u) && !/Chrome/.test(u)
+isChrome.is = isChrome()
+isMobile.is = isMobile()
+isIos.is = isIos()
+isAndroid.is = isAndroid()
+isWx.is = isWx()
+isWxMobile.is = isWxMobile()
+isWxPc.is = isWxPc()
+isWxWork.is = isWxWork()
+isWxWorkMobile.is = isWxWorkMobile()
+isWxWorkPc.is = isWxWorkPc()
+isFirefox.is = isFirefox()
+isSafari.is = isSafari()
 /**
  * 浏览器环境
  */
