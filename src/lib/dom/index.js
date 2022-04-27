@@ -31,7 +31,7 @@ import selectRangeByElement from "./selectRangeByElement";
 import selectTextByElement from "./selectTextByElement";
 import addStyleCss from "./addStyleCss";
 import copyText from "./copyText";
-
+import domWatch from "./domWatch";
 export default {
     bindEvent,
     bufferAnimation,
@@ -65,5 +65,6 @@ export default {
     selectRangeByElement,
     selectTextByElement,
     addStyleCss,
-    copyText
+    copyText,
+    domWatch
 };
