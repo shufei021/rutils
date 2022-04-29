@@ -17,5 +17,9 @@ export default isNum
  *
  *
  *
+ 
+function isNum(val){
+    return /^[+-]?\d+(\.\d+)?$/.test(String(val))
+}
  *
  */

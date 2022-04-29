@@ -12,6 +12,8 @@ const isWxWorkMobile = () => isTencentAgent && u.match(/wxwork/i) == 'wxwork' &&
 const isWxWorkPc = () => isTencentAgent && u.match(/wxwork/i) == 'wxwork' && u.match(/Mobile/i) != 'Mobile'
 const isFirefox = ()=> u.includes('Firefox')
 const isSafari = ()=>/Safari/.test(u) && !/Chrome/.test(u)
+const isWindows =()=> ['win32','wow32','win64','wow64'].some(i=>u.toLowerCase().includes(i))
+const isMac =()=>/macintosh|mac os x/i.test(u)
 isChrome.is = isChrome()
 isMobile.is = isMobile()
 isIos.is = isIos()
@@ -24,6 +26,8 @@ isWxWorkMobile.is = isWxWorkMobile()
 isWxWorkPc.is = isWxWorkPc()
 isFirefox.is = isFirefox()
 isSafari.is = isSafari()
+isWindows.is = isWindows()
+isMac.is = isMac()
 /**
  * 浏览器环境
  */
@@ -39,5 +43,7 @@ export default {
     isWxWorkMobile, // 是否企业微信移动端
     isWxWorkPc, // 是否企业微信PC端
     isFirefox, // 是否是火狐浏览器
-    isSafari // 是否是isSafari浏览器
+    isSafari, // 是否是isSafari浏览器
+    isWindows, // 是否为windows系统
+    isMac // 是否为Mac系统
 }
