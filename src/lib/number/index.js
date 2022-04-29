@@ -8,6 +8,7 @@ import round from './round'
 import subtract from './subtract'
 import isInteger from './isInteger'
 import sumBigNumber from './sumBigNumber'
+import sumDecimalNumber from './sumDecimalNumber'
 
 export default {
     add,
@@ -19,5 +20,6 @@ export default {
     round,
     subtract,
     isInteger,
-    sumBigNumber
+    sumBigNumber,
+    sumDecimalNumber
 }
