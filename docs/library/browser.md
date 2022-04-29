@@ -14,6 +14,8 @@
 | <a href="#iswxwork">isWxWork</a>             | 是否为企业微信       |
 | <a href="#iswxworkmobile">isWxWorkMobile</a> | 是否为企业微信移动端 |
 | <a href="#iswxworkpc">isWxWorkPc</a>         | 是否为企业微信 PC 端 |
+| <a href="#ismac">isMac</a>                   | 是否为Mac系统 |
+| <a href="#iswindows">isWindows</a>           | 是否为Windows系统 |
 
 ### isChorme
 
@@ -262,5 +264,55 @@ rutils.isWxWorkPc()
 
 ```javascript
 rutils.isWxWorkPc()
+// => true or false
+```
+
+### isMac
+
+> 是否为Mac系统
+
+```javascript
+rutils.isMac()
+```
+
+**参数：**
+
+​ 无
+
+**返回值：**
+
+​ `boolean`
+
+​ true: 是 | false: 否
+
+**例子：**
+
+```javascript
+rutils.isMac()
+// => true or false
+```
+
+### isWindows
+
+> 是否为Windows系统
+
+```javascript
+rutils.isWindows()
+```
+
+**参数：**
+
+​ 无
+
+**返回值：**
+
+​ `boolean`
+
+​ true: 是 | false: 否
+
+**例子：**
+
+```javascript
+rutils.isWindows()
 // => true or false
 ```

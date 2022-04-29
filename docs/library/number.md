@@ -12,6 +12,8 @@
 | <a href="#isinteger">isInteger</a> | 是否为整数         |
 | <a href="#isnum">isNum</a>         | 是否为数字         |
 | <a href="#round">round</a>         | 四舍五入到指定位数 |
+| <a href="#sumdecimalnumber">sumDecimalNumber</a>         | 两个超小数（均是字符串）相加 |
+| <a href="#sumbignumber">sumBigNumber</a>         | 两个超大整数（均是字符串）相加 |
 
 ### add
 
@@ -249,4 +251,46 @@ rutils.isInteger('3')
 
 rutils.isInteger(NaN)
 // => false
+```
+
+### sumDecimalNumber
+
+> 两个超小数（均是字符串）相加
+
+**语法：**
+
+```javascript
+rutils.sumDecimalNumber(a,b)
+```
+
+**参数：**
+
+`a：`加数 ，字符串类型，超小数<br/>
+`b：`被加数 ，字符串类型，超小数
+
+**示例：**
+
+```javascript
+rutils.sumDecimalNumber('0.0000000000001','0.00000000000007')// '0.00000000000017'
+```
+
+### sumBigNumber
+
+> 两个超小数（均是字符串）相加
+
+**语法：**
+
+```javascript
+rutils.sumBigNumber(a,b)
+```
+**参数：**
+
+`a：`加数 ，字符串类型，整数<br/>
+`b：`被加数 ，字符串类型，整数
+
+**示例：**
+
+```javascript
+rutils.sumBigNumber('9999999999999999','9999999999999999999')// '10009999999999999998' 与BigInt 运算一致
+//BigInt运算： 9999999999999999n+9999999999999999999n // 10009999999999999998n
 ```

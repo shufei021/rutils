@@ -30,6 +30,10 @@
 | <a href="#selectrangebyelement">selectRangeByElement</a>             | 通过元素选中范围值                                       |
 | <a href="#selecttextbyelement">selectTextByElement</a>             | 通过元素选中文本                                       |
 | <a href="#copytext">copyText</a>             | 复制文本内容                                       |
+| <a href="#getelementbytarget">getElementByTarget</a>             | 根据目标元素获取包含指定类名的元素                                       |
+| <a href="#domwatch">domWatch</a>             | 监听DOM 变化                                       |
+
+
 ### backTop
 
 > 回到顶部
@@ -70,11 +74,11 @@ rutils.bindEvent(value1, value2, value3)
 
 **参数：**
 
-​ 1.`value1` {element} 绑定元素
+​ `value1` {element} 绑定元素<br/>
 
-​ 2.`value2` {string} 事件名称，不需要加`on`前缀
+​ `value2` {string} 事件名称，不需要加`on`前缀<br/>
 
-​ 3.`value3` {function} 事件回调函数
+​`value3` {function} 事件回调函数
 
 **返回值：**
 
@@ -848,4 +852,61 @@ copyText(copyContentStr)
 **示例**
 ```js
 rutils.copyText('测试的文本内容')
+```
+
+
+### getElementByTarget
+
+**语法**
+
+```javascript
+rutils.getElementByTarget(el, targetClass)
+```
+
+> 根据目标元素获取包含指定类名的元素
+
+
+**参数**
+
+`@param {Element} el:` DOM元素<br/>
+`@param {String} targetClass:` 含指定类名
+
+
+**例子**
+
+<div class="rutilsjs" style="width:200px;height:100px;border:1px solid #000;">rutilsjs <button class="btn" >btn</button> </div> 
+
+```html
+
+<div class="rutilsjs" style="width:200px;height:100px;border:1px solid #000;">rutilsjs <button class="btn" >btn</button> </div> 
+
+// 传入 btn 从自己开始向上查询每个元素是否包含指定类名，包含则返回
+rutils.getElementByTarget(document.querySelector('.btn'), 'rutilsjs')
+```
+
+### domWatch
+
+> 监听 dom 变化
+
+**语法**
+
+```js
+domWatch(tagNode, cb, config = {})
+```
+
+**参数**
+
+`@param {Element | string} tagNode ` 监听的节点元素<br/>
+`@param {Function} cb ` 监听的节点元素属性或子节点发生变化的回调函数<br/>
+`@param {Object} config ` 监听的节点元素的配置项 ，默认配置项 { attributes: true, childList: true, subtree: true,once:true }，默认监听一次
+
+<button id="csbtn">按钮</button>
+
+
+**例子**
+
+```js
+rutils.domWatch(el,(records)=>{
+    console.log(records)
+},{once:false})
 ```

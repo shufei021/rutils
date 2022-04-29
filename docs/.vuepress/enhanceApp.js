@@ -1,4 +1,3 @@
-// import rutils from './lib'
 const print = function (){
     Array.from(arguments).forEach(item=>{
         if( Object.prototype.toString.call(item).slice(8,-1) === 'Object'){
@@ -38,7 +37,7 @@ export default ({ router, Vue }) => {
                                 backgroundColor:"#1475b2"
                             },{
                                 title: "Build Date",
-                                content:'2022/4/14 10:37:25'
+                                content:'2022/4/29 20:56'
                                 // new Date().toLocaleString()
                             })
                             window.rutils = module.default
@@ -55,8 +54,7 @@ export default ({ router, Vue }) => {
                             addStyleCss('BACK_TOP',[`#BACK_TOP{
                                 display: none;
                                 font-size: 16px;
-                                backgroundColor: #61dafb;
-                                color: #000000;
+                                color: #fff;
                                 padding:10px 25px;
                                 white-space: nowrap;
                                 transition: background-color 0.2s ease-out;
@@ -65,10 +63,12 @@ export default ({ router, Vue }) => {
                                 z-index: 100000;
                                 cursor: pointer;
                                 bottom: 50px;
-                                background-color: #61dafb;
+                                box-shadow: 1px 2px 2px #666;
+                                border-radius:2px;
+                                background: linear-gradient(to right, #ff9569 0%, #e92758 100%);
                                 color: #fff;}`])
                                 window.onscroll = function(){
-                                    backTopButton.style.display =scrollY>=2400? 'block':'none'
+                                    backTopButton.style.display =scrollY>=500? 'block':'none'
                                 }
                                 backTopButton.onclick = function(){
                                     window.scrollTo(0,0)

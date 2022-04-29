@@ -18,6 +18,8 @@
 | <a href="#iswxwork">isWxWork</a> | 是否企业微信       |
 | <a href="#iswxworkmobile">isWxWorkMobile </a>      | 是否企业微信移动端       |
 | <a href="#iswxworkpc">isWxWorkPc </a>      | 是否企业微信PC端       |
+| <a href="#ismac">isMac</a>                   | 是否为Mac系统 |
+| <a href="#iswindows">isWindows</a>           | 是否为Windows系统 |
 
 :::warning PS
 以上均是函数
@@ -57,9 +59,9 @@ rutils.isMobile()
 // 不是移动端 就是PC 端
 ```
 
-## 系统识别
+## 手机系统识别
 
-### 是否IOS
+### 是否IOS系统
 ```js
 rutils.isIos()
 
@@ -67,7 +69,7 @@ rutils.isIos()
 
 ```
 
-### 是否Android
+### 是否Android系统
 ```js
 rutils.isAndroid()
 
@@ -125,4 +127,57 @@ rutils.isWxWorkMobile()
 rutils.isWxWorkPc()
 
 // 或 rutils.isWxWorkPc.is (最新版本支持.is 直接获取)
+```
+## 电脑系统识别
+
+### 是否为Mac系统
+
+> 是否为Mac系统
+
+```javascript
+rutils.isMac()
+```
+
+**参数：**
+
+​ 无
+
+**返回值：**
+
+​ `boolean`
+
+​ true: 是 | false: 否
+
+**例子：**
+
+```javascript
+rutils.isMac()
+// => true or false
+```
+
+### 是否为Windows系统
+
+> 是否为Windows系统
+
+```javascript
+rutils.isWindows()
+// 或 rutils.isWindows.is (最新版本支持.is 直接获取)
+```
+
+**参数：**
+
+​ 无
+
+**返回值：**
+
+​ `boolean`
+
+​ true: 是 | false: 否
+
+**例子：**
+
+```javascript
+rutils.isWindows()
+// => true or false
+// 或 rutils.isWindows.is (最新版本支持.is 直接获取)
 ```
