@@ -32,6 +32,8 @@ import selectTextByElement from "./selectTextByElement";
 import addStyleCss from "./addStyleCss";
 import copyText from "./copyText";
 import domWatch from "./domWatch";
+import getElementByTarget from "./getElementByTarget";
+
 export default {
     bindEvent,
     bufferAnimation,
@@ -66,5 +68,6 @@ export default {
     selectTextByElement,
     addStyleCss,
     copyText,
-    domWatch
+    domWatch,
+    getElementByTarget
 };
