@@ -30,7 +30,8 @@ import getScrollerWidth from "./getScrollerWidth";
 import selectRangeByElement from "./selectRangeByElement";
 import selectTextByElement from "./selectTextByElement";
 import addStyleCss from "./addStyleCss";
-import copyText from "./copyText";
+import copyText from "./copyText"; // 复制文本
+import textAutoEllipsis from "./textAutoEllipsis"; // 文本自动省略号
 
 export default {
     bindEvent,
@@ -65,5 +66,6 @@ export default {
     selectRangeByElement,
     selectTextByElement,
     addStyleCss,
-    copyText
+    copyText,
+    textAutoEllipsis
 };
