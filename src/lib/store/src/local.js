@@ -58,16 +58,16 @@ const get = function (k,d) {
         let ret = null
         try {
             ret =  _parse(k)
-            if(!isObject(ret)) {
-                ret = _get(k)
-                if(ret === "false" || ret === "true") {
-                    ret =  _parse(k)
-                }
+            if(!isObject(ret) && !Array.isArray(ret)){
+                ret =  _get(k)
+            }
+            if(ret === "false" || ret === "true") {
+                ret =  _parse(k)
             }
         } catch (e) {
             ret = _get(k)
         }
-        return d!==undefined && !ret? d:ret
+        return d!==undefined && !ret? d: ret
     } else if (Array.isArray(k)) {
         if(!k.length) return {}
         return k.reduce((p, c) => {

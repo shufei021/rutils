@@ -32,6 +32,8 @@ import selectTextByElement from "./selectTextByElement";
 import addStyleCss from "./addStyleCss";
 import copyText from "./copyText"; // 复制文本
 import textAutoEllipsis from "./textAutoEllipsis"; // 文本自动省略号
+import domWatch from "./domWatch";
+import getElementByTarget from "./getElementByTarget";
 
 export default {
     bindEvent,
@@ -67,5 +69,7 @@ export default {
     selectTextByElement,
     addStyleCss,
     copyText,
-    textAutoEllipsis
+    textAutoEllipsis,
+    domWatch,
+    getElementByTarget
 };
